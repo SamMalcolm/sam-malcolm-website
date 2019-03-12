@@ -1,0 +1,33 @@
+{
+  "name": "smm-website",
+  "version": "1.0.0",
+  "description": "MERN Stack website for folio",
+  "main": "app.js",
+  "scripts": {
+    "start": "./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack -w"
+  },
+  "author": "Sam Malcolm",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "nyc": "^13.3.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "http-errors": "^1.7.2",
+    "morgan": "^1.9.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-router": "^4.3.1"
+  }
+}
