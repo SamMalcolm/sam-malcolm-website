@@ -1,14 +1,26 @@
-import React from 'react';
-import Router from 'react-router';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
-const Nav = require('./components/Nav.js');
-
+import Nav from './components/Nav';
+import './styles/_var.scss'
+import './styles/style.scss'
 function App() {
+
+    const { highlightColour, setHighlightColour } = useState('#000054');
+
     return (
-        <div className="appContainer">
-            <Nav />
-            <h1> This is my app</h1>
-        </div>
+        <Router>
+            <div className="appContainer">
+                <Nav />
+                <h1> This is my app</h1>
+                <Switch>
+                    <Route exact path="/users">
+                        <h2>Users route</h2>
+                    </Route>
+                </Switch>
+            </div>
+
+        </Router>
     )
 }
 

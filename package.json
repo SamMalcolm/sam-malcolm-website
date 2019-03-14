@@ -16,18 +16,24 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "chai": "^4.2.0",
+    "css-loader": "^2.1.1",
     "mocha": "^6.0.2",
+    "node-sass": "^4.11.0",
     "nyc": "^13.3.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
   },
   "dependencies": {
     "cookie-parser": "^1.4.4",
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
     "http-errors": "^1.7.2",
     "morgan": "^1.9.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-router": "^4.3.1"
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
   }
 }
