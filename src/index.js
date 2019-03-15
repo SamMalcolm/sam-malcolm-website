@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import Nav from './components/Nav';
 import './styles/_var.scss'
 import './styles/style.scss'
+import Background from './components/Background';
 
 const fetchBackgrounds = () => {
     return new Promise((resolve, reject) => {
@@ -23,7 +24,6 @@ const fetchBackgrounds = () => {
         ])
     })
 }
-
 
 const App = () => {
 
@@ -45,8 +45,6 @@ const App = () => {
     //     }, 3000);
     //     clearInterval(interval);
     // });
-
-    console.log("App component called");
     // useEffect(() => {
     //     let path = window.location.pathname;
     //     document.title = "Sam Malcolm Media | " + path;
