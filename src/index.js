@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import './styles/_var.scss'
 import './styles/style.scss'
 import Background from './components/Background';
+import About from './components/About.js';
 
 const fetchBackgrounds = () => {
     return new Promise((resolve, reject) => {
@@ -52,6 +53,7 @@ const App = () => {
     return (
         <Router>
             <div className="appContainer">
+                <Background />
                 <Nav highlight={highlightColour} />
                 <h1> This is my app</h1>
                 <Switch>
@@ -59,7 +61,7 @@ const App = () => {
                         <h2>Snooker &amp; Billiards Results</h2>
                     </Route>
                     <Route exact path="/about">
-                        <h2>About Me</h2>
+                        <About />
                     </Route>
                     <Route exact path="/work">
                         <h2>Works</h2>
@@ -75,6 +77,9 @@ const App = () => {
                     </Route>
                     <Route exact path="/blog">
                         <h2>blog</h2>
+                    </Route>
+                    <Route exact path="/music">
+                        <h2>Music</h2>
                     </Route>
                 </Switch>
             </div>

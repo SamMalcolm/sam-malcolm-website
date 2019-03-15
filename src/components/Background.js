@@ -1,9 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function Background(props) {
+function Background() {
+    const [backgrounds, setBackgrounds] = useState([
+        {
+            "src": "/public/assets/backgrounds/1.jpg",
+            "highlight": "#FF0000"
+        },
+        {
+            "src": "/public/assets/backgrounds/2.jpg",
+            "highlight": "#00FF00"
+        },
+        {
+            "src": "/public/assets/backgrounds/3.jpg",
+            "highlight": "#0000FF"
+        },
+    ]);
+
     return (
-        <div>
-
+        <div className="backgroundContainer">
+            {backgrounds.map((background) => {
+                return (
+                    <div className="background">
+                        <img src={background.src} />
+                    </div>
+                )
+            })}
         </div>
     )
 }

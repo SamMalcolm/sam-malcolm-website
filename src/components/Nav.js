@@ -38,6 +38,9 @@ const Nav = (props) => {
                 <Link to="/blog">
                     <NavLink highlight={props.highlight} name="Blog" />
                 </Link>
+                <Link to="/music">
+                    <NavLink name="Music" />
+                </Link>
                 <Link to="/tutorials">
                     <NavLink name="Tutorials" />
                 </Link>
