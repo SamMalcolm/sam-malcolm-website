@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-function About() {
+const About = () => {
     return (
         <div className="bio_container">
             <div className="bio_img">
@@ -62,5 +62,5 @@ function About() {
     )
 }
 
-export default About
+export default About;
 

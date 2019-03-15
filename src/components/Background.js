@@ -20,8 +20,7 @@ function Background() {
         <div className="backgroundContainer">
             {backgrounds.map((background) => {
                 return (
-                    <div className="background">
-                        <img src={background.src} />
+                    <div className="background" style={{ 'backgroundImage': 'url(' + background.src + ')' }}>
                     </div>
                 )
             })}
