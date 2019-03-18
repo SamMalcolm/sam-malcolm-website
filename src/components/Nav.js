@@ -32,6 +32,11 @@ const Nav = (props) => {
                 <Wordmark highlight={props.highlight} />
             </Link>
             <div className="nav-links">
+                <div className="hamburger">
+                    <div className="grill"></div>
+                    <div className="grill"></div>
+                    <div className="grill"></div>
+                </div>
                 <Link to="/work">
                     <NavLink highlight={props.highlight} name="Work" />
                 </Link>

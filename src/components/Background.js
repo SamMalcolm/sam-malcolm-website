@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Background() {
     const [backgrounds, setBackgrounds] = useState([
         {
-            "src": "/public/assets/backgrounds/1.jpg",
+            "src": "/assets/backgrounds/flower.jpg",
             "highlight": "#FF0000"
         },
         {
-            "src": "/public/assets/backgrounds/2.jpg",
+            "src": "/assets/backgrounds/toby.jpg",
             "highlight": "#00FF00"
         },
         {
-            "src": "/public/assets/backgrounds/3.jpg",
+            "src": "/assets/backgrounds/night_exp.jpg",
             "highlight": "#0000FF"
         },
     ]);

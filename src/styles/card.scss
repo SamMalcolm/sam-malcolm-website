@@ -18,6 +18,9 @@ font-size: 35px;
 background-color: black;
 padding: 7px;
 cursor:pointer;
+.childCardTrigger {
+    transition:0.5s;
+}
 }
 .ackImage {
     img {
@@ -28,3 +31,4 @@ cursor:pointer;
 .ackActive {
     right:0;
 }
+

@@ -6,12 +6,17 @@ import Nav from './components/Nav';
 import './styles/_var.scss'
 import './styles/style.scss'
 import './styles/about.scss';
-import './styles/acknowledgement.scss';
+import './styles/card.scss';
 import './styles/backgrounds.scss';
 
 import Background from './components/Background';
 import About from './components/About.js';
-import AcknowledgementOfCountry from './components/AcknowledgementOfCountry.js';
+import Card from './components/Card.js';
+import Container from './components/Container.js';
+import FullWidthBanner from './components/FullWidthBanner';
+import Albums from './components/Albums';
+import Folio from './components/Folio';
+
 
 
 const App = () => {
@@ -25,13 +30,20 @@ const App = () => {
                 <Nav highlight={highlightColour} />
                 <Switch>
                     <Route exact path="/snooker">
-                        <h2>Snooker &amp; Billiards Results</h2>
+                        <div>
+                            <FullWidthBanner src="/assets/ui_images/snooker.jpg" title="Snooker &amp; Billiards" />
+                            <Container>
+                                <h1>Results</h1>
+                            </Container>
+                        </div>
                     </Route>
                     <Route exact path="/about">
-                        <About />
+                        <Container>
+                            <About />
+                        </Container>
                     </Route>
                     <Route exact path="/work">
-                        <h2>Works</h2>
+                        <Folio />
                     </Route>
                     <Route exact path="/contact">
                         <h2>Contact Me</h2>
@@ -46,10 +58,19 @@ const App = () => {
                         <h2>blog</h2>
                     </Route>
                     <Route exact path="/music">
-                        <h2>Music</h2>
+                        <Albums />
                     </Route>
                 </Switch>
-                <AcknowledgementOfCountry />
+                <Card>
+                    <div className="ackImage">
+                        <img src='./assets/ui_images/ack.png' />
+                    </div>
+                    <div className="ackText">
+                        <h3>Acknowledgement Of Country</h3>
+                        <p>I would like to acknowledge the traditional owners of the land on which I conduct the business of being a developer and designer. I would like to pay my respect to their elders past, present and future.</p>
+                        <p>If you would like to learn more about indigenous culture please click <a href="#">here</a></p>
+                    </div>
+                </Card>
             </div>
 
         </Router>

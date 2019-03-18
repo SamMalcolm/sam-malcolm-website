@@ -9,7 +9,9 @@ router.get([
   '/blog',
   '/film',
   '/contact',
-  '/about'
+  '/about',
+  '/work',
+  '/music'
 ], function (req, res, next) {
   let path = req.originalUrl.slice(1, req.originalUrl.length);
   path = path.split("");

@@ -1,4 +1,6 @@
 $mainColour: #f2f2f2;
+$darkBackground: #000000;
+
 @font-face {
     font-family: 'montserratextrabold';
     src: url("../../public/fonts/montserrat-extrabold-webfont.woff2") format('woff2'),
@@ -6,4 +8,5 @@ $mainColour: #f2f2f2;
     font-weight: normal;
     font-style: normal;
 }
+
 $mainFont:'montserratextrabold';
