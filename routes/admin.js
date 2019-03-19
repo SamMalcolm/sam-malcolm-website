@@ -15,12 +15,28 @@ router.post('/work', () => {
     // add work to db
 })
 
+router.delete('/work/:work_id', () => {
+    // delete blog
+})
+
+router.put('/work/:work_id', () => {
+    // update blog
+})
+
 router.get('/blog', () => {
-    // add work to db form
+    // add blog to db form
 })
 
 router.post('/blog', () => {
-    // add work to db
+    // add blog to db
+})
+
+router.delete('/blog/:blog_id', () => {
+    // delete blog
+})
+
+router.put('/blog/:blog_id', () => {
+    // update blog
 })
 
 

@@ -16,12 +16,16 @@ import Container from './components/Container.js';
 import FullWidthBanner from './components/FullWidthBanner';
 import Albums from './components/Albums';
 import Folio from './components/Folio';
-
+import backgroundSlider from './components/backgroundSlider'
 
 
 const App = () => {
 
     const [highlightColour, setHighlightColour] = useState('#000054');
+
+    useEffect(() => {
+        backgroundSlider();
+    })
 
     return (
         <Router>
