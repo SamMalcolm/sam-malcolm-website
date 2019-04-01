@@ -33,6 +33,7 @@ const App = () => {
                 <Background />
                 <Nav highlight={highlightColour} />
                 <Switch>
+                    <Route exact path="/"></Route>
                     <Route exact path="/snooker">
                         <div>
                             <FullWidthBanner src="/assets/ui_images/snooker.jpg" title="Snooker &amp; Billiards" />
