@@ -14,18 +14,18 @@ import About from './components/About.js';
 import Card from './components/Card.js';
 import Container from './components/Container.js';
 import FullWidthBanner from './components/FullWidthBanner';
-import Albums from './components/Albums';
-import Folio from './components/Folio';
-import backgroundSlider from './components/backgroundSlider'
+//import Albums from './components/Albums';
+//import Folio from './components/Folio';
+//import backgroundSlider from './components/backgroundSlider'
 
 
 const App = () => {
 
     const [highlightColour, setHighlightColour] = useState('#000054');
 
-    useEffect(() => {
-        backgroundSlider();
-    })
+    // useEffect(() => {
+    //     backgroundSlider();
+    // })
 
     return (
         <Router>
@@ -47,7 +47,7 @@ const App = () => {
                         </Container>
                     </Route>
                     <Route exact path="/work">
-                        <Folio />
+                        <h2>Test</h2>
                     </Route>
                     <Route exact path="/contact">
                         <h2>Contact Me</h2>
@@ -62,7 +62,7 @@ const App = () => {
                         <h2>blog</h2>
                     </Route>
                     <Route exact path="/music">
-                        <Albums />
+                        <h1>test</h1>
                     </Route>
                 </Switch>
                 <Card>

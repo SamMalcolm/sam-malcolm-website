@@ -10,5 +10,6 @@ router.get('/work', function (req, res, next) {
 
 router.get('/blog', (req, res) => {
 
-})
+});
+
 module.exports = router;
