@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import Nav from './components/Nav';
 
-import './styles/_var.scss'
-import './styles/style.scss'
+import './styles/_var.scss';
+import './styles/style.scss';
 import './styles/about.scss';
 import './styles/card.scss';
 import './styles/backgrounds.scss';
@@ -64,16 +64,28 @@ const App = () => {
                         <h1>test</h1>
                     </Route>
                 </Switch>
-                <Card>
-                    <div className="ackImage">
-                        <img src='./assets/ui_images/ack.png' />
-                    </div>
-                    <div className="ackText">
-                        <h3>Acknowledgement Of Country</h3>
-                        <p>I would like to acknowledge the traditional owners of the land on which I conduct the business of being a developer and designer. I would like to pay my respect to their elders past, present and future.</p>
-                        <p>If you would like to learn more about indigenous culture please click <a href="#">here</a></p>
-                    </div>
-                </Card>
+                <div className="cardContainer">
+                    <Card>
+                        <div className="ackImage">
+                            <img src='./assets/ui_images/ack.png' />
+                        </div>
+                        <div className="ackText">
+                            <h3>Acknowledgement Of Country</h3>
+                            <p>I would like to acknowledge the traditional owners of the land on which I conduct the business of being a developer and designer. I would like to pay my respect to their elders past, present and future.</p>
+                            <p>If you would like to learn more about indigenous culture please click <a href="#">here</a></p>
+                        </div>
+                    </Card>
+                    <Card>
+                        <div className="ackImage">
+                            <img src='./assets/ui_images/ack.png' />
+                        </div>
+                        <div className="ackText">
+                            <h3>Accessibility Options</h3>
+                            <p>I would like to acknowledge the traditional owners of the land on which I conduct the business of being a developer and designer. I would like to pay my respect to their elders past, present and future.</p>
+                            <p>If you would like to learn more about indigenous culture please click <a href="#">here</a></p>
+                        </div>
+                    </Card>
+                </div>
             </div>
 
         </Router>

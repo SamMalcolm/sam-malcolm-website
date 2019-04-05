@@ -13,7 +13,7 @@ nav {
 .st2{font-size:36.7136px; fill:white;}
 .st3{fill:white;}
 
-nav div.nav-links div.hamburger {
+nav div.hamburger {
     width: 40px;
 
 height: 35px;
@@ -24,12 +24,12 @@ display: none;
 
 position: absolute;
 
-top: -64px;
+top: 0;
 
 right: 0;
 
 transition: 0.2s;
-    &:hover {
+    &:hover, &.selected {
         background-color:white;
         cursor:pointer;
         div.grill {
@@ -47,9 +47,7 @@ transition: 0.2s;
 
 
 @media screen and (max-width: 1040px) {
-    nav div.nav-links div.hamburger {
-        display:block;
-    }
+
     nav div.nav-links a {
         width: calc(100% - 48px);
     }
@@ -57,11 +55,11 @@ transition: 0.2s;
         float:none;
         position: absolute;
         z-index: 99999;
-    top: 65px;
-    background:$darkBackground;
-    width: 100%;
+        top: 65px;
+        background:$darkBackground;
+        width: 100%;
     }
-    nav div.nav-links div.hamburger {
+    nav div.hamburger {
         display:flex;
         flex-direction:column;
         justify-content:space-around;
@@ -98,10 +96,14 @@ nav .wordmark {
     width: 0%;
     margin: auto;
     animation:none;
-    transition:0.2s ease-in-out;
+    transition: background-color $transitionTime, 0.2s ease-in-out;
 }
 
 nav div.nav-links a:hover .nav-link-underline {
     left: 0;
     width: 100%;
+}
+
+.wordmark path {
+    transition:$transitionTime;
 }
