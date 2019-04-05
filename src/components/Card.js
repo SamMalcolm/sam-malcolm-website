@@ -29,7 +29,7 @@ const Card = ({ children }) => {
 
     return (
         <div className="ackContainer">
-            <div className="ackTrigger" tabindex="0" onFocus={openCard} onBlur={closeCard} onClick={handleAckClick} aria-role="button">
+            <div className="ackTrigger" tabindex="0" onFocus={openCard} onClick={handleAckClick} aria-role="button">
                 <div className="childCardTrigger">&laquo;</div>
             </div>
             {children}

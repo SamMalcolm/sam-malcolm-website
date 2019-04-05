@@ -21,16 +21,14 @@ import FullWidthBanner from './components/FullWidthBanner';
 
 const App = () => {
 
-    const [highlightColour, setHighlightColour] = useState('#000054');
+    const [highlightColour, setHighlightColour] = useState('#D2FBFC');
 
-    // useEffect(() => {
-    //     backgroundSlider();
-    // })
+
 
     return (
         <Router>
             <div className="appContainer">
-                <Background />
+                <Background setHighlightColour={setHighlightColour} />
                 <Nav highlight={highlightColour} />
                 <Switch>
                     <Route exact path="/"></Route>
