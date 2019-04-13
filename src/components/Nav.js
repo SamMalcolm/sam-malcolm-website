@@ -68,10 +68,12 @@ const Nav = (props) => {
     }, [windowSize.innerWidth])
 
     const showMenu = () => {
-        if (expanded) {
-            setExpanded(false);
-        } else {
-            setExpanded(true);
+        if (windowSize.innerWidth < 1040) {
+            if (expanded) {
+                setExpanded(false);
+            } else {
+                setExpanded(true);
+            }
         }
     }
 
@@ -93,6 +95,7 @@ const Nav = (props) => {
                 <NavLink highlight={props.highlight} name="Snooker" path="/snooker" showMenu={showMenu} />
                 <NavLink highlight={props.highlight} name="Film" path="/film" showMenu={showMenu} />
                 <NavLink highlight={props.highlight} name="About" path="/about" showMenu={showMenu} />
+                <NavLink highlight={props.highlight} name="Appearances" path="/appearances" showMenu={showMenu} />
                 <NavLink highlight={props.highlight} name="Contact" path="/contact" showMenu={showMenu} />
             </div>
         </nav>

@@ -11,7 +11,8 @@ router.get([
   '/contact',
   '/about',
   '/work',
-  '/music'
+  '/music',
+  '/appearances'
 ], function (req, res, next) {
   let path;
   console.log(req);
@@ -28,8 +29,6 @@ router.get([
 
 
 
-  console.log("connecting to DB");
-  mongoose.connect('mongodb://localhost:27017/smm_db');
 
   res.render('index', { title: path });
 });

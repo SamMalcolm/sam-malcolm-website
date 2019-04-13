@@ -57,7 +57,7 @@ function Background(props) {
             } else {
                 counter++;
             }
-        }, 2500);
+        }, 4000);
         return () => clearInterval(int);
     }, []);
 

@@ -8,23 +8,20 @@ import './styles/style.scss';
 import './styles/about.scss';
 import './styles/card.scss';
 import './styles/backgrounds.scss';
+import './styles/blog.scss';
+import './styles/appearances.scss';
 
 import Background from './components/Background';
 import About from './components/About.js';
 import Card from './components/Card.js';
 import Container from './components/Container.js';
 import FullWidthBanner from './components/FullWidthBanner';
-//import Albums from './components/Albums';
-//import Folio from './components/Folio';
-//import backgroundSlider from './components/backgroundSlider'
-
+import Blog from './components/Blog';
+import Contact from './components/Contact';
+import Appearances from './components/Appearances';
 
 const App = () => {
-
-    const [highlightColour, setHighlightColour] = useState('#D2FBFC');
-
-
-
+    const [highlightColour, setHighlightColour] = useState('');
     return (
         <Router>
             <div className="appContainer">
@@ -32,6 +29,11 @@ const App = () => {
                 <Nav highlight={highlightColour} />
                 <Switch>
                     <Route exact path="/"></Route>
+                    <Route exact path="/appearances">
+                        <Container>
+                            <Appearances highlight={highlightColour} />
+                        </Container>
+                    </Route>
                     <Route exact path="/snooker">
                         <div>
                             <FullWidthBanner src="/assets/ui_images/snooker.jpg" title="Snooker &amp; Billiards" />
@@ -49,7 +51,9 @@ const App = () => {
                         <h2>Test</h2>
                     </Route>
                     <Route exact path="/contact">
-                        <h2>Contact Me</h2>
+                        <Container>
+                            <Contact />
+                        </Container>
                     </Route>
                     <Route exact path="/film">
                         <h2>Film criticism</h2>
@@ -58,7 +62,9 @@ const App = () => {
                         <h2>Tutorials</h2>
                     </Route>
                     <Route exact path="/blog">
-                        <h2>blog</h2>
+                        <Container>
+                            <Blog />
+                        </Container>
                     </Route>
                     <Route exact path="/music">
                         <h1>test</h1>

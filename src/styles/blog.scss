@@ -1,0 +1,56 @@
+@import '_var.scss';
+
+.postContainer {
+	position: relative;
+	width:100%;
+	height:150px;
+	margin-bottom:30px;
+	.postBg {
+		position: absolute;
+		overflow:hidden;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-size:110%;
+		background-position:center;
+		filter: blur(4px);
+		.postDarker {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background:rgba(0,0,0,0.5);
+			
+		}
+		
+	}
+	
+	.postImage {
+		position:absolute;
+		left:20px;
+		top:-10px;
+		img {
+			width:213px;
+		}
+	}
+	.postText {
+		color:white;
+		position:absolute;
+		z-index:200;
+		width:calc(100% - 253px);
+		right:0;
+		padding:10px;
+		text-align:left;
+		.postTitle {
+			size: 26px;
+			text-transform: uppercase;
+			font-family:$mainFont;
+		}
+		div {
+			margin-top:5px;
+			margin-bottom:5px;
+		}
+	}
+}

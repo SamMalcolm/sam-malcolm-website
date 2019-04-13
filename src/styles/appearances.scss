@@ -1,0 +1,36 @@
+@import '_var.scss';
+
+table.appearances {
+	border-collapse: collapse;
+	width:100%;
+	thead {
+		background:black;
+		th  {
+			padding:10px;
+			text-transform:uppercase;
+			font-family:$mainFont;
+			color:white;
+			text-align:left;
+		}
+	}
+	tbody {
+		background:rgba(0,0,0,0.5);
+		tr {
+			td {
+				color:white;
+				padding:10px;
+			}
+		}
+	}
+}
+
+svg.ticket {
+	transition:$transitionTime;
+	width:50px;
+	&:hover {
+		.ticketPath {
+			fill:white !important;
+			transition:1.5s;
+		}
+	}
+}

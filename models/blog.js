@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 
-const Blog = new Schema({
+const BlogSchema = new Schema({
     title: { type: String },
     content: { type: String },
     date: { type: Date, default: Date.now },
@@ -11,5 +11,5 @@ const Blog = new Schema({
     social_description: { type: String },
     social_title: { type: String }
 });
-
-module.exports = Blog;
+const BlogModel = mongoose.model('blog', BlogSchema);
+module.exports = BlogModel;
