@@ -25,12 +25,30 @@ table.appearances {
 }
 
 svg.ticket {
-	transition:$transitionTime;
 	width:50px;
-	&:hover {
-		.ticketPath {
-			fill:white !important;
-			transition:1.5s;
+	g {
+		rect path {
+			transition:$transitionTime;
+			&:hover {
+				fill:white !important;
+			}
 		}
 	}
 }
+
+svg.information {
+	width:50px;
+	transition:$transitionTime;
+	.st0{stroke-width:8;stroke-miterlimit:10;}
+	.st1{font-family:'sans-serif';}
+	.st2{font-size:141.7134px;}
+	&:hover { 
+		g {
+			rect path circle {
+				fill:white !important;
+				transition:0.2s;
+			}
+		}
+	}
+}
+
