@@ -15,8 +15,6 @@ router.get([
   '/appearances'
 ], function (req, res, next) {
   let path;
-  console.log(req);
-  console.log(req.originalUrl);
   if (typeof req.originalUrl.length != 'undefined' && req.originalUrl.length > 1) {
     path = req.originalUrl.slice(1, req.originalUrl.length);
     path = path.split("");

@@ -2,10 +2,8 @@ var express = require('express');
 var router = express.Router();
 const blogModel = require('../models/blog');
 const appearanceModel = require('../models/appearances');
+const workModel = require('../models/work');
 /* GET home page. */
-router.get('/work', function (req, res, next) {
-    // responsd with works object
-});
 
 // Get blog posts
 router.get('/blog', (req, res) => {
@@ -63,6 +61,35 @@ router.post('/appearances', (req, res) => {
 // Delete record by ID
 router.delete('/appearances', (req, res) => {
     let appearance = appearanceModel.deleteOne({ _id: req.body.id }, (err, resp) => {
+        res.send(resp);
+    })
+})
+
+
+// WORKS
+
+// Get blog posts
+router.get('/works', (req, res) => {
+    workModel.find({}, (err, docs) => {
+        res.send(docs);
+    })
+});
+
+// Post new blog post
+router.post('/works', (req, res) => {
+    console.log(req.body);
+    let work = new workModel({
+        date: req.body.date,
+        description: req.body.description,
+        name: req.body.name
+    });
+    work.save();
+    res.json(work);
+});
+
+// Delete record by ID
+router.delete('/works', (req, res) => {
+    let work = workModel.deleteOne({ _id: req.body.id }, (err, resp) => {
         res.send(resp);
     })
 })

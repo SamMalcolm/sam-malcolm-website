@@ -10,6 +10,7 @@ import './styles/card.scss';
 import './styles/backgrounds.scss';
 import './styles/blog.scss';
 import './styles/appearances.scss';
+import './styles/bio.scss';
 
 import Background from './components/Background';
 import About from './components/About.js';
@@ -19,6 +20,7 @@ import FullWidthBanner from './components/FullWidthBanner';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Appearances from './components/Appearances';
+import Folio from './components/Folio';
 
 const App = () => {
     const [highlightColour, setHighlightColour] = useState('');
@@ -48,7 +50,7 @@ const App = () => {
                         </Container>
                     </Route>
                     <Route exact path="/work">
-                        <h2>Test</h2>
+                        <Folio />
                     </Route>
                     <Route exact path="/contact">
                         <Container>

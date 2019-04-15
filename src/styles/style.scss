@@ -1,15 +1,11 @@
-$red: #E60028;
 
 body,html {
     margin:0;
     padding:0;
     overflow-x:hidden;
-    font-family:sans-serif
+    font-family:sans-serif;
 }
 
-h1 {
-    color:$red;
-}
 // Container
 .smm_container {
     width: calc(100% - 40px);

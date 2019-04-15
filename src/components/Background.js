@@ -5,18 +5,18 @@ function Background(props) {
     const [backgrounds, setBackgrounds] = useState([
         {
             "src": "/assets/backgrounds/flower.jpg",
-            "highlight": "#26ae1a",
+            "highlight": "rgb(0,255,255)",
             "active": 1,
         },
         {
             "src": "/assets/backgrounds/toby.jpg",
-            "highlight": "#00FF00",
+            "highlight": "rgb(0,255,100)",
             "active": 1
 
         },
         {
             "src": "/assets/backgrounds/night_exp.jpg",
-            "highlight": "#aa4444",
+            "highlight": "#f99d23",
             "active": 1
         },
     ]);

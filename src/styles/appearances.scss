@@ -27,28 +27,43 @@ table.appearances {
 svg.ticket {
 	width:50px;
 	g {
-		rect path {
+		rect, path {
 			transition:$transitionTime;
-			&:hover {
+		}
+	}
+	&:hover {
+		g {
+			rect, path {
+				transition:0.2s;
 				fill:white !important;
 			}
 		}
-	}
+}
 }
 
 svg.information {
 	width:50px;
 	transition:$transitionTime;
 	.st0{stroke-width:8;stroke-miterlimit:10;}
-	.st1{font-family:'sans-serif';}
+	.st1{font-family:sans-serif;}
 	.st2{font-size:141.7134px;}
+	rect, path, circle {
+		transition:$transitionTime;
+	}
+	text {
+		transition:$transitionTime;
+	}
 	&:hover { 
-		g {
-			rect path circle {
+		
+			rect, path, circle {
+				stroke:white !important;
+				transition:0.2s;
+			}
+			text {
 				fill:white !important;
 				transition:0.2s;
 			}
-		}
+		
 	}
 }
 
