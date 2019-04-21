@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
+import { Link } from 'react-router-dom';
+
 const axios = require('axios');
 const Work = (props) => {
     return (
-        <div className="work">
-            <div className="workCover" style={{ 'backgroundImage': 'url(\'' + props.thumb_src + '\')' }} ></div>
-            <h3>{props.title}</h3>
-            <p>{props.description}</p>
-        </div>
+        <Link to={"/work/" + props._id}>
+            <div className="work">
+                <div className="workCover" style={{ 'backgroundImage': 'url(\'' + props.thumb_src + '\')' }} ></div>
+                <h3>{props.title}</h3>
+                <p>{props.description}</p>
+            </div>
+        </Link>
     )
 }
 

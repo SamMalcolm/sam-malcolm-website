@@ -11,7 +11,7 @@ import './styles/backgrounds.scss';
 import './styles/blog.scss';
 import './styles/appearances.scss';
 import './styles/bio.scss';
-
+import './styles/work.scss';
 import Background from './components/Background';
 import About from './components/About.js';
 import Card from './components/Card.js';
@@ -52,6 +52,9 @@ const App = () => {
                     <Route exact path="/work">
                         <Folio />
                     </Route>
+                    <Route exact path="/work/:work_id">
+                        <h1>Test</h1>
+                    </Route>
                     <Route exact path="/contact">
                         <Container>
                             <Contact />
@@ -69,7 +72,23 @@ const App = () => {
                         </Container>
                     </Route>
                     <Route exact path="/music">
-                        <h1>test</h1>
+                        <div>
+                            <FullWidthBanner backgroundPosition="top center" src="/assets/ui_images/music.jpg" title="Music" />
+                            <Container>
+                                <h1>Coming Soon: Ultra Violet <i>(2019)</i></h1>
+                                <p>Ultra Violet is a alternative rock album. Taking inspiration from the likes of Primus, Jack White and Flume it offers a unique yet memorable combination of progressive funk rhythms, contemporary electronic sounds and classic blues energy and lyrics.</p>
+                                <div style={{ "width": "80%", "margin": "auto", "margin-top": "15px", "margin-bottom": "15px", "height": "2px", "background": "white" }}></div>
+                                <h1>Cover: All The Good Girls Go To Hell <i>(2019)</i></h1>
+                                <p>This is my cover of the Billie Eilish song <i>All The Good Girls Go To Hell.</i> After listening to this song initially I really liked the bass line and saw great potential for an energitic rock version of the tune.</p>
+                                <div className="videoContainer">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/s_IwrqvM618" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div style={{ "width": "80%", "margin": "auto", "margin-top": "15px", "margin-bottom": "15px", "height": "2px", "background": "white" }}></div>
+                                <h1>Thirty Five Millimeter <i>(2018)</i></h1>
+                                <p>Thirty Five Millimetere is my first publicaly released record. It was entirely written performed and mastered by me. I decided to try and make a record of cinematic, ambient and experimental works. Mixing orchestral and electronic instrumentation I think i produced something failry interesting.</p>
+                                <iframe src="https://open.spotify.com/embed/album/6N9Nmb25DGkh6szFdJ4jcK" width="100%" height="267" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                            </Container>
+                        </div>
                     </Route>
                 </Switch>
                 <div className="cardContainer">
