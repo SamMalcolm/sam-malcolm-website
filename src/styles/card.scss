@@ -1,34 +1,37 @@
 $ackWidth:500px;
 
 .ackContainer {
-    position: fixed;
-    width: $ackWidth;
-    text-align:center;
-    right: -$ackWidth;
-    transition:0.4s ease;
-    bottom:10px;
-    background-color:white;
-.ackTrigger {
-    position: absolute;
-top: 0;
-left: -30px;
-color: white;
-font-family: bold;
-font-size: 35px;
-background-color: black;
-padding: 7px;
-cursor:pointer;
-.childCardTrigger {
-    transition:0.5s;
-}
-}
-.ackImage {
-    img {
-        width:100px;
-    }
-}
-}
-.ackActive {
-    right:0;
+     position: fixed;
+     width: $ackWidth;
+     text-align: center;
+     right: -$ackWidth;
+     transition: 0.4s ease;
+     bottom: 10px;
+     background-color: white;
+
+     .ackTrigger {
+          position: absolute;
+          top: 0;
+          left: -30px;
+          color: white;
+          font-family: bold;
+          font-size: 35px;
+          background-color: black;
+          padding: 7px;
+          cursor: pointer;
+
+          .childCardTrigger {
+               transition: 0.5s;
+          }
+     }
+
+     .ackImage {
+          img {
+               width: 100px;
+          }
+     }
 }
 
+.ackActive {
+     right: 0;
+}

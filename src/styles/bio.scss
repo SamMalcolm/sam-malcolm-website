@@ -1,17 +1,18 @@
 @import '_var.scss';
 
 .bio_container {
-	h3 {
-		font-family:$mainFont;
-		margin-top:15px;
-		margin-bottom:15px;
-		font-size:36px;
-	}
-	.bottomSection {
-		div {
-			width:calc(50% - 20px);
-			padding:10px;
-			display: inline-block; 
-		}
-	}
+     h3 {
+          font-family: $mainFont;
+          margin-top: 15px;
+          margin-bottom: 15px;
+          font-size: 36px;
+     }
+
+     .bottomSection {
+          div {
+               width: calc(50% - 20px);
+               padding: 10px;
+               display: inline-block;
+          }
+     }
 }

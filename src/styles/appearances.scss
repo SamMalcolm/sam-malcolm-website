@@ -1,69 +1,96 @@
 @import '_var.scss';
 
 table.appearances {
-	border-collapse: collapse;
-	width:100%;
-	thead {
-		background:black;
-		th  {
-			padding:10px;
-			text-transform:uppercase;
-			font-family:$mainFont;
-			color:white;
-			text-align:left;
-		}
-	}
-	tbody {
-		background:rgba(0,0,0,0.5);
-		tr {
-			td {
-				color:white;
-				padding:10px;
-			}
-		}
-	}
+     border-collapse: collapse;
+     width: 100%;
+
+     thead {
+          background: black;
+
+          th {
+               padding: 10px;
+               text-transform: uppercase;
+               font-family: $mainFont;
+               color: white;
+               text-align: left;
+          }
+     }
+
+     tbody {
+          background: rgba(0, 0, 0, 0.5);
+
+          tr {
+               td {
+                    color: white;
+                    padding: 10px;
+               }
+          }
+     }
 }
 
 svg.ticket {
-	width:50px;
-	g {
-		rect, path {
-			transition:$transitionTime;
-		}
-	}
-	&:hover {
-		g {
-			rect, path {
-				transition:0.2s;
-				fill:white !important;
-			}
-		}
-}
+     width: 50px;
+
+     g {
+
+          rect,
+          path {
+               transition: $transitionTime;
+          }
+     }
+
+     &:hover {
+          g {
+
+               rect,
+               path {
+                    transition: 0.2s;
+                    fill: white !important;
+               }
+          }
+     }
 }
 
 svg.information {
-	width:50px;
-	transition:$transitionTime;
-	.st0{stroke-width:8;stroke-miterlimit:10;}
-	.st1{font-family:sans-serif;}
-	.st2{font-size:141.7134px;}
-	rect, path, circle {
-		transition:$transitionTime;
-	}
-	text {
-		transition:$transitionTime;
-	}
-	&:hover { 
-		
-			rect, path, circle {
-				stroke:white !important;
-				transition:0.2s;
-			}
-			text {
-				fill:white !important;
-				transition:0.2s;
-			}
-		
-	}
-}
+     width: 50px;
+     transition: $transitionTime;
 
+     .st0 {
+          stroke-width: 8;
+          stroke-miterlimit: 10;
+     }
+
+     .st1 {
+          font-family: sans-serif;
+     }
+
+     .st2 {
+          font-size: 141.7134px;
+     }
+
+     rect,
+     path,
+     circle {
+          transition: $transitionTime;
+     }
+
+     text {
+          transition: $transitionTime;
+     }
+
+     &:hover {
+
+          rect,
+          path,
+          circle {
+               stroke: white !important;
+               transition: 0.2s;
+          }
+
+          text {
+               fill: white !important;
+               transition: 0.2s;
+          }
+
+     }
+}
