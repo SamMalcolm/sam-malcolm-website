@@ -8,8 +8,10 @@ const Work = (props) => {
         <Link to={"/work/" + props._id}>
             <div className="work">
                 <div className="workCover" style={{ 'backgroundImage': 'url(\'' + props.thumb_src + '\')' }} ></div>
-                <h3>{props.name}</h3>
-                <p>{props.description}</p>
+                <div className="workText">
+                    <h3>{props.name}</h3>
+                    <p>{props.description}</p>
+                </div>
             </div>
         </Link>
     )
