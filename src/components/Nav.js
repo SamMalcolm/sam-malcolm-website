@@ -78,7 +78,7 @@ const Nav = (props) => {
     }
 
     return (
-        <nav>
+        <nav style={{ "backgroundColor": 'black' }}>
             <Link to="/">
                 <Wordmark highlight={props.highlight} />
             </Link>

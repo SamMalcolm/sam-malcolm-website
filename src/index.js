@@ -3,15 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import Nav from './components/Nav';
 
-import './styles/_var.scss';
 import './styles/style.scss';
-import './styles/about.scss';
-import './styles/card.scss';
-import './styles/backgrounds.scss';
-import './styles/blog.scss';
-import './styles/appearances.scss';
-import './styles/bio.scss';
-import './styles/work.scss';
+
 import Background from './components/Background';
 import About from './components/About.js';
 import Card from './components/Card.js';
@@ -21,6 +14,7 @@ import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Appearances from './components/Appearances';
 import Folio from './components/Folio';
+import WorkPage from './components/WorkPage';
 
 const App = () => {
     const [highlightColour, setHighlightColour] = useState('');
@@ -92,7 +86,7 @@ const App = () => {
                     </Route>
                 </Switch>
                 <div className="cardContainer">
-                    <Card>
+                    <Card top="50%">
                         <div className="ackImage">
                             <img src='./assets/ui_images/ack.png' />
                         </div>
@@ -102,7 +96,7 @@ const App = () => {
                             <p>If you would like to learn more about indigenous culture please click <a href="#">here</a></p>
                         </div>
                     </Card>
-                    <Card>
+                    <Card top="0">
                         <div className="ackImage">
                             <img src='./assets/ui_images/ack.png' />
                         </div>
