@@ -14,7 +14,7 @@ import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Appearances from './components/Appearances';
 import Folio from './components/Folio';
-import WorkPage from './components/WorkPage';
+import PhotoGallery from './components/PhotoGallery';
 
 const App = () => {
     const [highlightColour, setHighlightColour] = useState('');
@@ -47,7 +47,7 @@ const App = () => {
                         <Folio />
                     </Route>
                     <Route exact path="/work/:work_id">
-                        <h1>Test</h1>
+                        <PhotoGallery />
                     </Route>
                     <Route exact path="/contact">
                         <Container>
