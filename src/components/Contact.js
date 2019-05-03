@@ -17,8 +17,8 @@ export default function Contact() {
 			"service": "Twitter",
 			"icon": "http://pngimg.com/uploads/twitter/twitter_PNG1.png",
 			"colour": "#38A1F3",
-			"content": `<a href="https://twitter.com/SamMalcolm1414?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @SamMalcolm1414</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-			<a class="twitter-timeline" data-theme="dark" href="https://twitter.com/SamMalcolm1414?ref_src=twsrc%5Etfw">Tweets by SamMalcolm1414</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> `,
+			"content": `<a href="https://twitter.com/SamMalcolm1414?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @SamMalcolm1414</a>
+			<a class="twitter-timeline" data-theme="dark" href="https://twitter.com/SamMalcolm1414?ref_src=twsrc%5Etfw">Tweets by SamMalcolm1414</a>`,
 			"active": true
 
 		}

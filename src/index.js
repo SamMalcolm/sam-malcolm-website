@@ -32,7 +32,7 @@ const App = () => {
                     </Route>
                     <Route exact path="/snooker">
                         <div>
-                            <FullWidthBanner src="/assets/ui_images/snooker.jpg" title="Snooker &amp; Billiards" />
+                            <FullWidthBanner src="/assets/ui_images/snooker2.jpg" caption="Photo: David Heath" title="Snooker &amp; Billiards" />
                             <Container>
                                 <h1>Results</h1>
                             </Container>
@@ -67,7 +67,7 @@ const App = () => {
                     </Route>
                     <Route exact path="/music">
                         <div>
-                            <FullWidthBanner backgroundPosition="top center" src="/assets/ui_images/music.jpg" title="Music" />
+                            <FullWidthBanner caption="Photo: Ian Malcolm" backgroundPosition="top center" src="/assets/ui_images/music.jpg" title="Music" />
                             <Container>
                                 <h1>Coming Soon: Ultra Violet <i>(2019)</i></h1>
                                 <p>Ultra Violet is a alternative rock album. Taking inspiration from the likes of Primus, Jack White and Flume it offers a unique yet memorable combination of progressive funk rhythms, contemporary electronic sounds and classic blues energy and lyrics.</p>
