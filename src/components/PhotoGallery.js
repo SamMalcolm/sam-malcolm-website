@@ -25,11 +25,6 @@ export default function PhotoGallery() {
 	},]);
 
 	const toggleGalleryOpen = () => {
-		// if (galleryVisible) {
-		// 	setGalleryVisible(false);
-		// } else {
-		// 	setGalleryVisible(true);
-		// }
 		window.location.pathname = "/work"
 	}
 

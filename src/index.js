@@ -15,7 +15,7 @@ import Contact from './components/Contact';
 import Appearances from './components/Appearances';
 import Folio from './components/Folio';
 import PhotoGallery from './components/PhotoGallery';
-
+import Albums from './components/Albums';
 const App = () => {
     const [highlightColour, setHighlightColour] = useState('');
     return (
@@ -66,7 +66,8 @@ const App = () => {
                         </Container>
                     </Route>
                     <Route exact path="/music">
-                        <div>
+                        <Albums />
+                        {/* <div>
                             <FullWidthBanner caption="Photo: Ian Malcolm" backgroundPosition="top center" src="/assets/ui_images/music.jpg" title="Music" />
                             <Container>
                                 <h1>Coming Soon: Ultra Violet <i>(2019)</i></h1>
@@ -82,7 +83,7 @@ const App = () => {
                                 <p>Thirty Five Millimetere is my first publicaly released record. It was entirely written performed and mastered by me. I decided to try and make a record of cinematic, ambient and experimental works. Mixing orchestral and electronic instrumentation I think i produced something failry interesting.</p>
                                 <iframe src="https://open.spotify.com/embed/album/6N9Nmb25DGkh6szFdJ4jcK" width="100%" height="267" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                             </Container>
-                        </div>
+                        </div> */}
                     </Route>
                 </Switch>
                 <div className="cardContainer">
