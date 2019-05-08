@@ -14,8 +14,9 @@ import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Appearances from './components/Appearances';
 import Folio from './components/Folio';
-import PhotoGallery from './components/PhotoGallery';
+import WorkPage from './components/WorkPage';
 import Albums from './components/Albums';
+
 const App = () => {
     const [highlightColour, setHighlightColour] = useState('');
     return (
@@ -46,9 +47,13 @@ const App = () => {
                     <Route exact path="/work">
                         <Folio />
                     </Route>
-                    <Route exact path="/work/:work_id">
-                        <PhotoGallery />
-                    </Route>
+                    <Route exact path="/work/:work_id" render={(props) => {
+                        let workid = props.location.pathname.replace('/work/', '');
+                        return (
+                            <WorkPage id={workid} />
+                        )
+                    }} />
+
                     <Route exact path="/contact">
                         <Container>
                             <Contact />

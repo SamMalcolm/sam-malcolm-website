@@ -75,6 +75,13 @@ router.get('/works', (req, res) => {
     })
 });
 
+// Get blog posts
+router.get('/works/:id', (req, res) => {
+    workModel.findById(req.params.id, (err, docs) => {
+        res.send(docs);
+    })
+});
+
 // Post new blog post
 router.post('/works', (req, res) => {
     console.log(req.body);
