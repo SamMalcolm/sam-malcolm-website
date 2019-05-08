@@ -3,6 +3,8 @@ var router = express.Router();
 const blogModel = require('../models/blog');
 const appearanceModel = require('../models/appearances');
 const workModel = require('../models/work');
+const albumModel = require('../models/albums');
+
 /* GET home page. */
 
 // Get blog posts
@@ -65,7 +67,11 @@ router.delete('/appearances', (req, res) => {
     })
 })
 
-
+router.get('/albums', (req, res) => {
+    albumModel.find({}, (err, docs) => {
+        res.send(docs);
+    })
+});
 // WORKS
 
 // Get blog posts

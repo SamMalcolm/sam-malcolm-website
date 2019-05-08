@@ -4,7 +4,7 @@ import axios from 'axios';
 import PhotoGallery from './PhotoGallery';
 import Container from './Container';
 import moment from 'moment';
-import BlogCoverPhoto from './BlogPage';
+import { BlogCoverPhoto } from './BlogPage';
 
 export default function WorkPage(props) {
 
@@ -19,9 +19,12 @@ export default function WorkPage(props) {
 
 
 	return (
-		<Container>
+		<div>
 			<BlogCoverPhoto src={work.thumb_src} title={work.name} date={moment(work.date).format('ll')} />
-			<p>{work.description}</p>
-		</Container>
+			<Container>
+
+				<p>{work.description}</p>
+			</Container>
+		</div>
 	)
 }
