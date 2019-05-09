@@ -24,7 +24,7 @@
           width: calc(100% / 6);
           height: 400px;
           display: inline-block;
-          font-family: montserratextrabold;
+          font-family:$mainFont;
           cursor: pointer;
 
           h1 {
@@ -38,6 +38,7 @@
                font-size: 26px;
                width: 100%;
                text-align: center;
+
           }
 
           .songTitle {
@@ -80,6 +81,11 @@
 
      .infoContainer {
           padding: 10px;
+
+          h1 {
+               font-family: $mainFont;
+               text-transform: uppercase;
+          }
      }
 
      img {
