@@ -62,6 +62,7 @@ function Albums(props) {
             setAlbums(result.data);
         })
     }, []);
+
     return (
         <div className="albumsContainer">
             <FullWidthBanner caption="Photo: Ian Malcolm" backgroundPosition="top center" src="/assets/ui_images/music.jpg" title="Music" />
@@ -69,7 +70,7 @@ function Albums(props) {
                 return (
                     <div>
                         <AlbumMeta {...album} />
-                        <Album {...album} />
+                        {(album.type == 1) ? <Album {...album} /> : null}
                     </div>
                 )
             })}

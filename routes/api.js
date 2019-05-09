@@ -68,7 +68,7 @@ router.delete('/appearances', (req, res) => {
 })
 
 router.get('/albums', (req, res) => {
-    albumModel.find({}, (err, docs) => {
+    albumModel.find({}).sort({ 'year': -1 }).exec((err, docs) => {
         res.send(docs);
     })
 });
