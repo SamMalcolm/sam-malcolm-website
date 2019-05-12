@@ -12,6 +12,12 @@ body {
      padding-top: 65px;
 }
 
+h1,
+h2,
+h3 {
+     font-family: $mainFont;
+}
+
 // Container
 .smm_container {
      width: calc(100% - 40px);

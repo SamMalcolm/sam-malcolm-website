@@ -72,3 +72,37 @@
           padding-bottom: 40.6%;
      }
 }
+
+.videoTheatre {
+     background-color: black;
+
+     .iframeContainer {
+          width: 100%;
+          max-width: 940px;
+          margin: auto;
+          position: relative;
+          padding-bottom: 33%;
+
+          iframe {
+               position: absolute;
+               width: 100%;
+               height: 100%;
+               top: 0;
+               left: 0;
+          }
+     }
+}
+
+@media screen and (max-width:800px) {
+     .videoTheatre {
+          .iframeContainer {
+               padding-bottom: 54%;
+          }
+     }
+}
+
+.shareContainer * {
+     display: inline-block;
+     margin: 10px;
+     cursor: pointer;
+}

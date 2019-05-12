@@ -5,6 +5,26 @@ import PhotoGallery from './PhotoGallery';
 import Container from './Container';
 import moment from 'moment';
 import { BlogCoverPhoto } from './BlogPage';
+import {
+	FacebookShareButton,
+	LinkedinShareButton,
+	TwitterShareButton,
+	RedditShareButton,
+	FacebookIcon,
+	TwitterIcon,
+	RedditIcon,
+	LinkedinIcon,
+} from 'react-share';
+
+const VideoContainer = (props) => {
+	return (
+		<div className="videoTheatre">
+			<div className="iframeContainer">
+				<iframe src={props.src} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+		</div>
+	)
+}
 
 export default function WorkPage(props) {
 
@@ -20,10 +40,29 @@ export default function WorkPage(props) {
 
 	return (
 		<div>
-			<BlogCoverPhoto src={work.thumb_src} title={work.name} date={moment(work.date).format('ll')} />
+			{(work.type != 1) ?
+				<BlogCoverPhoto src={work.thumb_src} title={work.name} date={moment(work.date).format('ll')} />
+				: <VideoContainer src={work.src} />}
 			<Container>
-
-				<p>{work.description}</p>
+				{(work.type == 1) ? <div>
+					<h1>{work.name}</h1>
+					<i>{moment(work.date).format('ll')}</i>
+				</div>
+					: <p>{work.description}</p>}
+				<div className="shareContainer">
+					<FacebookShareButton url={window.location.href}>
+						<FacebookIcon size={32} round={true} />
+					</FacebookShareButton>
+					<TwitterShareButton url={window.location.href}>
+						<TwitterIcon size={32} round={true} />
+					</TwitterShareButton>
+					<RedditShareButton url={window.location.href} >
+						<RedditIcon size={32} round={true} />
+					</RedditShareButton>
+					<LinkedinShareButton url={window.location.href} >
+						<LinkedinIcon size={32} round={true} />
+					</LinkedinShareButton>
+				</div>
 			</Container>
 		</div>
 	)
