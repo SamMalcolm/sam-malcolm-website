@@ -5,10 +5,11 @@ import axios from 'axios';
 const Song = (props) => {
     return (
         <div className={(props.active) ? "songContainer" : "songContainer colourTransition"}>
-            {(props.active || props.clickCount) ? <iframe src={props.src} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> : null}
+
             <div onClick={() => { props.handleClick(props.name); }} style={{ 'backgroundColor': props.color, "zIndex": (props.active) ? "299" : "301" }} className="songTitle">
                 <h1 className={(props.active) ? "selected" : null}>{(props.active) ? "LOADING" : props.name}</h1>
             </div>
+            {(props.active || props.clickCount) ? <iframe src={props.src} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> : null}
 
         </div>
     )
@@ -70,7 +71,7 @@ function Albums(props) {
                 return (
                     <div>
                         <AlbumMeta {...album} />
-                        {(album.type == 1) ? <Album {...album} /> : null}
+                        {(album.type == 1 && album.songs.length) ? <Album {...album} /> : null}
                     </div>
                 )
             })}
