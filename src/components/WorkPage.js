@@ -19,8 +19,10 @@ import {
 const VideoContainer = (props) => {
 	return (
 		<div className="videoTheatre">
-			<div className="iframeContainer">
-				<iframe src={props.src} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<div className="containerContainer">
+				<div className="iframeContainer">
+					<iframe src={props.src} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
 			</div>
 		</div>
 	)
