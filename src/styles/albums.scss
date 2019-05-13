@@ -3,67 +3,70 @@
 .alContainer {
      width: 100%;
 
-
-     .songContainer {
-          &.colourTransition {
-               filter: grayscale(1);
-               transition: 0.2s ease;
-
-               &:hover {
-                    filter: grayscale(0);
-
-                    h1 {
-                         opacity: 1;
-
-                    }
-               }
-
-          }
-
-          position: relative;
-          width: calc(100% / 6);
-          height: 400px;
+     div {
           display: inline-block;
-          font-family:$mainFont;
-          cursor: pointer;
 
-          h1 {
-               &.selected {
-                    opacity: 1;
+          .songContainer {
+               &.colourTransition {
+                    filter: grayscale(1);
+                    transition: 0.2s ease;
+
+                    &:hover {
+                         filter: grayscale(0);
+
+                         h1 {
+                              opacity: 1;
+
+                         }
+                    }
+
                }
 
-               transition: 0.2s ease;
-               opacity: 0;
-               position: absolute;
-               font-size: 26px;
-               width: 100%;
-               text-align: center;
-
-          }
-
-          .songTitle {
                position: relative;
-               top: 0;
-               left: 0;
-               width: 100%;
-               height: 100%;
-               z-index: 200;
-               color: white;
-               display: flex;
-               flex-direction: column;
-               justify-content: center;
-               text-align: center;
-               text-transform: uppercase;
-               font-size: 28px;
-          }
+               width: calc(100% / 6);
+               height: 400px;
+               display: inline-block;
+               font-family:$mainFont;
+               cursor: pointer;
 
-          iframe {
-               position: absolute;
-               top: 0;
-               left: 0;
-               height: 100%;
-               width: 100%;
-               z-index: 300;
+               h1 {
+                    &.selected {
+                         opacity: 1;
+                    }
+
+                    transition: 0.2s ease;
+                    opacity: 0;
+                    position: absolute;
+                    font-size: 26px;
+                    width: 100%;
+                    text-align: center;
+
+               }
+
+               .songTitle {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 200;
+                    color: white;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-size: 28px;
+               }
+
+               iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    z-index: 300;
+               }
           }
      }
 }
