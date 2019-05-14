@@ -4,6 +4,7 @@
      width: 100%;
 
      div {
+          width: calc(100% / 6);
           display: inline-block;
 
           .songContainer {
@@ -23,8 +24,8 @@
                }
 
                position: relative;
-               width: calc(100% / 6);
-               height: 400px;
+               width: 100%;
+               padding-bottom:100%;
                display: inline-block;
                font-family:$mainFont;
                cursor: pointer;
@@ -44,7 +45,7 @@
                }
 
                .songTitle {
-                    position: relative;
+                    position: absolute;
                     top: 0;
                     left: 0;
                     width: 100%;
@@ -98,11 +99,30 @@
 
 }
 
+.albumLinks {
+     margin-top: 26px;
+
+     a {
+          background: black;
+          padding: 10px;
+          margin-right: 11px;
+          border-radius: 20px;
+          color: white;
+          text-decoration: none;
+          border: 2px solid white;
+          transition: 0.2s;
+
+          &:hover {
+               background: white;
+               color: black;
+          }
+     }
+}
+
 @media screen and (max-width:1200px) {
      .alContainer {
-          height: 800px;
 
-          .songContainer {
+          div {
                width: calc(100% / 3);
           }
      }
@@ -110,9 +130,8 @@
 
 @media screen and (max-width:850px) {
      .alContainer {
-          height: 1200px;
 
-          .songContainer {
+          div {
                width: calc(100% / 2);
           }
      }

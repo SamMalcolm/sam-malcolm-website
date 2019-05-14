@@ -3,6 +3,7 @@ import FullWidthBanner from './FullWidthBanner';
 import axios from 'axios';
 
 const Song = (props) => {
+
     return (
         <div>
             {(props.active) ?
@@ -13,11 +14,10 @@ const Song = (props) => {
                     <iframe src={props.src} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 </div>
                 :
-                <div className="songContainer">
+                <div className="songContainer colourTransition">
                     <div onClick={() => { props.handleClick(props.name); }} style={{ 'backgroundColor': props.color, "zIndex": "301" }} className="songTitle">
                         <h1>{props.name}</h1>
                     </div>
-                    {(props.clickCount) ? <iframe src={props.src} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> : null}
                 </div>
             }
         </div>
@@ -29,21 +29,15 @@ const Album = (props) => {
     const [songs, setSongs] = useState(props.songs);
 
     const handleClick = (name) => {
-        console.log("CLICK!");
         for (var key in songs) {
             songs[key].active = 0;
         }
-        console.log("After loop");
         let activeSong = songs.filter((song) => {
             return song.name == name;
         });
-        console.log("after filter");
         let index = songs.indexOf(activeSong[0]);
         songs[index].active = 1;
-        songs[index].clickCount++;
-        console.log("Setting params");
         setSongs(songs);
-        console.log("Setting state");
     }
 
     return (
@@ -65,8 +59,12 @@ const AlbumMeta = (props) => {
             <div className="infoContainer">
                 <h1>{props.name}  <i>{props.year}</i></h1>
                 <p>{props.description}</p>
+                <div className="albumLinks">
+                    {(props.spotifyLink) ? <a style={{ 'borderColor': props.highlight }} href={props.spotifyLink} targeet="_blank" >View on Spotify</a> : null}
+                    {(props.itunesLink) ? <a style={{ 'borderColor': props.highlight }} href={props.itunesLink} targeet="_blank" >View on iTunes</a> : null}
+                </div>
             </div>
-        </div>
+        </div >
     )
 }
 
@@ -85,7 +83,7 @@ function Albums(props) {
             {albums.map((album) => {
                 return (
                     <div>
-                        <AlbumMeta {...album} />
+                        <AlbumMeta {...album} highlight={props.highlight} />
                         {(album.type == 1 && album.songs.length) ? <Album {...album} /> : null}
                     </div>
                 )

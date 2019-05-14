@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Container from './Container';
+import moment from 'moment';
 
 const BlogCoverPhoto = (props) => {
 	return (
@@ -8,7 +11,7 @@ const BlogCoverPhoto = (props) => {
 				<div className="gradientCover">
 					<div className="blogCoverTitle">
 						<h2>{props.title}</h2>
-						<i>{props.date}</i>
+						<i>{moment(props.date).format('ll')}</i>
 					</div>
 				</div>
 			</div>
@@ -16,4 +19,26 @@ const BlogCoverPhoto = (props) => {
 	)
 }
 
-export { BlogCoverPhoto };
+const BlogPage = (props) => {
+
+	const [post, setPost] = useState({});
+
+	useEffect(() => {
+		axios.get('/api/blog/' + props.id).then((result) => {
+			setPost(result.data);
+		})
+	}, []);
+
+	return (
+		<div>
+			<BlogCoverPhoto title={post.title} date={post.date} src={post.src} />
+			<Container>
+				<div dangerouslySetInnerHTML={{ __html: props.markup }}>
+				</div>
+			</Container>
+
+		</div >
+	)
+
+}
+export { BlogCoverPhoto, BlogPage };

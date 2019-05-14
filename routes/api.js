@@ -14,6 +14,12 @@ router.get('/blog', (req, res) => {
     })
 });
 
+router.get('/blog/:id', (req, res) => {
+    blogModel.findById(req.params.id, (err, docs) => {
+        res.send(docs);
+    })
+});
+
 // Post new blog post
 router.post('/blog', (req, res) => {
     console.log(req.body);

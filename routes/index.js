@@ -13,7 +13,8 @@ router.get([
   '/work',
   '/music',
   '/appearances',
-  '/work/:work_id'
+  '/work/:work_id',
+  '/blog/:blog_id'
 ], function (req, res, next) {
   let path;
   if (typeof req.originalUrl.length != 'undefined' && req.originalUrl.length > 1) {
