@@ -117,14 +117,18 @@ router.delete('/works', (req, res) => {
 });
 
 router.get('/film_data', async (req, res) => {
+
     let googleData = await axios.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=PLYj0yV-4c3WdYKOrfdraM9-2aVzopk4KK&key=' + googleApiKey);
     let letterboxdData = await axios.get('https://letterboxd.com/samwise_7107/rss/');
     let finalResult = [];
+
     parseString(letterboxdData.data, function (err, result) {
         if (err) { console.log(err) }
+
         for (let i = 0; i < googleData.data.items.length; i++) {
             finalResult.push(googleData.data.items[i]);
         }
+
         for (let i = 0; i < result.rss.channel[0].item.length; i++) {
             finalResult.push(result.rss.channel[0].item[i]);
         }
@@ -144,8 +148,11 @@ router.get('/film_data', async (req, res) => {
             }
 
             return dateB - dateA;
+
         })
+
         res.send(finalResult);
+
     });
 
 });
