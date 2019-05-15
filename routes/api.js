@@ -4,7 +4,10 @@ const blogModel = require('../models/blog');
 const appearanceModel = require('../models/appearances');
 const workModel = require('../models/work');
 const albumModel = require('../models/albums');
-
+const axios = require('axios');
+const { googleApiKey } = require('../keys/google_api.js');
+const parseString = require('xml2js').parseString;
+const moment = require('moment');
 /* GET home page. */
 
 // Get blog posts
@@ -111,6 +114,40 @@ router.delete('/works', (req, res) => {
     let work = workModel.deleteOne({ _id: req.body.id }, (err, resp) => {
         res.send(resp);
     })
-})
+});
+
+router.get('/film_data', async (req, res) => {
+    let googleData = await axios.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=PLYj0yV-4c3WdYKOrfdraM9-2aVzopk4KK&key=' + googleApiKey);
+    let letterboxdData = await axios.get('https://letterboxd.com/samwise_7107/rss/');
+    let finalResult = [];
+    parseString(letterboxdData.data, function (err, result) {
+        if (err) { console.log(err) }
+        for (let i = 0; i < googleData.data.items.length; i++) {
+            finalResult.push(googleData.data.items[i]);
+        }
+        for (let i = 0; i < result.rss.channel[0].item.length; i++) {
+            finalResult.push(result.rss.channel[0].item[i]);
+        }
+
+        finalResult.sort((a, b) => {
+            let dateA, dateB;
+            if (typeof a.pubDate != 'undefined') {
+                dateA = moment(a.pubDate[0]);
+            } else {
+                dateA = moment(a.contentDetails.videoPublishedAt);
+            }
+
+            if (typeof b.pubDate != 'undefined') {
+                dateB = moment(b.pubDate[0]);
+            } else {
+                dateB = moment(b.contentDetails.videoPublishedAt);
+            }
+
+            return dateB - dateA;
+        })
+        res.send(finalResult);
+    });
+
+});
 
 module.exports = router;
