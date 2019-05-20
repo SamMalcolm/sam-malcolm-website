@@ -17,6 +17,7 @@ import Appearances from './components/Appearances';
 import Folio from './components/Folio';
 import WorkPage from './components/WorkPage';
 import Albums from './components/Albums';
+import FilmPage from './components/FilmPage';
 
 const App = () => {
     const [highlightColour, setHighlightColour] = useState('');
@@ -68,7 +69,12 @@ const App = () => {
                         </Container>
                     </Route>
                     <Route exact path="/film">
-                        <h2>Film criticism</h2>
+                        <div>
+                            <FullWidthBanner src="/assets/ui_images/film.jpg" title="Film Criticism" />
+                            <Container>
+                                <FilmPage highlight={highlightColour} />
+                            </Container>
+                        </div>
                     </Route>
                     <Route exact path="/tutorials">
                         <h2>Tutorials</h2>

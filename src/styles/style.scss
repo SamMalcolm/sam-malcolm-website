@@ -18,6 +18,22 @@ h3 {
      font-family: $mainFont;
 }
 
+a.smBtn {
+     background: black;
+     padding: 10px;
+     margin-right: 11px;
+     border-radius: 20px;
+     color: white;
+     text-decoration: none;
+     border: 2px solid white;
+     transition: 0.2s;
+
+     &:hover {
+          background: white;
+          color: black;
+     }
+}
+
 // Container
 .smm_container {
      width: calc(100% - 40px);
@@ -90,3 +106,4 @@ h3 {
 @import 'nav.scss';
 @import 'work.scss';
 @import 'albums.scss';
+@import 'film.scss';
