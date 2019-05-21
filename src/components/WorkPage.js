@@ -5,6 +5,8 @@ import PhotoGallery from './PhotoGallery';
 import Container from './Container';
 import moment from 'moment';
 import { BlogCoverPhoto } from './BlogPage';
+import ReactBnbGallery from 'react-bnb-gallery';
+
 import {
 	FacebookShareButton,
 	LinkedinShareButton,
@@ -31,14 +33,13 @@ const VideoContainer = (props) => {
 export default function WorkPage(props) {
 
 	const [work, setWork] = useState({});
-
+	const [galleryVisible, setGalleryVisible] = useState(false);
 	useEffect(() => {
 		axios.get('/api/works/' + props.id).then((res) => {
 			console.log(res.data);
 			setWork(res.data);
 		})
 	}, []);
-
 
 	return (
 		<div>
@@ -51,6 +52,11 @@ export default function WorkPage(props) {
 					<i>{moment(work.date).format('ll')}</i>
 				</div>
 					: <p>{work.description}</p>}
+				{(work.type == 2) ?
+					<div>
+						<a href="#" style={{ 'borderColor': props.highlight }} className="smBtn" onClick={() => { setGalleryVisible(true) }}>View Gallery</a>
+						<ReactBnbGallery onClose={() => { setGalleryVisible(false) }} photos={work.data} show={galleryVisible} />
+					</div> : null}
 				<div className="shareContainer">
 					<FacebookShareButton url={window.location.href}>
 						<FacebookIcon size={32} round={true} />
