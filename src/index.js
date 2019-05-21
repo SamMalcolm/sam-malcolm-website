@@ -52,7 +52,7 @@ const App = () => {
                     <Route exact path="/work/:work_id" render={(props) => {
                         let workid = props.location.pathname.replace('/work/', '');
                         return (
-                            <WorkPage id={workid} />
+                            <WorkPage highlight={highlightColour} id={workid} />
                         )
                     }} />
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Display from './Display';
 import axios from 'axios';
-import PhotoGallery from './PhotoGallery';
 import Container from './Container';
 import moment from 'moment';
 import { BlogCoverPhoto } from './BlogPage';
@@ -57,6 +56,9 @@ export default function WorkPage(props) {
 						<a href="#" style={{ 'borderColor': props.highlight }} className="smBtn" onClick={() => { setGalleryVisible(true) }}>View Gallery</a>
 						<ReactBnbGallery onClose={() => { setGalleryVisible(false) }} photos={work.data} show={galleryVisible} />
 					</div> : null}
+				{(work.type == 3) ?
+					<a href={work.src} style={{ 'borderColor': props.highlight }} className="smBtn" target="_blank">{"View " + work.name}</a>
+					: null}
 				<div className="shareContainer">
 					<FacebookShareButton url={window.location.href}>
 						<FacebookIcon size={32} round={true} />
