@@ -23,14 +23,15 @@ a.smBtn {
      padding: 10px;
      margin-right: 11px;
      border-radius: 20px;
-     color: white;
+     color: rgb(214, 214, 214);
      text-decoration: none;
      border: 2px solid white;
      transition: 0.2s;
+     display: inline-block;
+     padding-top: 12px;
 
      &:hover {
-          background: white;
-          color: black;
+          color: white;
      }
 }
 

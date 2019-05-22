@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
+var workModel = require('../models/work');
 /* GET home page. */
 router.get([
   '/',
@@ -13,7 +14,6 @@ router.get([
   '/work',
   '/music',
   '/appearances',
-  '/work/:work_id',
   '/blog/:blog_id'
 ], function (req, res, next) {
   let path;
@@ -27,10 +27,18 @@ router.get([
     path = "Sam Malcolm Media";
   }
 
-
-
-
   res.render('index', { title: path });
 });
+
+
+router.get('/work/:work_id', (req, res) => {
+  workModel.findById(req.params.work_id, (err, docs) => {
+    console.log(docs);
+    res.render('index', {
+      work: docs,
+      title: docs.name
+    })
+  })
+})
 
 module.exports = router;

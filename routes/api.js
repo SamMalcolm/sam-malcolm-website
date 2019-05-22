@@ -12,7 +12,7 @@ const moment = require('moment');
 
 // Get blog posts
 router.get('/blog', (req, res) => {
-    blogModel.find({}, (err, docs) => {
+    blogModel.find({}).sort({ 'date': -1 }).exec((err, docs) => {
         res.send(docs);
     })
 });
@@ -85,7 +85,7 @@ router.get('/albums', (req, res) => {
 
 // Get blog posts
 router.get('/works', (req, res) => {
-    workModel.find({}, (err, docs) => {
+    workModel.find({}).sort({ 'date': -1 }).exec((err, docs) => {
         res.send(docs);
     })
 });

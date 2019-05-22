@@ -31,9 +31,9 @@ const BlogPage = (props) => {
 
 	return (
 		<div>
-			<BlogCoverPhoto title={post.title} date={post.date} src={post.src} />
+			<BlogCoverPhoto title={post.title} date={post.date} src={post.feature_image} />
 			<Container>
-				<div dangerouslySetInnerHTML={{ __html: props.markup }}>
+				<div dangerouslySetInnerHTML={{ __html: post.markup }}>
 				</div>
 			</Container>
 

@@ -59,9 +59,9 @@ const AlbumMeta = (props) => {
             <div className="infoContainer">
                 <h1>{props.name}  <i>{props.year}</i></h1>
                 <p>{props.description}</p>
-                <div className="albumLinks">
-                    {(props.spotifyLink) ? <a style={{ 'borderColor': props.highlight }} href={props.spotifyLink} targeet="_blank" >View on Spotify</a> : null}
-                    {(props.itunesLink) ? <a style={{ 'borderColor': props.highlight }} href={props.itunesLink} targeet="_blank" >View on iTunes</a> : null}
+                <div>
+                    {(props.spotifyLink) ? <a style={{ 'borderColor': props.highlight }} href={props.spotifyLink} targeet="_blank" className="smBtn" >View on Spotify</a> : null}
+                    {(props.itunesLink) ? <a style={{ 'borderColor': props.highlight }} href={props.itunesLink} targeet="_blank" className="smBtn" >View on iTunes</a> : null}
                 </div>
             </div>
         </div >
