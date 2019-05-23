@@ -18,7 +18,7 @@ import Folio from './components/Folio';
 import WorkPage from './components/WorkPage';
 import Albums from './components/Albums';
 import FilmPage from './components/FilmPage';
-
+import SnookerPage from './components/SnookerPage'
 const App = () => {
     const [highlightColour, setHighlightColour] = useState('');
     return (
@@ -37,7 +37,7 @@ const App = () => {
                         <div>
                             <FullWidthBanner src="/assets/ui_images/snooker2.jpg" caption="Photo: David Heath" title="Snooker &amp; Billiards" />
                             <Container>
-                                <h1>Results</h1>
+                                <SnookerPage />
                             </Container>
                         </div>
                     </Route>

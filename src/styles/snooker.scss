@@ -1,0 +1,26 @@
+@import '_var.scss';
+
+.season {
+     .donutContainer {
+          width: 50%;
+          display: inline-block;
+     }
+
+     .handicapContainer {
+          width: 50%;
+          display: inline-block;
+     }
+
+     .winStatsContainer {
+          display: flex;
+
+          .percent {
+               width: 50%;
+
+               h1 {
+                    font-size: 60px;
+               }
+          }
+     }
+
+}
