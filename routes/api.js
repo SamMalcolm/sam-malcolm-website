@@ -3,6 +3,7 @@ var router = express.Router();
 const blogModel = require('../models/blog');
 const appearanceModel = require('../models/appearances');
 const workModel = require('../models/work');
+const snookerModel = require('../models/snooker');
 const albumModel = require('../models/albums');
 const axios = require('axios');
 const { googleApiKey } = require('../keys/google_api.js');
@@ -156,5 +157,17 @@ router.get('/film_data', async (req, res) => {
     });
 
 });
+
+router.get('/snooker/all', (req, res) => {
+    snookerModel.find({}).exec((err, docs) => {
+        res.send(docs);
+    })
+})
+
+router.get('/snooker/:id', (req, res) => {
+    snookerModel.findById(req.params.id, (err, docs) => {
+        res.send(docs);
+    })
+})
 
 module.exports = router;
