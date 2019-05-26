@@ -5,7 +5,10 @@ const BlogSchema = new Schema({
     title: {
         type: String
     },
-    content: {
+    description: {
+        type: String
+    },
+    markup: {
         type: String
     },
     date: {
@@ -22,6 +25,9 @@ const BlogSchema = new Schema({
     },
     social_title: {
         type: String
+    },
+    active: {
+        type: Boolean
     }
 });
 

@@ -13,14 +13,18 @@ const moment = require('moment');
 
 // Get blog posts
 router.get('/blog', (req, res) => {
-    blogModel.find({}).sort({ 'date': -1 }).exec((err, docs) => {
+    blogModel.find({}).where({ active: true }).sort({ 'date': -1 }).exec((err, docs) => {
         res.send(docs);
     })
 });
 
 router.get('/blog/:id', (req, res) => {
     blogModel.findById(req.params.id, (err, docs) => {
-        res.send(docs);
+        if (docs.active) {
+            res.send(docs);
+        } else {
+            res.sendStatus(403);
+        }
     })
 });
 
@@ -72,7 +76,7 @@ router.post('/appearances', (req, res) => {
 
 // Delete record by ID
 router.delete('/appearances', (req, res) => {
-    let appearance = appearanceModel.deleteOne({ _id: req.body.id }, (err, resp) => {
+    appearanceModel.deleteOne({ _id: req.body.id }, (err, resp) => {
         res.send(resp);
     })
 })
@@ -86,7 +90,7 @@ router.get('/albums', (req, res) => {
 
 // Get blog posts
 router.get('/works', (req, res) => {
-    workModel.find({}).sort({ 'date': -1 }).exec((err, docs) => {
+    workModel.find({}).where({ active: true }).sort({ 'date': -1 }).exec((err, docs) => {
         res.send(docs);
     })
 });
@@ -94,7 +98,11 @@ router.get('/works', (req, res) => {
 // Get blog posts
 router.get('/works/:id', (req, res) => {
     workModel.findById(req.params.id, (err, docs) => {
-        res.send(docs);
+        if (docs.active) {
+            res.send(docs);
+        } else {
+            res.sendStatus(403);
+        }
     })
 });
 
@@ -112,7 +120,7 @@ router.post('/works', (req, res) => {
 
 // Delete record by ID
 router.delete('/works', (req, res) => {
-    let work = workModel.deleteOne({ _id: req.body.id }, (err, resp) => {
+    workModel.deleteOne({ _id: req.body.id }, (err, resp) => {
         res.send(resp);
     })
 });
@@ -161,8 +169,6 @@ router.get('/film_data', async (req, res) => {
 router.get('/snooker/all', (req, res) => {
     snookerModel.find({}).sort({ 'year': -1 }).exec((err, docs) => {
         if (err) { console.log(err) }
-        console.log(snookerModel);
-        console.log(docs);
         res.send(docs);
     })
 })
@@ -170,8 +176,6 @@ router.get('/snooker/all', (req, res) => {
 router.get('/snooker/:id', (req, res) => {
     snookerModel.findById(req.params.id, (err, docs) => {
         if (err) { console.log(err) }
-        console.log(req.params.id)
-        console.log(docs);
         res.send(docs);
     })
 })

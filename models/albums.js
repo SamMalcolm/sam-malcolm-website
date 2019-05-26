@@ -8,6 +8,7 @@ const AlbumSchema = new Schema({
 	artwork: { type: String },
 	spotify_link: { type: String },
 	songs: { type: Array },
+	active: { type: Boolean }
 });
 
 module.exports = mongoose.model('albums', AlbumSchema);;

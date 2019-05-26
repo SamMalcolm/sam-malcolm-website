@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { defaults, Doughnut, Line } from "react-chartjs-2";
 import Axios from 'axios';
+import { createSecretKey } from 'crypto';
 defaults.global.defaultFontColor = "#FFFFFF";
 
 let options = {
@@ -21,17 +22,27 @@ export default function SnookerPage() {
 	const [winLoss, setWinLoss] = useState({});
 	const [handicap, setHandicap] = useState({});
 	const [ladder, setLadder] = useState({});
+	const [winLossPercent, setWinLossPercent] = useState("");
+	const [winLossFramePercent, setWinLossFramePercent] = useState("");
+	const [comps, setComps] = useState([]);
+	const [snooker, setSnooker] = useState(true);
 
-	const getMatchPercentage = (data) => {
+	const getMatchPercentage = (data, snooker) => {
 		let sum = 0;
 		let wonsum = 0;
 		for (let i = 0; i < data.length; i++) {
-			if (i < 2) {
-				wonsum += data[i];
+			if (snooker) {
+				if (i < 2) {
+					wonsum += data[i];
+				}
+			} else {
+				if (i == 0) {
+					wonsum += data[i];
+				}
 			}
 			sum += data[i]
 		}
-		return Math.ceil(((wonsum / sum) * 100) * 100) / 100 + "%";
+		return Math.ceil(((wonsum / sum) * 100) * 10) / 10 + "%";
 	}
 
 	const getFramePercentage = (data) => {
@@ -45,38 +56,37 @@ export default function SnookerPage() {
 			}
 			sum += data[i] * 3;
 		}
-		return Math.ceil(((wonsum / sum) * 100) * 100) / 100 + "%";
+		return Math.ceil(((wonsum / sum) * 100) * 10) / 10 + "%";
 	}
 
-	const changeComp = (e) => {
-		console.log(e.target.value);
-		Axios.get('/api/snooker/' + e.target.value).then((res) => {
-			if (res.data) {
-				setWinLoss(res.data.winLoss);
-				setLadder(res.data.ladder);
-				setHandicap(res.data.handicap);
-				setCompname(res.data.compname);
-			}
-		})
+	const changeComp = (index) => {
+		setWinLoss(comps[index].winLoss);
+		setWinLossPercent(getMatchPercentage(comps[index].winLoss.datasets[0].data, comps[index].snooker));
+		setWinLossFramePercent(getFramePercentage(comps[index].winLoss.datasets[0].data));
+		setLadder(comps[index].ladder);
+		setHandicap(comps[index].handicap);
+		setCompname(comps[index].compname);
+		setSnooker(comps[index].snooker);
 	}
-
-	const [comps, setComps] = useState([]);
 
 	useEffect(() => {
 		Axios.get("/api/snooker/all").then((resp) => {
 			setComps(resp.data);
+			changeComp(0);
 		})
 	}, [])
 
 	return (
 		<div>
 			{(comps.length) ?
-				<select onChange={changeComp}>
+				<select className="snookerSelect" onChange={(e) => {
+					changeComp(e.target.value)
+				}}>
 					{comps.map((comp, i) => {
 						console.log(i);
 						return (
 							<option
-								value={comp._id}>{comp.compname}</option>
+								value={i}>{comp.compname}</option>
 						)
 					})} </select> : null}
 			<div className="season">
@@ -88,12 +98,14 @@ export default function SnookerPage() {
 					<div className="winStatsContainer">
 						<div className="percent">
 							<h4>By Match</h4>
-							{/* <h1>{getMatchPercentage(winLoss.datasets[0].data)}</h1> */}
+							<h1>{winLossPercent}</h1>
 						</div>
-						<div className="percent">
-							<h4>By Frame</h4>
-							{/* <h1>{getFramePercentage(winLoss.datasets[0].data)}</h1> */}
-						</div>
+						{(snooker) ?
+							<div className="percent">
+								<h4>By Frame</h4>
+								<h1>{winLossFramePercent}</h1>
+							</div> : null}
+
 					</div>
 				</div>
 				<div className="handicapContainer">
