@@ -7,8 +7,8 @@ const SnookerSchema = new Schema({
 	compname: { type: String },
 	handicap: { type: Object },
 	ladder: { type: Object },
-	winLoss: { type: String }
+	winLoss: { type: Object }
 });
 
-const snookerModel = mongoose.model('snooker', SnookerSchema);
+const snookerModel = mongoose.model('snooker', SnookerSchema, 'snooker');
 module.exports = snookerModel;

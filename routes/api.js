@@ -42,7 +42,7 @@ router.post('/blog', (req, res) => {
 
 // Delete record by ID
 router.delete('/blog', (req, res) => {
-    let blog = blogModel.deleteOne({ _id: req.body.id }, (err, resp) => {
+    blogModel.deleteOne({ _id: req.body.id }, (err, resp) => {
         res.send(resp);
     })
 })
@@ -159,13 +159,19 @@ router.get('/film_data', async (req, res) => {
 });
 
 router.get('/snooker/all', (req, res) => {
-    snookerModel.find({}).exec((err, docs) => {
+    snookerModel.find({}).sort({ 'year': -1 }).exec((err, docs) => {
+        if (err) { console.log(err) }
+        console.log(snookerModel);
+        console.log(docs);
         res.send(docs);
     })
 })
 
 router.get('/snooker/:id', (req, res) => {
     snookerModel.findById(req.params.id, (err, docs) => {
+        if (err) { console.log(err) }
+        console.log(req.params.id)
+        console.log(docs);
         res.send(docs);
     })
 })

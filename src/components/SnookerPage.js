@@ -48,8 +48,16 @@ export default function SnookerPage() {
 		return Math.ceil(((wonsum / sum) * 100) * 100) / 100 + "%";
 	}
 
-	const changeComp = (id) => {
-		console.log(id);
+	const changeComp = (e) => {
+		console.log(e.target.value);
+		Axios.get('/api/snooker/' + e.target.value).then((res) => {
+			if (res.data) {
+				setWinLoss(res.data.winLoss);
+				setLadder(res.data.ladder);
+				setHandicap(res.data.handicap);
+				setCompname(res.data.compname);
+			}
+		})
 	}
 
 	const [comps, setComps] = useState([]);
@@ -62,19 +70,15 @@ export default function SnookerPage() {
 
 	return (
 		<div>
-
-			<select onChange={(e) => {
-				changeComp(e.value);
-			}}>
-				<option></option>
-
-				{comps.map((comp) => {
-					return (
-						<option value={comp._id}>{comp.compname}</option>
-					)
-				})}
-
-			</select>
+			{(comps.length) ?
+				<select onChange={changeComp}>
+					{comps.map((comp, i) => {
+						console.log(i);
+						return (
+							<option
+								value={comp._id}>{comp.compname}</option>
+						)
+					})} </select> : null}
 			<div className="season">
 				<h1>{compname}</h1>
 				<div className="donutContainer">
@@ -84,11 +88,11 @@ export default function SnookerPage() {
 					<div className="winStatsContainer">
 						<div className="percent">
 							<h4>By Match</h4>
-							<h1>{getMatchPercentage(winLoss.datasets[0].data)}</h1>
+							{/* <h1>{getMatchPercentage(winLoss.datasets[0].data)}</h1> */}
 						</div>
 						<div className="percent">
 							<h4>By Frame</h4>
-							<h1>{getFramePercentage(winLoss.datasets[0].data)}</h1>
+							{/* <h1>{getFramePercentage(winLoss.datasets[0].data)}</h1> */}
 						</div>
 					</div>
 				</div>
