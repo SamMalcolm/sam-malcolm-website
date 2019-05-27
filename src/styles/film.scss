@@ -1,7 +1,15 @@
 .lbdescr {
-     display: flex;
 
-     img {
-          width: 140px;
+     p {
+          display: inline-block;
+          width: calc(100% - 20px);
+          padding: 10px;
+
+          img {
+               width: 140px;
+          }
      }
+
+
+
 }

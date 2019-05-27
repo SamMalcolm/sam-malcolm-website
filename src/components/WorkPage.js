@@ -50,7 +50,8 @@ export default function WorkPage(props) {
 					<h1>{work.name}</h1>
 					<i>{moment(work.date).format('ll')}</i>
 				</div>
-					: <p>{work.description}</p>}
+					: null}
+				<p>{work.long_description}</p>
 				{(work.type == 2) ?
 					<div>
 						<a href="#" style={{ 'borderColor': props.highlight }} className="smBtn" onClick={() => { setGalleryVisible(true) }}>View Gallery</a>
@@ -59,6 +60,8 @@ export default function WorkPage(props) {
 				{(work.type == 3) ?
 					<a href={work.src} style={{ 'borderColor': props.highlight }} className="smBtn" target="_blank">{"View " + work.name}</a>
 					: null}
+				{(work.type == 4) ?
+					<div dangerouslySetInnerHTML={{ __html: work.markup }}></div> : null}
 				<div className="shareContainer">
 					<FacebookShareButton url={window.location.href}>
 						<FacebookIcon size={32} round={true} />

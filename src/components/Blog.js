@@ -12,8 +12,7 @@ const Post = (props) => {
 			</div>
 			<div className="postText">
 				<div className="postTitle">{props.title}</div>
-				<div className="postDate"><i>{moment(props.date).format('lll')}</i></div>
-				<div className="postAuthor"><i>{props.author}</i></div>
+				<div className="postDate"><i>{props.author + " | " + moment(props.date).format('ll')}</i></div>
 				<div className="postDescription">{props.social_description}</div>
 			</div>
 		</div>
