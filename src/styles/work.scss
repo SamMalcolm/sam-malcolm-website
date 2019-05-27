@@ -102,8 +102,13 @@
 }
 
 
-.shareContainer * {
-     display: inline-block;
-     margin: 10px;
-     cursor: pointer;
+.shareContainer {
+     display: block;
+     margin-top: 10px;
+
+     * {
+          display: inline-block;
+          margin: 1px;
+          cursor: pointer;
+     }
 }

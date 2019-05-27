@@ -25,6 +25,20 @@
 
 }
 
+@media screen and (max-width:800px) {
+     .season {
+          .donutContainer {
+               width: 100%;
+               display: block;
+          }
+
+          .handicapContainer {
+               width: 100%;
+               display: block;
+          }
+     }
+}
+
 select.snookerSelect {
      display: block;
      font-size: 16px;

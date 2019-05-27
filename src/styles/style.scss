@@ -23,15 +23,17 @@ a.smBtn {
      padding: 10px;
      margin-right: 11px;
      border-radius: 20px;
-     color: rgb(214, 214, 214);
+     color: white;
      text-decoration: none;
      border: 2px solid white;
-     transition: 0.2s;
+     transition: $transitionTime;
      display: inline-block;
      padding-top: 12px;
+     cursor: pointer !important;
 
      &:hover {
-          color: white;
+          transition: 0.2s !important;
+          border-color: white !important;
      }
 }
 

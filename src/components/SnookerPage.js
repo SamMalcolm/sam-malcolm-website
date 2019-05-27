@@ -72,7 +72,13 @@ export default function SnookerPage() {
 	useEffect(() => {
 		Axios.get("/api/snooker/all").then((resp) => {
 			setComps(resp.data);
-			changeComp(0);
+			setWinLoss(resp.data[0].winLoss);
+			setWinLossPercent(getMatchPercentage(resp.data[0].winLoss.datasets[0].data, resp.data[0].snooker));
+			setWinLossFramePercent(getFramePercentage(resp.data[0].winLoss.datasets[0].data));
+			setLadder(resp.data[0].ladder);
+			setHandicap(resp.data[0].handicap);
+			setCompname(resp.data[0].compname);
+			setSnooker(resp.data[0].snooker);
 		})
 	}, [])
 

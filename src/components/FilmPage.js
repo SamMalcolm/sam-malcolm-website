@@ -16,11 +16,12 @@ const Letterboxd = (props) => {
 }
 
 const YouTubeReview = (props) => {
+	console.log(props.contentDetails.videoId);
 	return (
-		<div>
-		<div>{props.snippet.title}</div>
-		<i>{props.snippet.description}</i>
-		<iframe src={"https://www.youtube.com.au/embed/"+props.snippet.video_id} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<div className="ytdescr">
+			<iframe style={{ 'display': 'block', 'margin': 'auto' }} src={"https://www.youtube.com.au/embed/" + props.contentDetails.videoId} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<h1>{props.snippet.title}</h1>
+			<i>{props.snippet.description}</i>
 		</div>
 	)
 }
