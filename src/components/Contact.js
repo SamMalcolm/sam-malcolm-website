@@ -14,21 +14,30 @@ const Twitter = () => {
 	)
 }
 
-const ContactForm = () => {
+const ContactForm = (props) => {
 	return (
 		<div>
-			<h1>Contact Form</h1>
-			<h3>la dad adad</h3>
+			<h1>Contact Me</h1>
+			<form action="/api/contact" method="post" name="contact" id="contact">
+				<h4>Email</h4>
+				<input style={{ 'borderColor': props.highlight }} type="email" name="email" required id="email" placeholder="ronnie.osullivan@worldsnooker.com" />
+				<h4>Name</h4>
+				<input style={{ 'borderColor': props.highlight }} type="text" name="name" required id="name" placeholder="Ron" />
+				<h4>Message</h4>
+				<textarea style={{ 'borderColor': props.highlight }} name="message" id="message" required form="contact"></textarea>
+				<br /><br />
+				<input type="submit" value="Submit" className="smBtn" />
+			</form>
 		</div>
 	)
 }
 
-export default function Contact() {
+export default function Contact(props) {
 	const [socials, setSocials] = useState([
 		{
 			"service": "twitter",
 			"icon": "/assets/ui_images/social/twitter.png",
-			"component": [<Twitter />],
+			"component": [<ContactForm highlight={props.highlight} />],
 			"active": true
 		},
 		{
@@ -77,7 +86,7 @@ export default function Contact() {
 			</div>
 			<div className="socialContentContainer">
 
-				{(socials).map((social, i) => {
+				{/* {(socials).map((social, i) => {
 					return (
 						<div className="socialContainer" style={{ 'display': (social.active) ? 'block' : 'none' }}>
 							{(
@@ -85,7 +94,8 @@ export default function Contact() {
 							)}
 						</div>
 					)
-				})}
+				})} */}
+				<ContactForm highlight={props.highlight} />
 			</div>
 		</div >
 	)

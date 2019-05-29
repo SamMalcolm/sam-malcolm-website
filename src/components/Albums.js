@@ -3,7 +3,10 @@ import FullWidthBanner from './FullWidthBanner';
 import axios from 'axios';
 
 const Song = (props) => {
-
+    useEffect(() => {
+        console.log("PROPS CHANGED");
+        console.log(new Date());
+    }, [props])
     return (
         <div>
             {(props.active) ?
@@ -26,25 +29,11 @@ const Song = (props) => {
 }
 
 const Album = (props) => {
-    const [songs, setSongs] = useState(props.songs);
-
-    const handleClick = (name) => {
-        for (var key in songs) {
-            songs[key].active = 0;
-        }
-        let activeSong = songs.filter((song) => {
-            return song.name == name;
-        });
-        let index = songs.indexOf(activeSong[0]);
-        songs[index].active = 1;
-        setSongs(songs);
-    }
-
     return (
         <div className="alContainer">
-            {songs.map((song) => {
+            {props.songs.map((song) => {
                 return (
-                    <Song {...song} handleClick={handleClick} />
+                    <Song {...song} handleClick={props.handleClick} />
 
                 )
             })}
@@ -77,6 +66,20 @@ function Albums(props) {
         })
     }, []);
 
+    const handleClick = (name) => {
+        console.log("CLICKED");
+        for (var key in albums) {
+            for (var keyb in albums[key].songs) {
+                if (albums[key].songs[keyb].name == name) {
+                    albums[key].songs[keyb].active = 1;
+                } else {
+                    albums[key].songs[keyb].active = 0;
+                }
+            }
+        }
+        setAlbums(albums);
+    }
+
     return (
         <div className="albumsContainer">
             <FullWidthBanner caption="Photo: Ian Malcolm" backgroundPosition="top center" src="/assets/ui_images/music.jpg" title="Music" />
@@ -84,7 +87,7 @@ function Albums(props) {
                 return (
                     <div>
                         <AlbumMeta {...album} highlight={props.highlight} />
-                        {(album.type == 1 && album.songs.length) ? <Album {...album} /> : null}
+                        {(album.type == 1 && album.songs.length) ? <Album {...album} handleClick={handleClick} /> : null}
                     </div>
                 )
             })}

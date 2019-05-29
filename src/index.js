@@ -65,7 +65,7 @@ const App = () => {
 
                     <Route exact path="/contact">
                         <Container>
-                            <Contact />
+                            <Contact highlight={highlightColour} />
                         </Container>
                     </Route>
                     <Route exact path="/film">
