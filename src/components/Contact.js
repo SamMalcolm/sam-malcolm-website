@@ -24,7 +24,7 @@ const ContactForm = (props) => {
 				<h4>Name</h4>
 				<input style={{ 'borderColor': props.highlight }} type="text" name="name" required id="name" placeholder="Ron" />
 				<h4>Message</h4>
-				<textarea style={{ 'borderColor': props.highlight }} name="message" id="message" required form="contact"></textarea>
+				<textarea style={{ 'borderColor': props.highlight }} name="message" id="message" form="contact"></textarea>
 				<br /><br />
 				<input type="submit" value="Submit" className="smBtn" />
 			</form>
@@ -44,6 +44,12 @@ export default function Contact(props) {
 			"service": "contact",
 			"icon": "/assets/ui_images/social/mail.png",
 			"component": [<ContactForm />],
+			"active": false
+		},
+		{
+			"service": "github",
+			"icon": "/assets/ui_images/social/github.png",
+			"src": "https://github.com/SamMalcolm",
 			"active": false
 		}
 	]);

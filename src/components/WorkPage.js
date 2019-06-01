@@ -60,6 +60,8 @@ export default function WorkPage(props) {
 				{(work.type == 3) ?
 					<a href={work.src} style={{ 'borderColor': props.highlight }} className="smBtn" target="_blank">{"View " + work.name}</a>
 					: null}
+				{(work.codepen) ? <a href={work.codepen} style={{ 'borderColor': props.highlight }} className="smBtn" target="_blank">View on Codepen</a> : null}
+				{(work.github) ? <a href={work.github} style={{ 'borderColor': props.highlight }} className="smBtn" target="_blank">View on Github</a> : null}
 				{(work.type == 4) ?
 					<div dangerouslySetInnerHTML={{ __html: work.markup }}></div> : null}
 				<div className="shareContainer">

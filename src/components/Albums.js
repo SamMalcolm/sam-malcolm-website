@@ -9,20 +9,12 @@ const Song = (props) => {
     }, [props])
     return (
         <div>
-            {(props.active) ?
-                <div className="songContainer">
-                    <div onClick={() => { props.handleClick(props.name); }} style={{ 'backgroundColor': props.color, "zIndex": "299" }} className="songTitle">
-                        <h1 className="selected">LOADING</h1>
-                    </div>
-                    <iframe src={props.src} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <div className={(props.active) ? "songContainer" : "songContainer colourTransition"}>
+                <div onClick={() => { props.handleClick(props.name); }} style={{ 'backgroundColor': props.color, "zIndex": (props.active) ? "300" : "250" }} className="songTitle">
+                    <h1 className={(props.active) ? "selected" : null}>{(props.active) ? "LOADING" : props.name}</h1>
                 </div>
-                :
-                <div className="songContainer colourTransition">
-                    <div onClick={() => { props.handleClick(props.name); }} style={{ 'backgroundColor': props.color, "zIndex": "301" }} className="songTitle">
-                        <h1>{props.name}</h1>
-                    </div>
-                </div>
-            }
+                <iframe style={{ 'display': (props.active) ? "block" : "none", "zIndex": (props.active) ? "300" : "250" }} src={props.src} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
         </div>
 
     )

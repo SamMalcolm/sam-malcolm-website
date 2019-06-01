@@ -9,6 +9,8 @@ const axios = require('axios');
 const { googleApiKey } = require('../keys/google_api.js');
 const parseString = require('xml2js').parseString;
 const moment = require('moment');
+const nodemailer = require('nodemailer');
+const nodemailer_transport = require("../keys/nodemailer_transport");
 /* GET home page. */
 
 // Get blog posts
@@ -82,7 +84,7 @@ router.delete('/appearances', (req, res) => {
 })
 
 router.get('/albums', (req, res) => {
-    albumModel.find({}).sort({ 'year': -1 }).exec((err, docs) => {
+    albumModel.find({ 'active': true }).sort({ 'year': -1 }).exec((err, docs) => {
         res.send(docs);
     })
 });
@@ -178,6 +180,35 @@ router.get('/snooker/:id', (req, res) => {
         if (err) { console.log(err) }
         res.send(docs);
     })
+})
+
+router.post('/contact', (req, res) => {
+    console.log(req.body);
+    let transport = nodemailer.createTransport(nodemailer_transport);
+
+    var message = {
+        from: 'Sam Malcolm Media <sam.malcolm.media@gmail.com>',
+        to: req.body.email,
+        cc: 'sam_malcolm@live.com.au',
+        subject: 'Sam Malcolm Media | Message',
+        replyTo: req.body.email,
+        text: 'Thank you for contact Sam Malcolm Media. I will try and get back to you as soon as i can',
+        html: `<p>Thank you for contact Sam Malcolm Media. I will try and get back to you as soon as i can</p>
+        <b>Name: </b>${req.body.name}
+        <b>Email: </b>${req.body.email}
+        <b>Message: </b>${req.body.message}
+        `
+    };
+    transport.sendMail(message, (err, info) => {
+        if (err) {
+            console.log(err);
+            res.send(err);
+        } else {
+            console.log(info);
+            res.redirect('/contact');
+        }
+    })
+
 })
 
 module.exports = router;
