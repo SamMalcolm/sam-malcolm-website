@@ -100,6 +100,12 @@ const App = () => {
                                 setBackgroundSlides(e.target.checked);
 
                             }} />
+                            <br />
+                            <i>Large Text</i>
+                            <input type="checkbox" value="backgrounds" onChange={(e) => {
+                                document.querySelector("body").classList.toggle("large_text");
+
+                            }} />
 
                         </div>
                     </Card>

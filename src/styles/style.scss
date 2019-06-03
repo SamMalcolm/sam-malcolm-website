@@ -1,5 +1,75 @@
 @import '_var.scss';
 
+@mixin themify($themes: $themes) {
+
+     @each $theme,
+     $map in $themes {
+
+          .theme-#{$theme} & {
+               $theme-map: () !global;
+
+               @each $key,
+               $submap in $map {
+                    $value: map-get(map-get($themes, $theme), '#{$key}');
+                    $theme-map: map-merge($theme-map, ($key: $value)) !global;
+               }
+
+               @content;
+               $theme-map: null !global;
+          }
+
+     }
+}
+
+body.large_text {
+     h1 {
+          // font-size:32px;
+          font-size: 37px !important;
+     }
+
+     h2 {
+          // font-size:24px;
+          font-size: 29px !important;
+     }
+
+     h3 {
+          // font-size:18.72px;
+          font-size: 23.72px !important;
+     }
+
+     h4 {
+          // font-size:16px;
+          font-size: 21px !important;
+     }
+
+     h5 {
+          // font-size:13.28px;
+          font-size: 18.28px !important;
+     }
+
+     h6 {
+          // font-size:12px;
+          font-size: 17px !important;
+     }
+
+     p {
+          font-size: 21px !important;
+     }
+
+     div.nav_link {
+          font-size: 20px !important;
+     }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+     font-family: $mainFont;
+}
+
 body,
 html {
      margin: 0;
@@ -16,11 +86,7 @@ body {
      padding-top: 65px;
 }
 
-h1,
-h2,
-h3 {
-     font-family: $mainFont;
-}
+
 
 a.smBtn,
 input.smBtn {
