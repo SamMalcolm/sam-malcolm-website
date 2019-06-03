@@ -183,6 +183,7 @@ router.get('/snooker/:id', (req, res) => {
 })
 
 router.post('/contact', (req, res) => {
+    console.log(req);
     console.log(req.body);
     let transport = nodemailer.createTransport(nodemailer_transport);
 

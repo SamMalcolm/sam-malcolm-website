@@ -67,9 +67,7 @@ const App = () => {
                     }} />
 
                     <Route exact path="/contact">
-                        <Container>
-                            <Contact highlight={highlightColour} />
-                        </Container>
+                        <Contact highlight={highlightColour} />
                     </Route>
                     <Route exact path="/film">
                         <div>
