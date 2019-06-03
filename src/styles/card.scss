@@ -1,23 +1,54 @@
-$ackWidth:500px;
+$ackWidth:380px;
+
+@mixin cardHeight {
+     @for $i from 1 through 4 {
+          &:nth-child(#{$i}) {
+               bottom: #{($i * 16) + 50}px;
+          }
+     }
+}
+
+@mixin cardHeightMedia {
+     @for $i from 1 through 4 {
+          &:nth-child(#{$i}) {
+               bottom: -400px;
+          }
+     }
+}
+
+@mixin cardTriggerMedia {
+     @for $i from 1 through 4 {
+          &:nth-child(#{$i}) {
+               left: #{($i - 1) * 16}px;
+          }
+     }
+}
 
 .ackContainer {
      position: fixed;
      width: $ackWidth;
      text-align: center;
-     right: -$ackWidth;
+     right: -400px;
      transition: 0.4s ease;
      bottom: 10px;
      background-color: white;
+     padding: 10px;
 
      .ackTrigger {
           position: absolute;
-          left: -30px;
+          left: -50px;
           color: white;
           font-family: bold;
           font-size: 35px;
-          background-color: black;
-          padding: 7px;
+          background-color: #202020;
           cursor: pointer;
+          top: -1px;
+          width: 50px;
+          height: 50px;
+          border-radius: 25px 0 0 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
           .childCardTrigger {
                transition: 0.5s;
@@ -34,3 +65,42 @@ $ackWidth:500px;
 .ackActive {
      right: 0;
 }
+
+.cardContainer {
+     div.ackContainer {
+          @include cardHeight();
+     }
+}
+
+// @media screen and (max-width:700px) {
+//      .ackActive {
+//           bottom: 0;
+//      }
+
+//      .cardContainer {
+//           div.ackContainer {
+//                @include cardHeightMedia();
+//           }
+//      }
+
+//      .ackContainer {
+//           height: $ackWidth;
+//           width: calc(100% - 20px);
+//           bottom: -500px;
+
+//           .ackTrigger {
+//                @include cardTriggerMedia();
+
+//                .childCardTrigger {
+//                     transition: 0.5s;
+//                }
+//           }
+
+//           .ackImage {
+//                img {
+//                     width: 100px;
+//                }
+//           }
+//      }
+
+// }

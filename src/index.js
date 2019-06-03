@@ -18,13 +18,16 @@ import Folio from './components/Folio';
 import WorkPage from './components/WorkPage';
 import Albums from './components/Albums';
 import FilmPage from './components/FilmPage';
-import SnookerPage from './components/SnookerPage'
+import SnookerPage from './components/SnookerPage';
+
 const App = () => {
+
     const [highlightColour, setHighlightColour] = useState('');
+    const [backgroundSlides, setBackgroundSlides] = useState(false);
     return (
         <Router>
             <div className="appContainer">
-                <Background setHighlightColour={setHighlightColour} />
+                {(!backgroundSlides) ? <Background setHighlightColour={setHighlightColour} /> : null}
                 <Nav highlight={highlightColour} />
                 <Switch>
                     <Route exact path="/"></Route>
@@ -89,30 +92,33 @@ const App = () => {
                     </Route>
                 </Switch>
                 <div className="cardContainer">
-                    <Card top="50%">
+
+                    <Card icon="assets/ui_images/accessibility.png">
+                        <div className="ackText">
+                            <h3>Accessibility Options</h3>
+                            <i>Stop Background Slideshow</i>
+                            <input type="checkbox" value="backgrounds" onChange={(e) => {
+                                console.log(e.target.checked);
+                                setBackgroundSlides(e.target.checked);
+
+                            }} />
+
+                        </div>
+                    </Card>
+                    <Card icon="assets/ui_images/australia.png">
                         <div className="ackImage">
                             <img src='./assets/ui_images/ack.png' />
                         </div>
                         <div className="ackText">
                             <h3>Acknowledgement Of Country</h3>
                             <p>I would like to acknowledge the traditional owners of the land on which I conduct the business of being a developer and designer. I would like to pay my respect to their elders past, present and future.</p>
-                            <p>If you would like to learn more about indigenous culture please click <a href="#">here</a></p>
-                        </div>
-                    </Card>
-                    <Card top="0">
-                        <div className="ackImage">
-                            <img src='./assets/ui_images/ack.png' />
-                        </div>
-                        <div className="ackText">
-                            <h3>Accessibility Options</h3>
-                            <p>I would like to acknowledge the traditional owners of the land on which I conduct the business of being a developer and designer. I would like to pay my respect to their elders past, present and future.</p>
-                            <p>If you would like to learn more about indigenous culture please click <a href="#">here</a></p>
+                            <p>If you would like to learn more about indigenous culture please click <a style={{ 'color': 'black' }} href="https://www.indigenous.gov.au/">here</a></p>
                         </div>
                     </Card>
                 </div>
             </div>
 
-        </Router>
+        </Router >
     )
 }
 
