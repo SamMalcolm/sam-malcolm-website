@@ -3,7 +3,6 @@ import { TwitterTimelineEmbed, TwitterFollowButton } from 'react-twitter-embed';
 import { FacebookProvider, Feed } from 'react-facebook';
 import Container from './Container';
 
-
 const Twitter = () => {
 	return (
 		<div>
@@ -37,63 +36,63 @@ export default function Contact(props) {
 		{
 			"service": "twitter",
 			"icon": "/assets/ui_images/social/twitter.png",
-			"component": [<ContactForm highlight={props.highlight} />],
+			"component": [<Twitter />],
 			"active": true,
-			"colour": "#1da1f2"
+			"colour": "#1da1f2",
+			"embed": true
 		},
 		{
 			"service": "contact",
 			"icon": "/assets/ui_images/social/email.png",
-			"component": [<ContactForm />],
+			"component": [<ContactForm highlight={props.highlight} />],
 			"active": false,
-			"colour": "#0078d7"
+			"colour": "#0078d7",
+			"embed": true
 		},
 		{
 			"service": "github",
 			"icon": "/assets/ui_images/social/github.jpg",
 			"src": "https://github.com/SamMalcolm",
 			"active": false,
-			"colour": "#333333"
+			"colour": "#333333",
+			"embed": false
 		},
 		{
 			"service": "imdb",
 			"icon": "/assets/ui_images/social/imdb.png",
 			"src": "https://www.imdb.com/name/nm7066438/",
 			"active": false,
-			"colour": "#f5de50"
+			"colour": "#f5de50",
+			"embed": false,
+			"dark_text": true
 		},
 		{
 			"service": "instagram",
 			"icon": "/assets/ui_images/social/instagram.png",
 			"src": "https://www.instagram.com/sam_a_malcolm/",
 			"active": false,
-			"colour": "#f56040"
+			"colour": "#f56040",
+			"embed": false
 		},
 		{
 			"service": "facebook",
 			"icon": "/assets/ui_images/social/facebook.png",
 			"src": "https://www.facebook.com/sammalcolmmedia/",
 			"active": false,
-			"colour": "#3b5998"
+			"colour": "#3b5998",
+			"embed": false
 		}
 	]);
 
 	const handleChange = (e) => {
-		console.log(socials);
-		console.log(e.currentTarget.value);
 		let index = e.currentTarget.value;
 		let newSocialObject = socials;
 		for (let key in newSocialObject) {
 			newSocialObject[key].active = false;
 		}
 		newSocialObject[index].active = true;
-		console.log(newSocialObject);
 		setSocials(newSocialObject);
 	}
-
-	useEffect(() => {
-		console.log(socials);
-	}, [])
 
 	return (
 		<div>
@@ -101,14 +100,28 @@ export default function Contact(props) {
 				{(socials).map((social, i) => {
 					return (
 						<div className="socialInput" style={{ 'backgroundColor': social.colour }}>
-							<input type="radio" id={social.service} className="socialRadio" name="social" value={i} onChange={handleChange}
-								checked={(social.active) ? "true" : "false"} />
-							<label className="socialLabel" for={social.service}>
-								<div className="socialIcon">
-									<img src={social.icon} />
+							{(!social.embed) ?
+								<div>
+									<a href={social.src} target="_blank">
+										<div className="socialLabel" for={social.service}>
+											<div className="socialIcon">
+												<img src={social.icon} />
+											</div>
+											<div className="socialTitle" style={{ 'color': (social.dark_text) ? '#000000' : '#FFFFFF' }}>{social.service}</div>
+										</div>
+									</a>
 								</div>
-								<div className="socialTitle">{social.service}</div>
-							</label>
+								:
+								<div>
+									<input type="radio" id={social.service} className="socialRadio" name="social" value={i} onChange={handleChange} checked={(social.active) ? "true" : "false"} />
+									<label className="socialLabel" for={social.service}>
+										<div className="socialIcon">
+											<img src={social.icon} />
+										</div>
+										<div className="socialTitle">{social.service}</div>
+									</label>
+								</div>
+							}
 						</div>
 					)
 				})}
@@ -117,16 +130,13 @@ export default function Contact(props) {
 			<Container>
 				<div className="socialContentContainer">
 
-					{/* {(socials).map((social, i) => {
-					return (
-						<div className="socialContainer" style={{ 'display': (social.active) ? 'block' : 'none' }}>
-							{(
-								social.component[0]
-							)}
-						</div>
-					)
-				})} */}
-					<ContactForm highlight={props.highlight} />
+					{(socials).map((social, i) => {
+						return (
+							<div className="socialContainer" style={{ 'display': (social.active) ? 'block' : 'none' }}>
+								{(social.component) ? social.component[0] : null}
+							</div>
+						)
+					})}
 				</div>
 			</Container>
 		</div >

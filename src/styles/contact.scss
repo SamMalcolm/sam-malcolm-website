@@ -40,6 +40,8 @@
           .socialTitle {
                display: none;
                text-transform: uppercase;
+               font-family: $mainFont;
+               color: white;
           }
 
           &:hover {

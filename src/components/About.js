@@ -9,7 +9,7 @@ const About = () => {
                 </div>
             </div>
             <div className="bio_body">
-                <h3>SAM MALCOLM</h3>
+                <h1>SAM MALCOLM</h1>
                 <p>My Name is Sam Malcolm and I am a multi-disciplinary digital media designer from Melbourne, Australia. </p>
                 <p>I currently work at RMIT University in the central Learning and Teaching Design team focusing on improving the student and teacher experience. This role has involved me conducting photography and videography of high stakes clients including former Prime-Minister Julia Gillard and the Deputy Vice-Chancellor. The role has also involved building enterprise scale web applications to enable more efficient processes.</p>
                 <p>My focus areas are photo/video and full stack web programming, but I also have a vested interest in 3D modelling, music production and composition and motion graphics. Under the <i>works</i> section of this site I have some examples of my work in these areas. Under the <i>music</i> section there are examples of some of my own originally composed and performed music.</p>
