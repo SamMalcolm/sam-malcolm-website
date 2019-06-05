@@ -81,12 +81,21 @@ export default function Contact(props) {
 			"active": false,
 			"colour": "#3b5998",
 			"embed": false
+		},
+		{
+			"service": "reddit",
+			"icon": "/assets/ui_images/social/reddit.png",
+			"src": "https://www.reddit.com/user/sam_malcolm",
+			"active": false,
+			"colour": "#ff4500",
+			"embed": false
 		}
+
 	]);
 
 	const handleChange = (e) => {
 		let index = e.currentTarget.value;
-		let newSocialObject = socials;
+		let newSocialObject = [...socials];
 		for (let key in newSocialObject) {
 			newSocialObject[key].active = false;
 		}
@@ -99,7 +108,7 @@ export default function Contact(props) {
 			<div className="socialContainer">
 				{(socials).map((social, i) => {
 					return (
-						<div className="socialInput" style={{ 'backgroundColor': social.colour }}>
+						<div key={'social-link-' + i} className="socialInput" style={{ 'backgroundColor': social.colour, 'width': 'calc(100% / ' + socials.length }}>
 							{(!social.embed) ?
 								<div>
 									<a href={social.src} target="_blank">
@@ -132,8 +141,13 @@ export default function Contact(props) {
 
 					{(socials).map((social, i) => {
 						return (
-							<div className="socialContainer" style={{ 'display': (social.active) ? 'block' : 'none' }}>
-								{(social.component) ? social.component[0] : null}
+							<div key={'social-' + i} className="socialContainer" style={{ 'display': (social.active) ? 'block' : 'none' }}>
+								{social.service == "twitter" && (
+									<Twitter />
+								)}
+								{social.service == "contact" && (
+									<ContactForm highlight={props.highlight} />
+								)}
 							</div>
 						)
 					})}

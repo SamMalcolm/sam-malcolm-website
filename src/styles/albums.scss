@@ -2,10 +2,18 @@
 
 .alContainer {
      width: 100%;
+     display: flex;
 
      div {
           width: calc(100% / 6);
           display: inline-block;
+          height: 0;
+          position: relative;
+          width: 100%;
+          padding-bottom: 100%;
+          display: inline-block;
+          font-family: $mainFont;
+          cursor: pointer;
 
           .songContainer {
                &.colourTransition {
@@ -23,12 +31,6 @@
 
                }
 
-               position: relative;
-               width: 100%;
-               padding-bottom:100%;
-               display: inline-block;
-               font-family:$mainFont;
-               cursor: pointer;
 
                h1 {
                     &.selected {
@@ -58,6 +60,7 @@
                     text-align: center;
                     text-transform: uppercase;
                     font-size: 28px;
+                    padding: 0;
                }
 
                iframe {
@@ -130,7 +133,6 @@
 
 @media screen and (max-width:850px) {
      .alContainer {
-
           div {
                width: calc(100% / 2);
           }

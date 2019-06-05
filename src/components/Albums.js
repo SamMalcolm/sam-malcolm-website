@@ -21,7 +21,9 @@ const Song = props => {
 					<h1>{active ? "LOADING" : name}</h1>
 				</div>
 				{(active || clickCount) && ( // && Short Circuit instead of tenary (its more concise)
-					<iframe src={src} frameBorder="0" allowtransparency="true" allow="encrypted-media" />
+					<iframe style={{
+						zIndex: active ? "300" : "250"
+					}} src={src} frameBorder="0" allowtransparency="true" allow="encrypted-media" />
 				)}
 			</div>
 		</div>
