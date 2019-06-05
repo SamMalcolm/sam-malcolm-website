@@ -25,7 +25,7 @@ const Album = (props) => {
         <div className="alContainer">
             {props.songs.map((song) => {
                 return (
-                    <Song {...song} handleClick={props.handleClick} />
+                    <Song {...song} key={song.name} handleClick={props.handleClick} />
 
                 )
             })}
@@ -77,7 +77,7 @@ function Albums(props) {
             <FullWidthBanner caption="Photo: Ian Malcolm" backgroundPosition="top center" src="/assets/ui_images/music.jpg" title="Music" />
             {albums.map((album) => {
                 return (
-                    <div>
+                    <div key={album.name}>
                         <AlbumMeta {...album} highlight={props.highlight} />
                         {(album.type == 1 && album.songs.length) ? <Album {...album} handleClick={handleClick} /> : null}
                     </div>

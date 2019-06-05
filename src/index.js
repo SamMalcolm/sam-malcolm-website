@@ -19,6 +19,7 @@ import WorkPage from './components/WorkPage';
 import Albums from './components/Albums';
 import FilmPage from './components/FilmPage';
 import SnookerPage from './components/SnookerPage';
+import { Helmet } from "react-helmet";
 
 const App = () => {
 
@@ -27,6 +28,9 @@ const App = () => {
     return (
         <Router>
             <div className="appContainer">
+                <Helmet>
+                    <title>Sam Malcolm Media</title>
+                </Helmet>
                 {(!backgroundSlides) ? <Background setHighlightColour={setHighlightColour} /> : null}
                 <Nav highlight={highlightColour} />
                 <Switch>
