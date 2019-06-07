@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { TwitterTimelineEmbed, TwitterFollowButton } from 'react-twitter-embed';
-import { FacebookProvider, Feed } from 'react-facebook';
 import Container from './Container';
 
 const Twitter = () => {
@@ -108,7 +107,7 @@ export default function Contact(props) {
 			<div className="socialContainer">
 				{(socials).map((social, i) => {
 					return (
-						<div key={'social-link-' + i} className="socialInput" style={{ 'backgroundColor': social.colour, 'width': 'calc(100% / ' + socials.length }}>
+						<div key={'social-link-' + i} className={social.active ? "socialInput selected" : "socialInput"} style={{ 'backgroundColor': social.colour, 'width': 'calc(100% / ' + socials.length, 'cursor': 'pointre' }}>
 							{(!social.embed) ?
 								<div>
 									<a href={social.src} target="_blank">

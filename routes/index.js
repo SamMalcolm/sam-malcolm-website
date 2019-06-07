@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var workModel = require('../models/work');
+const blogModel = require('../models/blog');
+const config = require('config');
 /* GET home page. */
 router.get([
   '/',
@@ -13,21 +15,19 @@ router.get([
   '/about',
   '/work',
   '/music',
-  '/appearances',
-  '/blog/:blog_id'
+  '/appearances'
 ], function (req, res, next) {
-  let path;
-  if (typeof req.originalUrl.length != 'undefined' && req.originalUrl.length > 1) {
-    path = req.originalUrl.slice(1, req.originalUrl.length);
-    path = path.split("");
-    path[0] = path[0].toUpperCase();
-    path = path.join("");
-    path = "Sam Malcolm Media | " + path;
-  } else {
-    path = "Sam Malcolm Media";
-  }
+  let path = "Sam Malcolm Media";
 
-  res.render('index', { title: path });
+  let meta = {};
+
+  meta.social_title = "Sam Malcolm Media"
+  meta.feature_image = "assets/ui_images/social_share.png"
+  meta.social_description = "The official website for Sam Malcolm, the Melbourne based Digital Media Designer"
+  meta.feature_image_alt = "An image of Sam Malcolms logo, the outline of a cube with a gradient coloured background"
+
+
+  res.render('index', { title: path, meta: meta, url: config.get("siteAddress") });
 });
 
 
@@ -35,8 +35,20 @@ router.get('/work/:work_id', (req, res) => {
   workModel.findById(req.params.work_id, (err, docs) => {
     console.log(docs);
     res.render('index', {
-      work: docs,
-      title: docs.name
+      meta: docs,
+      title: docs.name,
+      url: config.get("siteAddress")
+    })
+  })
+})
+
+router.get('/blog/:blog_id', (req, res) => {
+  blogModel.findById(req.params.blog_id, (err, docs) => {
+    console.log(docs);
+    res.render('index', {
+      meta: docs,
+      title: docs.name,
+      url: config.get("siteAddress")
     })
   })
 })

@@ -25,6 +25,7 @@ const App = () => {
 
     const [highlightColour, setHighlightColour] = useState('');
     const [backgroundSlides, setBackgroundSlides] = useState(false);
+
     return (
         <Router>
             <div className="appContainer">

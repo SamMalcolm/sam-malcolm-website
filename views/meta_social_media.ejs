@@ -1,22 +1,22 @@
 <!--  Essential META Tags -->
-<% if (typeof work != 'undefined') { %>
-<% if (work.social_title) { %>
-<meta name="twitter:title" content="<%= work.social_title %>">
-<meta property="og:title" content="<%= work.social_title %>">
+<% if (typeof meta != 'undefined') { %>
+<% if (meta.social_title) { %>
+<meta name="twitter:title" content="<%= meta.social_title %>">
+<meta property="og:title" content="<%= meta.social_title %>">
 <% } %>
 
-<% if (work.social_description) { %>
-<meta property="og:description" content="<%= work.social_description %>">
-<meta name="twitter:description" content="<%= work.social_description %>">
+<% if (meta.social_description) { %>
+<meta property="og:description" content="<%= meta.social_description %>">
+<meta name="twitter:description" content="<%= meta.social_description %>">
 <% } %>
 
-<% if (work.feature_image) { %>
-<meta property="og:image" content="<%= work.feature_image %>">
-<meta name="twitter:card" content="<%= work.feature_image %>">
-<meta name="twitter:image" content="<%= work.feature_image %>">
+<% if (meta.feature_image) { %>
+<meta property="og:image" content="<%= url + meta.feature_image %>">
+<meta name="twitter:card" content="<%= url + meta.feature_image %>">
+<meta name="twitter:image" content="<%= url + meta.feature_image %>">
 <% }  %>
-<% if (work.feature_image_alt) { %>
-<meta name="twitter:image:alt" content="<%= work.feature_image_alt %>">
+<% if (meta.feature_image_alt) { %>
+<meta name="twitter:image:alt" content="<%= meta.feature_image_alt %>">
 <% } %>
 
 <% } %>

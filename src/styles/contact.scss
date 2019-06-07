@@ -5,15 +5,22 @@
      max-width: 940px;
      width: 100%;
 
+
+
      .socialInput {
           width: calc(100% / 6);
           padding-bottom: 17%;
           height: 0;
-          background-color: blue;
           display: inline-block;
           position: relative;
           transition: 0.2s ease;
           cursor: pointer !important;
+
+          &.selected {
+               .socialTitle {
+                    display: block;
+               }
+          }
 
           input {
                display: none;
