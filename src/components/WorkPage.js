@@ -62,7 +62,7 @@ export default function WorkPage(props) {
 					: null}
 				{(work.codepen) ? <a href={work.codepen} style={{ 'borderColor': props.highlight }} className="smBtn" target="_blank">View on Codepen</a> : null}
 				{(work.github) ? <a href={work.github} style={{ 'borderColor': props.highlight }} className="smBtn" target="_blank">View on Github</a> : null}
-				{(work.type == 4) ?
+				{(work.markup) ?
 					<div dangerouslySetInnerHTML={{ __html: work.markup }}></div> : null}
 				<div className="shareContainer">
 					<FacebookShareButton url={window.location.href}>
