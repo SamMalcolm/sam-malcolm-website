@@ -11,6 +11,15 @@ var adminRouter = require('./routes/admin');
 var app = express();
 const config = require('config');
 
+
+console.log("\n\n\n\n\n\n");
+
+console.log("CONFIG");
+
+console.log(config.get("siteAddress"));
+console.log(config.get("mongoDB"));
+
+console.log("\n\n\n\n\n");
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
