@@ -36,7 +36,7 @@ export default function Contact(props) {
 			"service": "twitter",
 			"icon": "/assets/ui_images/social/twitter.png",
 			"component": [<Twitter />],
-			"active": true,
+			"active": false,
 			"colour": "#1da1f2",
 			"embed": true
 		},
@@ -44,7 +44,7 @@ export default function Contact(props) {
 			"service": "contact",
 			"icon": "/assets/ui_images/social/email.png",
 			"component": [<ContactForm highlight={props.highlight} />],
-			"active": false,
+			"active": true,
 			"colour": "#0078d7",
 			"embed": true
 		},
