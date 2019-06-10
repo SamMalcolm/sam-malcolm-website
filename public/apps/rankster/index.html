@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css" />
+    <title>Rankster</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Rankster</h1>
+        <i>a small app to help with ranking stuff</i>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-5">
+                <h2>Items</h2>
+                <br />
+                <div class="alert alert-warning">Pre-Loaded Lists</div>
+                <span>
+                    <button  class="btn btn-dark preloadList" data-list="starwars">Star Wars Films</button>
+                    <button  class="btn btn-dark preloadList" data-list="mcu">MCU Films</button>
+                    <button  class="btn btn-dark preloadList" data-list="pixar">Pixar Films</button>
+                </span>
+                <br />
+                <br />
+                <span class="items">
+                    <ul></ul>
+                    <input  type="text" placeholder="Item to rank" />
+                    <button  class="btn btn-primary">Add Item</button>
+                </span>
+                <br />
+                <button class="btn btn-success" style="margin-top:10px;">Start Ranking</button>
+                <br />
+                <br />
+                <div class="alert alert-secondary">Shareable Link</div>
+                <input type="text" contenteditable="false" class="share-link" />
+            </div>
+            <div class="col-7">
+                <h2>Ranking</h2>
+                <span class="ranked-area"></span>
+                <span class="test-area"></span>
+                <span class="controls">
+                    <button class="btn btn-secondary clearForm">Clear Form</button>
+                </span>
+            </div> 
+    </div>
+<script src="script.js" defer></script>
+</body>
+</html>
