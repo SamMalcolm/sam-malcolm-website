@@ -72,35 +72,13 @@ $ackWidth:380px;
      }
 }
 
-// @media screen and (max-width:700px) {
-//      .ackActive {
-//           bottom: 0;
-//      }
+@media screen and (max-width:500px) {
+     .ackContainer {
+          width: 257px;
+          right: -277px;
 
-//      .cardContainer {
-//           div.ackContainer {
-//                @include cardHeightMedia();
-//           }
-//      }
-
-//      .ackContainer {
-//           height: $ackWidth;
-//           width: calc(100% - 20px);
-//           bottom: -500px;
-
-//           .ackTrigger {
-//                @include cardTriggerMedia();
-
-//                .childCardTrigger {
-//                     transition: 0.5s;
-//                }
-//           }
-
-//           .ackImage {
-//                img {
-//                     width: 100px;
-//                }
-//           }
-//      }
-
-// }
+          &.ackActive {
+               right: 0;
+          }
+     }
+}

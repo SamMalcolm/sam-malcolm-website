@@ -74,11 +74,13 @@ nav div.hamburger {
 
      nav div.nav-links {
           float: none;
-          position: absolute;
+          position: fixed;
           z-index: 99999;
           top: 65px;
-          background: $darkBackground;
+          background: #000000;
           width: 100%;
+          overflow-y: scroll;
+          max-height: calc(100% - 65px);
      }
 
      nav div.hamburger {

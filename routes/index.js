@@ -5,8 +5,18 @@ var workModel = require('../models/work');
 const blogModel = require('../models/blog');
 const config = require('config');
 /* GET home page. */
+router.get('/', function (req, res, next) {
+  let path = "Sam Malcolm Media";
+  let meta = {};
+  meta.social_title = "Sam Malcolm Media"
+  meta.feature_image = "assets/ui_images/social_share.png"
+  meta.social_description = "The official website for Sam Malcolm, the Melbourne based Digital Media Designer"
+  meta.feature_image_alt = "An image of Sam Malcolms logo, the outline of a cube with a gradient coloured background"
+  console.log("\n\nMETA\n\n");
+  res.render('index', { title: path, meta: meta, url: config.get("siteAddress") });
+});
+
 router.get([
-  '/',
   '/snooker',
   '/tutorials',
   '/blog',
@@ -15,20 +25,22 @@ router.get([
   '/about',
   '/work',
   '/music',
-  '/appearances'
-], function (req, res, next) {
-  let path = "Sam Malcolm Media";
+  '/appearances'], function (req, res, next) {
+    let path = "Sam Malcolm Media";
 
-  let meta = {};
-
-  meta.social_title = "Sam Malcolm Media"
-  meta.feature_image = "assets/ui_images/social_share.png"
-  meta.social_description = "The official website for Sam Malcolm, the Melbourne based Digital Media Designer"
-  meta.feature_image_alt = "An image of Sam Malcolms logo, the outline of a cube with a gradient coloured background"
+    let meta = {};
 
 
-  res.render('index', { title: path, meta: meta, url: config.get("siteAddress") });
-});
+
+    meta.social_title = "Sam Malcolm Media"
+    meta.feature_image = "assets/ui_images/social_share.png"
+    meta.social_description = "The official website for Sam Malcolm, the Melbourne based Digital Media Designer"
+    meta.feature_image_alt = "An image of Sam Malcolms logo, the outline of a cube with a gradient coloured background"
+    console.log("\n\nOTHER ROUTE\n\n");
+
+    res.render('index', { title: path, meta: meta, url: config.get("siteAddress") });
+  }
+);
 
 
 router.get('/work/:work_id', (req, res) => {
