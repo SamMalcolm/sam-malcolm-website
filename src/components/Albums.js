@@ -8,7 +8,7 @@ const Song = props => {
 
 	const onClick = () => handleClick(name);
 	return (
-		<div>
+		<div className="songMid">
 			<div className={(active) ? "songContainer" : "songContainer colourTransition"}>
 				<div
 					onClick={onClick}
