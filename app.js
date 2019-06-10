@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
 var adminRouter = require('./routes/admin');
 var app = express();
+const config = require('config');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,7 +27,7 @@ app.use('/admin', adminRouter);
 app.use('/api', apiRouter);
 
 console.log("connecting to DB");
-mongoose.connect('mongodb://localhost:27017/smm_db');
+mongoose.connect(config.get("mongoDB"));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
