@@ -1,4 +1,0 @@
-{
-	"siteAddress": "http://localhost:3000/",
-	"mongoDB": "mongodb://localhost:27017/smm_db"
-}
