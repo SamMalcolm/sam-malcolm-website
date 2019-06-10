@@ -5,7 +5,7 @@ node_modules/
 *.pdf
 /keys
 
-config/*
+
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
