@@ -56,7 +56,7 @@ const NavLink = (props) => {
 }
 
 const Nav = (props) => {
-    const [expanded, setExpanded] = useState(true);
+    const [expanded, setExpanded] = useState(false);
     let windowSize = useWindowSize(setExpanded);
 
     useEffect(() => {
@@ -68,7 +68,7 @@ const Nav = (props) => {
     }, [windowSize.innerWidth])
 
     const showMenu = () => {
-        if (windowSize.innerWidth < 1040) {
+        if (windowSize.innerWidth < 1041) {
             if (expanded) {
                 setExpanded(false);
             } else {

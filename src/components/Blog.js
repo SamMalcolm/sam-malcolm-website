@@ -25,7 +25,6 @@ export default function Blog() {
 
 	useEffect(() => {
 		axios.get('/api/blog').then((res) => {
-			console.log(res);
 			setBlogPosts(res.data);
 		})
 	}, []);
