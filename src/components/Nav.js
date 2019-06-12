@@ -47,7 +47,7 @@ const Wordmark = (props) => {
 
 const NavLink = (props) => {
     return (
-        <Link onClick={props.showMenu} to={props.path}>
+        <Link tabindex='0' onClick={props.showMenu} to={props.path}>
             <div className="nav-link">{props.name}
                 <div className="nav-link-underline" style={{ 'backgroundColor': props.highlight }}></div>
             </div>

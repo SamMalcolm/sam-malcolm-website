@@ -6,7 +6,7 @@ import moment from 'moment';
 const axios = require('axios');
 const Work = (props) => {
     return (
-        <Link to={"/work/" + props._id}>
+        <Link tabindex='0' to={"/work/" + props._id}>
             <div className="work">
                 <div className="workCover" style={{ 'backgroundImage': 'url(\'' + props.thumb_src + '\')' }} ></div>
                 <div className="workText">

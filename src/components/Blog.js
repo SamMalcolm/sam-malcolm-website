@@ -34,7 +34,7 @@ export default function Blog() {
 			<h1>Blog</h1>
 			{blogPosts.map((post) => {
 				return (
-					<Link to={"/blog/" + post._id}>
+					<Link tabindex='0' to={"/blog/" + post._id}>
 						<Post {...post} />
 					</Link>
 				)
