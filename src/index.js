@@ -111,7 +111,7 @@ const App = () => {
                                 document.querySelector("body").classList.toggle("large_text");
 
                             }} />
-
+                            <i>If an accessibility feature is missing that may help you access the site more easily please dont hesitate to contact me via the contact page and I will make it a priority.</i>
                         </div>
                     </Card>
                     <Card icon="assets/ui_images/australia.png">
