@@ -2,6 +2,16 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Container from './Container';
 import moment from 'moment';
+import {
+	FacebookShareButton,
+	LinkedinShareButton,
+	TwitterShareButton,
+	RedditShareButton,
+	FacebookIcon,
+	TwitterIcon,
+	RedditIcon,
+	LinkedinIcon,
+} from 'react-share';
 
 const BlogCoverPhoto = (props) => {
 	return (
@@ -33,6 +43,20 @@ const BlogPage = (props) => {
 		<div>
 			<BlogCoverPhoto title={post.title} date={post.date} src={post.feature_image} />
 			<Container>
+				<div className="shareContainer">
+					<FacebookShareButton url={window.location.href}>
+						<FacebookIcon size={32} round={true} />
+					</FacebookShareButton>
+					<TwitterShareButton url={window.location.href}>
+						<TwitterIcon size={32} round={true} />
+					</TwitterShareButton>
+					<RedditShareButton url={window.location.href} >
+						<RedditIcon size={32} round={true} />
+					</RedditShareButton>
+					<LinkedinShareButton url={window.location.href} >
+						<LinkedinIcon size={32} round={true} />
+					</LinkedinShareButton>
+				</div>
 				<div dangerouslySetInnerHTML={{ __html: post.markup }}>
 				</div>
 			</Container>

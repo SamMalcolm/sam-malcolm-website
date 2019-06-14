@@ -111,6 +111,7 @@ const App = () => {
                                 document.querySelector("body").classList.toggle("large_text");
 
                             }} />
+                            <br />
                             <i>If an accessibility feature is missing that may help you access the site more easily please dont hesitate to contact me via the contact page and I will make it a priority.</i>
                         </div>
                     </Card>

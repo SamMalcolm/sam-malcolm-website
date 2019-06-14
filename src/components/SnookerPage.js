@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { defaults, Doughnut, Line } from "react-chartjs-2";
 import Axios from 'axios';
-import { createSecretKey } from 'crypto';
 defaults.global.defaultFontColor = "#FFFFFF";
 
 let options = {

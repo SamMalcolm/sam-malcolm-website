@@ -51,19 +51,6 @@ export default function WorkPage(props) {
 					<i>{moment(work.date).format('ll')}</i>
 				</div>
 					: null}
-				<p>{work.long_description}</p>
-				{(work.type == 2) ?
-					<div>
-						<a href="#" style={{ 'borderColor': props.highlight }} className="smBtn" onClick={() => { setGalleryVisible(true) }}>View Gallery</a>
-						<ReactBnbGallery onClose={() => { setGalleryVisible(false) }} photos={work.data} show={galleryVisible} />
-					</div> : null}
-				{(work.type == 3) ?
-					<a href={work.src} style={{ 'borderColor': props.highlight }} className="smBtn" target="_blank">{"View " + work.name}</a>
-					: null}
-				{(work.codepen) ? <a href={work.codepen} style={{ 'borderColor': props.highlight }} className="smBtn" target="_blank">View on Codepen</a> : null}
-				{(work.github) ? <a href={work.github} style={{ 'borderColor': props.highlight }} className="smBtn" target="_blank">View on Github</a> : null}
-				{(work.markup) ?
-					<div dangerouslySetInnerHTML={{ __html: work.markup }}></div> : null}
 				<div className="shareContainer">
 					<FacebookShareButton url={window.location.href}>
 						<FacebookIcon size={32} round={true} />
@@ -78,6 +65,20 @@ export default function WorkPage(props) {
 						<LinkedinIcon size={32} round={true} />
 					</LinkedinShareButton>
 				</div>
+				<p>{work.long_description}</p>
+				{(work.type == 2) ?
+					<div>
+						<a href="#" style={{ 'borderColor': props.highlight }} className="smBtn" onClick={() => { setGalleryVisible(true) }}>View Gallery</a>
+						<ReactBnbGallery onClose={() => { setGalleryVisible(false) }} photos={work.data} show={galleryVisible} />
+					</div> : null}
+				{(work.type == 3) ?
+					<a href={work.src} style={{ 'borderColor': props.highlight }} className="smBtn" target="_blank">{"View " + work.name}</a>
+					: null}
+				{(work.codepen) ? <a href={work.codepen} style={{ 'borderColor': props.highlight }} className="smBtn" target="_blank">View on Codepen</a> : null}
+				{(work.github) ? <a href={work.github} style={{ 'borderColor': props.highlight }} className="smBtn" target="_blank">View on Github</a> : null}
+				{(work.markup) ?
+					<div dangerouslySetInnerHTML={{ __html: work.markup }}></div> : null}
+
 			</Container>
 		</div>
 	)
