@@ -88,7 +88,25 @@ export default function Contact(props) {
 			"active": false,
 			"colour": "#ff4500",
 			"embed": false
+		},
+		{
+			"service": "linked in",
+			"icon": "/assets/ui_images/social/linkedin.png",
+			"src": "https://www.reddit.com/user/sam_malcolm",
+			"active": false,
+			"colour": "#0077b5",
+			"embed": false
+		},
+		{
+			"service": "youtube",
+			"icon": "/assets/ui_images/social/youtube.png",
+			"src": "https://www.youtube.com/channel/UCOSAPdTi4ICVPW8AUzoHUMg",
+			"active": false,
+			"colour": "#ff0000",
+			"embed": false
 		}
+
+
 
 	]);
 

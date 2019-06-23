@@ -37,12 +37,19 @@ const App = () => {
                 <Switch>
                     <Route exact path="/"></Route>
                     <Route exact path="/appearances">
+
                         <Container>
+                            <Helmet>
+                                <title>Sam Malcolm Media | Live</title>
+                            </Helmet>
                             <Appearances highlight={highlightColour} />
                         </Container>
                     </Route>
                     <Route exact path="/snooker">
                         <div>
+                            <Helmet>
+                                <title>Sam Malcolm Media | Snooker</title>
+                            </Helmet>
                             <FullWidthBanner src="/assets/ui_images/snooker2.jpg" caption="Photo: David Heath" title="Snooker &amp; Billiards" />
                             <Container>
                                 <SnookerPage />
@@ -51,31 +58,58 @@ const App = () => {
                     </Route>
                     <Route exact path="/about">
                         <Container>
+                            <Helmet>
+                                <title>Sam Malcolm Media | About</title>
+                            </Helmet>
                             <About />
                         </Container>
                     </Route>
                     <Route exact path="/work">
-                        <Folio />
+                        <div>
+                            <Helmet>
+                                <title>Sam Malcolm Media | Work</title>
+                            </Helmet>
+                            <Folio />
+                        </div>
                     </Route>
                     <Route exact path="/work/:work_id" render={(props) => {
                         let workid = props.location.pathname.replace('/work/', '');
                         return (
-                            <WorkPage highlight={highlightColour} id={workid} />
+                            <div>
+                                <Helmet>
+                                    <title>Sam Malcolm Media | Work</title>
+                                </Helmet>
+                                <WorkPage highlight={highlightColour} id={workid} />
+                            </div>
                         )
                     }} />
 
                     <Route exact path="/blog/:blog_id" render={(props) => {
                         let blogid = props.location.pathname.replace('/blog/', '');
                         return (
-                            <BlogPage id={blogid} />
+                            <div>
+                                <Helmet>
+                                    <title>Sam Malcolm Media | Blog</title>
+                                </Helmet>
+                                <BlogPage id={blogid} />
+                            </div>
                         )
                     }} />
 
                     <Route exact path="/contact">
-                        <Contact highlight={highlightColour} />
+                        <div>
+                            <Helmet>
+                                <title>Sam Malcolm Media | Contact</title>
+                            </Helmet>
+
+                            <Contact highlight={highlightColour} />
+                        </div>
                     </Route>
                     <Route exact path="/film">
                         <div>
+                            <Helmet>
+                                <title>Sam Malcolm Media | Film</title>
+                            </Helmet>
                             <FullWidthBanner src="/assets/ui_images/film.jpg" title="Film Criticism" />
                             <Container>
                                 <FilmPage highlight={highlightColour} />
@@ -87,11 +121,19 @@ const App = () => {
                     </Route>
                     <Route exact path="/blog">
                         <Container>
+                            <Helmet>
+                                <title>Sam Malcolm Media | Blog</title>
+                            </Helmet>
                             <Blog />
                         </Container>
                     </Route>
                     <Route exact path="/music">
-                        <Albums highlight={highlightColour} />
+                        <div>
+                            <Helmet>
+                                <title>Sam Malcolm Media | Music</title>
+                            </Helmet>
+                            <Albums highlight={highlightColour} />
+                        </div>
                     </Route>
                 </Switch>
                 <div className="cardContainer">
