@@ -92,7 +92,7 @@ router.get('/albums', (req, res) => {
 
 // Get blog posts
 router.get('/works', (req, res) => {
-    workModel.find({}).where({ active: true }).sort({ 'date': 1 }).exec((err, docs) => {
+    workModel.find({}).where({ active: true }).sort({ 'date': -1 }).exec((err, docs) => {
         res.send(docs);
     })
 });
