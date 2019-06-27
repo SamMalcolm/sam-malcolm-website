@@ -96,7 +96,7 @@ const Albums = props => {
 	return (
 		<div className="albumsContainer">
 			<FullWidthBanner
-				caption="Photo: Joe Bloggs"
+				caption="Photo: Ian Malcolm"
 				backgroundPosition="top center"
 				src="/assets/ui_images/music.jpg"
 				title="Music"

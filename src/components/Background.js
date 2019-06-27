@@ -7,17 +7,20 @@ function Background(props) {
             "src": "/assets/backgrounds/flower.jpg",
             "highlight": "rgb(0,255,255)",
             "active": 1,
+            "position": "bottom right"
         },
         {
             "src": "/assets/backgrounds/toby.jpg",
             "highlight": "rgb(0,255,100)",
-            "active": 1
+            "active": 1,
+            "position": "top center"
 
         },
         {
             "src": "/assets/backgrounds/night_exp.jpg",
             "highlight": "#f99d23",
-            "active": 1
+            "active": 1,
+            "position": "center"
         },
     ]);
 
@@ -69,7 +72,8 @@ function Background(props) {
                         {
                             'backgroundImage': 'url(' + background.src + ')',
                             'opacity': background.active,
-                            'zIndex': (0 - 999 - backgrounds.indexOf(background))
+                            'zIndex': (0 - 999 - backgrounds.indexOf(background)),
+                            'backgroundPosition': background.position
                         }
                     }>
                     </div>
