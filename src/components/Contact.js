@@ -92,7 +92,7 @@ export default function Contact(props) {
 		{
 			"service": "linked in",
 			"icon": "/assets/ui_images/social/linkedin.png",
-			"src": "https://www.reddit.com/user/sam_malcolm",
+			"src": "https://www.linkedin.com/in/sam-malcolm/",
 			"active": false,
 			"colour": "#0077b5",
 			"embed": false
