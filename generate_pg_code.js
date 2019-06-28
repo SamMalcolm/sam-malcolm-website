@@ -28,5 +28,5 @@ fs.readdir(process.argv[2], (err, files) => {
 		obj.thumbnail = path + 'tm/' + files[i].slice(0, files[i].indexOf(".")) + '_tm' + ext;
 		pgarr.push(obj);
 	}
-	console.log(pgarr);
+	console.log(JSON.stringify(pgarr));
 })
