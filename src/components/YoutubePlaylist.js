@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
 
+const ytpMenuItem = (data) => {
+	return (
+		<div>
+			<img src={data.src} />
+			<h3>{data.title}</h3>
+			<i>{data.duration}</i>
+		</div>
+	)
+}
+
 export default function YoutubePlaylist() {
 
 	const [autoplay, setAutoplay] = useState(true);
@@ -47,12 +57,12 @@ export default function YoutubePlaylist() {
 		<div className="ytp_container">
 			<div className="ytp_header">
 				<h1>Video Title</h1>
-				{/*(channel) &&
+				{(typeof channel != "undefined" && typeof channel.items != "undefined") &&
 					<div>
-						<img src={channel.items.snipper.thumbnail.default.url} />
-						<h5>{channel.items.snippet.title}</h5>
+						<img src={channel.items[0].snippet.thumbnails.default.url} />
+						<h5>{channel.items[0].snippet.title}</h5>
 					</div>
-				*/}
+				}
 			</div>
 			<div className="ytp_video_theatre_container">
 				<div className="ytp_video_theatre">
@@ -63,7 +73,14 @@ export default function YoutubePlaylist() {
 			</div>
 			<div className="ytp_meta_container" >
 				<div className="ytp_video_menu">
-
+					<h3>Video Menu</h3>
+					{(playlist).map((item) => {
+						console.log("mapping playlist object");
+						console.log(item);
+						(
+							<ytpMenuItem title={item.snippet.title} src={item.snippet.thumbnails.default.url} duration="1s" />
+						)
+					})}
 				</div>
 				<div className="ytp_meta_data">
 					<h3>Video Transcript</h3>
