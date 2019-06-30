@@ -11,6 +11,7 @@ const parseString = require('xml2js').parseString;
 const moment = require('moment');
 const nodemailer = require('nodemailer');
 const nodemailer_transport = require("../keys/nodemailer_transport");
+
 /* GET home page. */
 
 // Get blog posts
@@ -210,6 +211,27 @@ router.post('/contact', (req, res) => {
         }
     })
 
+})
+
+router.get('/youtube/transcript/:video_id', async (req, res) => {
+    let tscript = await axios.get("http://video.google.com/timedtext?lang=en&v=" + response[i].contentDetails.videoId);
+    parseString(tscript, { trim: true }, (err, result) => {
+        if (err) {
+            console.log(err);
+            res.sendStatus(404);
+        }
+        console.log(result);
+        res.send(result);
+    });
+});
+
+router.get('/youtube/:playlist_id', async (req, res) => {
+    let response = {};
+    let googleData = await axios.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=' + req.params.playlist_id + '&key=' + googleApiKey);
+    response.items = googleData.data.items;
+    let channelInfo = await axios.get('https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UCOSAPdTi4ICVPW8AUzoHUMg&key=' + googleApiKey);
+    response.channel = channelInfo.data;
+    res.send(response);
 })
 
 module.exports = router;

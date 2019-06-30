@@ -20,7 +20,7 @@ import Albums from './components/Albums';
 import FilmPage from './components/FilmPage';
 import SnookerPage from './components/SnookerPage';
 import { Helmet } from "react-helmet";
-
+import YoutubePlaylist from './components/YoutubePlaylist';
 const App = () => {
 
     const [highlightColour, setHighlightColour] = useState('');
@@ -117,7 +117,7 @@ const App = () => {
                         </div>
                     </Route>
                     <Route exact path="/tutorials">
-                        <h2>Tutorials</h2>
+                        <YoutubePlaylist />
                     </Route>
                     <Route exact path="/blog">
                         <Container>

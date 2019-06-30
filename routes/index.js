@@ -105,6 +105,16 @@ router.get('/appearances', function (req, res, next) {
   res.render('index', { title: path, meta: meta, url: config.get("siteAddress") });
 });
 
+router.get('/tutorials', function (req, res, next) {
+  let path = "Sam Malcolm Media | Tutorials";
+  let meta = {};
+  meta.social_title = "Sam Malcolm Media | Tutoruals"
+  meta.feature_image = "assets/ui_images/social_share.png"
+  meta.social_description = "The contact page of Sam Malcolm's official website"
+  meta.feature_image_alt = "An image of Sam Malcolms logo, the outline of a cube with a gradient coloured background"
+  res.render('index', { title: path, meta: meta, url: config.get("siteAddress") });
+});
+
 
 router.get('/work/:work_id', (req, res) => {
   workModel.findById(req.params.work_id, (err, docs) => {
