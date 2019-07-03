@@ -28,7 +28,21 @@ export default function YoutubePlaylist(data) {
 	const [resources, setResources] = useState([]);
 	const [channel, setChannel] = useState([]);
 
+	const tryFetchTranscript = videoid => {
+		console.log("FETCHING TRANSCRIPT " + videoid);
+		Axios.get("http://video.google.com/timedtext?lang=en&v=" + videoid).then(response => {
+			if (!response.data) {
+				console.log("NO TRANSCRIPT AVAILABLE");
+			} else {
+				// HANDLE TRANSCIRPT
+				console.log(response.data);
+			}
+		})
+	}
+
 	const playVideo = (index) => {
+		console.log("PLAY VIDEO " + index);
+		tryFetchTranscript(playlist[index].contentDetails.videoId);
 		setTitle(playlist[index].snippet.title);
 		setDescription(playlist[index].snippet.description);
 		player.loadVideoById(playlist[index].contentDetails.videoId);
