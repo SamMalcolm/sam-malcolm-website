@@ -15,7 +15,7 @@ const YtpMenuItem = (data) => {
 	)
 }
 
-export default function YoutubePlaylist() {
+export default function YoutubePlaylist(data) {
 
 	const [autoplay, setAutoplay] = useState(true);
 	const [playlist, setPlaylist] = useState([]);
@@ -60,7 +60,8 @@ export default function YoutubePlaylist() {
 
 	useEffect(() => {
 		console.log("USE EFFECT");
-		Axios.get('/api/youtube/PLT_xscTFmzgrH4D4BnIa6dru_iLZRCYDR').then((response) => {
+		// Axios.get('/api/youtube/PLT_xscTFmzgrH4D4BnIa6dru_iLZRCYDR').then((response) => {
+		Axios.get('/api/tutorial/' + data.id).then((response) => {
 			setPlaylist(response.data.items);
 			setChannel(response.data.channel);
 			var tag = document.createElement('script');

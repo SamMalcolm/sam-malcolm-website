@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var workModel = require('../models/work');
 const blogModel = require('../models/blog');
 const config = require('config');
-
+const tutorialModel = require('../models/tutorials');
 /* GET home page. */
 router.get('/', function (req, res, next) {
   let path = "Sam Malcolm Media";
@@ -108,11 +108,24 @@ router.get('/appearances', function (req, res, next) {
 router.get('/tutorials', function (req, res, next) {
   let path = "Sam Malcolm Media | Tutorials";
   let meta = {};
-  meta.social_title = "Sam Malcolm Media | Tutoruals"
+  meta.social_title = "Sam Malcolm Media | Tutorials"
   meta.feature_image = "assets/ui_images/social_share.png"
   meta.social_description = "The contact page of Sam Malcolm's official website"
   meta.feature_image_alt = "An image of Sam Malcolms logo, the outline of a cube with a gradient coloured background"
   res.render('index', { title: path, meta: meta, url: config.get("siteAddress") });
+});
+
+router.get('/tutorials/:id', function (req, res, next) {
+  tutorialModel.find({ 'ytid': req.params.id }, (err, docs) => {
+    let path = "Sam Malcolm Media | " + docs.name;
+    let meta = {};
+    meta.social_title = path;
+    meta.feature_image = docs.feature_image;
+    meta.social_description = docs.description;
+    meta.feature_image_alt = docs.feature_image_alt;
+    res.render('index', { title: path, meta: meta, url: config.get("siteAddress") });
+  })
+
 });
 
 
