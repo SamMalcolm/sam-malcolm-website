@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
+import parseString from 'xml2js';
 
 const YtpMenuItem = (data) => {
 	return (
@@ -35,7 +36,13 @@ export default function YoutubePlaylist(data) {
 				console.log("NO TRANSCRIPT AVAILABLE");
 			} else {
 				// HANDLE TRANSCIRPT
-				console.log(response.data);
+				console.log("PARSING TRASNSCRIPT XML");
+				parseString.parseString(response.data, (err, result) => {
+					if (err) {
+						console.log(err);
+					}
+					setTranscript(result.transcript.text);
+				});
 			}
 		})
 	}
@@ -134,10 +141,18 @@ export default function YoutubePlaylist(data) {
 								<span className="slider round"></span>
 							</label>
 						</div>
-						{(transcript) &&
+						{(transcript && transcript != []) &&
 							<div>
 								<h3>Video Transcript</h3>
-								<span className="ytp_transcript"></span>
+								<span className="ytp_transcript">
+									{(transcript).map(script => {
+										return (
+											<span data-start={script.$.start} data-duration={script.$.dur}>
+												{" " + script._ + " "}
+											</span>
+										)
+									})}
+								</span>
 							</div>
 						}
 
