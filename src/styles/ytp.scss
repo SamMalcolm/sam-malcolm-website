@@ -235,3 +235,22 @@ input:checked+.slider::before {
 .slider.round::before {
      border-radius: 50%;
 }
+
+.ytp_transcript span {
+     cursor: pointer !important;
+     transition: 0.2s;
+     padding: 3px;
+}
+
+.ytp_transcript span:hover {
+     background: rgba(0, 0, 0, 0.603);
+}
+
+.ytp_active {
+     background: rgba(253, 255, 141, 0.59);
+     transition: 0.2s;
+
+     &:hover {
+          background: rgba(253, 255, 141, 0.719);
+     }
+}

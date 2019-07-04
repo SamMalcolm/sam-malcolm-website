@@ -34,6 +34,7 @@ export default function YoutubePlaylist(data) {
 		Axios.get("http://video.google.com/timedtext?lang=en&v=" + videoid).then(response => {
 			if (!response.data) {
 				console.log("NO TRANSCRIPT AVAILABLE");
+				setTranscript([]);
 			} else {
 				// HANDLE TRANSCIRPT
 				console.log("PARSING TRASNSCRIPT XML");
@@ -41,15 +42,45 @@ export default function YoutubePlaylist(data) {
 					if (err) {
 						console.log(err);
 					}
+					for (let i = 0; i < result.transcript.text.length; i++) {
+						result.transcript.text[i].active = false;
+					}
 					setTranscript(result.transcript.text);
 				});
 			}
 		})
 	}
 
+	const handleTranscriptClick = e => {
+		if (player) {
+			player.seekTo(e.target.getAttribute("data-start"));
+			player.playVideo();
+		}
+	}
+
+	const highlightCurrentTranscript = (player) => {
+		console.log("HIGHLIGHT CURRENT SCRIPT");
+		let current_time = player.getCurrentTime();
+		let tcopy = transcript;
+		console.log(tcopy);
+		let current_script = tcopy.filter((script) => {
+			return script.$.start > current_time;
+		});
+		current_script = current_script[0];
+		console.log(current_script);
+		for (let i = 0; i < tcopy.length; i++) {
+			tcopy[i].active = false;
+		}
+		let activeIndex = tcopy.indexOf(current_script);
+		console.log(activeIndex);
+		tcopy[activeIndex].active = true;
+		setTranscript(tcopy);
+	}
+
 	const playVideo = (index) => {
 		console.log("PLAY VIDEO " + index);
 		tryFetchTranscript(playlist[index].contentDetails.videoId);
+		setInterval(highlightCurrentTranscript(player), 300);
 		setTitle(playlist[index].snippet.title);
 		setDescription(playlist[index].snippet.description);
 		player.loadVideoById(playlist[index].contentDetails.videoId);
@@ -59,6 +90,7 @@ export default function YoutubePlaylist(data) {
 
 	const onPlayerStateChange = () => {
 		if (player.getPlayerState() == 0 && autoplay) {
+			clearInterval(videoTimer);
 			let data = player.getVideoData();
 			let currentVid = playlist.filter((item) => {
 				return item.contentDetails.videoId == data.video_id;
@@ -68,6 +100,7 @@ export default function YoutubePlaylist(data) {
 			playVideo(index);
 		}
 	}
+
 
 	window.onYouTubeIframeAPIReady = () => {
 		player = new YT.Player('player', {
@@ -147,7 +180,7 @@ export default function YoutubePlaylist(data) {
 								<span className="ytp_transcript">
 									{(transcript).map(script => {
 										return (
-											<span data-start={script.$.start} data-duration={script.$.dur}>
+											<span key={script.$.start} onClick={handleTranscriptClick} classNamee={(script.active) ? "active" : null} data-start={script.$.start} data-duration={script.$.dur}>
 												{" " + script._ + " "}
 											</span>
 										)
