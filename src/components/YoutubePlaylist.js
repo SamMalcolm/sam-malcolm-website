@@ -164,7 +164,7 @@ export default function YoutubePlaylist(data) {
 					}
 					<div className="ytp_theme_switch">
 						<span>Dark Theme: </span>
-						<input onChange={e => { setDarkTheme(e.target.checked) }} type="checkbox" checked={(darkTheme) ? "true" : "false"} />
+						<input onChange={e => { setDarkTheme(e.target.checked) }} type="checkbox" />
 					</div>
 				</div>
 				<div className="ytp_video_theatre_container">
