@@ -239,7 +239,7 @@ input:checked+.slider::before {
 .ytp_transcript span {
      cursor: pointer !important;
      transition: 0.2s;
-     padding: 3px;
+     padding: 1px;
 }
 
 .ytp_transcript span:hover {
@@ -248,9 +248,9 @@ input:checked+.slider::before {
 
 .ytp_active {
      background: rgba(253, 255, 141, 0.59);
-     transition: 0.2s;
+     border-radius: 5px;
 
      &:hover {
-          background: rgba(253, 255, 141, 0.719);
+          background: rgba(253, 255, 141, 0.719) !important;
      }
 }

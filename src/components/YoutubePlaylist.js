@@ -28,26 +28,31 @@ export default function YoutubePlaylist(data) {
 	const [transcript, setTranscript] = useState([]);
 	const [resources, setResources] = useState([]);
 	const [channel, setChannel] = useState([]);
+	const [playerReady, setPlayerReady] = useState(false);
 
 	const tryFetchTranscript = videoid => {
-		console.log("FETCHING TRANSCRIPT " + videoid);
-		Axios.get("http://video.google.com/timedtext?lang=en&v=" + videoid).then(response => {
-			if (!response.data) {
-				console.log("NO TRANSCRIPT AVAILABLE");
-				setTranscript([]);
-			} else {
-				// HANDLE TRANSCIRPT
-				console.log("PARSING TRASNSCRIPT XML");
-				parseString.parseString(response.data, (err, result) => {
-					if (err) {
-						console.log(err);
-					}
-					for (let i = 0; i < result.transcript.text.length; i++) {
-						result.transcript.text[i].active = false;
-					}
-					setTranscript(result.transcript.text);
-				});
-			}
+		return new Promise((resolve, reject) => {
+			console.log("FETCHING TRANSCRIPT " + videoid);
+			Axios.get("http://video.google.com/timedtext?lang=en&v=" + videoid).then(response => {
+				if (!response.data) {
+					console.log("NO TRANSCRIPT AVAILABLE");
+					setTranscript([]);
+					resolve(false);
+				} else {
+					// HANDLE TRANSCIRPT
+					console.log("PARSING TRASNSCRIPT XML");
+					parseString.parseString(response.data, (err, result) => {
+						if (err) {
+							console.log(err);
+						}
+						for (let i = 0; i < result.transcript.text.length; i++) {
+							result.transcript.text[i].active = false;
+						}
+						setTranscript(result.transcript.text);
+						resolve(true);
+					});
+				}
+			})
 		})
 	}
 
@@ -58,39 +63,54 @@ export default function YoutubePlaylist(data) {
 		}
 	}
 
-	const highlightCurrentTranscript = (player) => {
-		console.log("HIGHLIGHT CURRENT SCRIPT");
-		let current_time = player.getCurrentTime();
-		let tcopy = transcript;
-		console.log(tcopy);
-		let current_script = tcopy.filter((script) => {
-			return script.$.start > current_time;
-		});
-		current_script = current_script[0];
-		console.log(current_script);
-		for (let i = 0; i < tcopy.length; i++) {
-			tcopy[i].active = false;
+	useEffect(() => {
+		var tscript_timer = setInterval(() => {
+			if (typeof player != "undefined" && transcript && transcript != [] && playerReady) {
+				let tcopy = transcript.map((script) => {
+					return script
+				});
+				let current_time = player.getCurrentTime();
+				if (current_time && tcopy) {
+					let current_script = tcopy.filter((script) => {
+						let startTime = parseFloat(script.$.start);
+						let duration = parseFloat(script.$.dur);
+						return startTime < current_time && current_time < (startTime + duration);
+					});
+					if (current_script.length) {
+						let activeIndex = tcopy.indexOf(current_script[0]);
+						if (!tcopy[activeIndex].active) {
+							console.log("UPDATING ACTIVE TRANSCRIPT");
+							for (let i = 0; i < tcopy.length; i++) {
+								tcopy[i].active = false;
+							}
+							tcopy[activeIndex].active = true;
+							setTranscript(tcopy);
+						}
+					}
+				}
+			}
+		}, 300);
+		return () => {
+			clearInterval(tscript_timer);
 		}
-		let activeIndex = tcopy.indexOf(current_script);
-		console.log(activeIndex);
-		tcopy[activeIndex].active = true;
-		setTranscript(tcopy);
-	}
+	}, [transcript])
 
 	const playVideo = (index) => {
 		console.log("PLAY VIDEO " + index);
 		tryFetchTranscript(playlist[index].contentDetails.videoId);
-		setInterval(highlightCurrentTranscript(player), 300);
 		setTitle(playlist[index].snippet.title);
 		setDescription(playlist[index].snippet.description);
 		player.loadVideoById(playlist[index].contentDetails.videoId);
+		player.playVideo();
 	}
 
-	const onPlayerReady = () => { player.playVideo(); }
+	const onPlayerReady = () => {
+		setPlayerReady(true);
+		playVideo(0);
+	}
 
 	const onPlayerStateChange = () => {
 		if (player.getPlayerState() == 0 && autoplay) {
-			clearInterval(videoTimer);
 			let data = player.getVideoData();
 			let currentVid = playlist.filter((item) => {
 				return item.contentDetails.videoId == data.video_id;
@@ -100,7 +120,6 @@ export default function YoutubePlaylist(data) {
 			playVideo(index);
 		}
 	}
-
 
 	window.onYouTubeIframeAPIReady = () => {
 		player = new YT.Player('player', {
@@ -112,7 +131,6 @@ export default function YoutubePlaylist(data) {
 				'onStateChange': onPlayerStateChange
 			}
 		});
-		playVideo(0);
 	}
 
 	useEffect(() => {
@@ -128,6 +146,7 @@ export default function YoutubePlaylist(data) {
 				firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 			} else {
 				onYouTubeIframeAPIReady();
+				onPlayerReady();
 			}
 		})
 	}, [])
@@ -180,7 +199,7 @@ export default function YoutubePlaylist(data) {
 								<span className="ytp_transcript">
 									{(transcript).map(script => {
 										return (
-											<span key={script.$.start} onClick={handleTranscriptClick} classNamee={(script.active) ? "active" : null} data-start={script.$.start} data-duration={script.$.dur}>
+											<span key={script.$.start} onClick={handleTranscriptClick} className={(script.active) ? "ytp_active" : null} data-start={script.$.start} data-duration={script.$.dur}>
 												{" " + script._ + " "}
 											</span>
 										)
