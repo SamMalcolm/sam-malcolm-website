@@ -5,7 +5,7 @@ const About = () => {
         <div className="bio_container">
             <div className="bio_img">
                 <div className="avatar">
-                    <img src="/assets/profile/small_me_for_site.jpg" />
+                    <img src="/assets/profile/headshot.jpg" />
                 </div>
             </div>
             <div className="bio_body">
