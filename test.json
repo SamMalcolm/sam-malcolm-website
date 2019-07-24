@@ -1,0 +1,1023 @@
+{
+	"name": "Anaheim, California",
+	"description": "Photos from spending the day at Disneyland Park in Anaheim.",
+	"data": [
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1378.jpg",
+			"number": 0,
+			"caption": "Sam_1378",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1378_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1379.jpg",
+			"number": 1,
+			"caption": "Sam_1379",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1379_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1391.jpg",
+			"number": 2,
+			"caption": "Sam_1391",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1391_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1394.jpg",
+			"number": 3,
+			"caption": "Sam_1394",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1394_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1398.jpg",
+			"number": 4,
+			"caption": "Sam_1398",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1398_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1407.jpg",
+			"number": 5,
+			"caption": "Sam_1407",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1407_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1414.jpg",
+			"number": 6,
+			"caption": "Sam_1414",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1414_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1418.jpg",
+			"number": 7,
+			"caption": "Sam_1418",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1418_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1434.jpg",
+			"number": 8,
+			"caption": "Sam_1434",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1434_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1448.jpg",
+			"number": 9,
+			"caption": "Sam_1448",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1448_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1480.jpg",
+			"number": 10,
+			"caption": "Sam_1480",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1480_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1488.jpg",
+			"number": 11,
+			"caption": "Sam_1488",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1488_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1499.jpg",
+			"number": 12,
+			"caption": "Sam_1499",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1499_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1501.jpg",
+			"number": 13,
+			"caption": "Sam_1501",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1501_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1508.jpg",
+			"number": 14,
+			"caption": "Sam_1508",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1508_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1513.jpg",
+			"number": 15,
+			"caption": "Sam_1513",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1513_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1529.jpg",
+			"number": 16,
+			"caption": "Sam_1529",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1529_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1544.jpg",
+			"number": 17,
+			"caption": "Sam_1544",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1544_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1603.jpg",
+			"number": 18,
+			"caption": "Sam_1603",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1603_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1616.jpg",
+			"number": 19,
+			"caption": "Sam_1616",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1616_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1628.jpg",
+			"number": 20,
+			"caption": "Sam_1628",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1628_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1650.jpg",
+			"number": 21,
+			"caption": "Sam_1650",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1650_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1659.jpg",
+			"number": 22,
+			"caption": "Sam_1659",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1659_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1663.jpg",
+			"number": 23,
+			"caption": "Sam_1663",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1663_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1683.jpg",
+			"number": 24,
+			"caption": "Sam_1683",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1683_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1712.jpg",
+			"number": 25,
+			"caption": "Sam_1712",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1712_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1725.jpg",
+			"number": 26,
+			"caption": "Sam_1725",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1725_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1730.jpg",
+			"number": 27,
+			"caption": "Sam_1730",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1730_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1768.jpg",
+			"number": 28,
+			"caption": "Sam_1768",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1768_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1799.jpg",
+			"number": 29,
+			"caption": "Sam_1799",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1799_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1811.jpg",
+			"number": 30,
+			"caption": "Sam_1811",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1811_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1814.jpg",
+			"number": 31,
+			"caption": "Sam_1814",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1814_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1844.jpg",
+			"number": 32,
+			"caption": "Sam_1844",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1844_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1856.jpg",
+			"number": 33,
+			"caption": "Sam_1856",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1856_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1863.jpg",
+			"number": 34,
+			"caption": "Sam_1863",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1863_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1877.jpg",
+			"number": 35,
+			"caption": "Sam_1877",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1877_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1882.jpg",
+			"number": 36,
+			"caption": "Sam_1882",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1882_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1884.jpg",
+			"number": 37,
+			"caption": "Sam_1884",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1884_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1912.jpg",
+			"number": 38,
+			"caption": "Sam_1912",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1912_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1932.jpg",
+			"number": 39,
+			"caption": "Sam_1932",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1932_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/anaheim_sm/SAM_1949.jpg",
+			"number": 40,
+			"caption": "Sam_1949",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1949_tm.jpg"
+		}
+	],
+	"type": 2,
+	"date": {
+		"$date": "2019-07-15T16:26:37.201Z"
+	},
+	"thumb_src": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1616_tm.jpg",
+	"feature_image": "/assets/works/image_galleries/anaheim_sm/tm/SAM_1616_tm.jpg",
+	"social_title": "Anaheim, California",
+	"social_description": "Photos from spending the day at Disneyland Park in Anaheim.",
+	"feature_image_alt": "Photo of a boy in R2D2 Mickey Mouse ears eagerly awaiting the Disneyland parade.",
+	"active": true,
+	"long_description": "Photos from spending the day at Disneyland Park in Anaheim"
+}
+ 
+ {
+	"data": [
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_1315.jpg",
+			"number": 1,
+			"caption": "Sam_1315",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_1315_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_1329.jpg",
+			"number": 2,
+			"caption": "Sam_1329",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_1329_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_1352.jpg",
+			"number": 3,
+			"caption": "Sam_1352",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_1352_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_1357.jpg",
+			"number": 4,
+			"caption": "Sam_1357",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_1357_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_1366.jpg",
+			"number": 5,
+			"caption": "Sam_1366",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_1366_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_1954.jpg",
+			"number": 6,
+			"caption": "Sam_1954",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_1954_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_1962.jpg",
+			"number": 7,
+			"caption": "Sam_1962",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_1962_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_1966.jpg",
+			"number": 8,
+			"caption": "Sam_1966",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_1966_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_1972.jpg",
+			"number": 9,
+			"caption": "Sam_1972",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_1972_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_1973.jpg",
+			"number": 10,
+			"caption": "Sam_1973",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_1973_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_1975.jpg",
+			"number": 11,
+			"caption": "Sam_1975",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_1975_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_1977.jpg",
+			"number": 12,
+			"caption": "Sam_1977",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_1977_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_1978.jpg",
+			"number": 13,
+			"caption": "Sam_1978",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_1978_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_2285.jpg",
+			"number": 14,
+			"caption": "Sam_2285",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_2285_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_2291.jpg",
+			"number": 15,
+			"caption": "Sam_2291",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_2291_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_2292.jpg",
+			"number": 16,
+			"caption": "Sam_2292",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_2292_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_2333.jpg",
+			"number": 17,
+			"caption": "Sam_2333",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_2333_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_2356.jpg",
+			"number": 18,
+			"caption": "Sam_2356",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_2356_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_2384.jpg",
+			"number": 19,
+			"caption": "Sam_2384",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_2384_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_2386.jpg",
+			"number": 20,
+			"caption": "Sam_2386",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_2386_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_2394.jpg",
+			"number": 21,
+			"caption": "Sam_2394",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_2394_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/sm_venice_malibu/SAM_2408.jpg",
+			"number": 22,
+			"caption": "Sam_2408",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_2408_tm.jpg"
+		}
+	],
+	"type": 2,
+	"name": "Malibu, Santa Monica and Venice",
+	"description": "Photos taken from the famous beach locations around California.",
+	"date": {
+		"$date": "2019-07-16T16:26:37.201Z"
+	},
+	"thumb_src": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_2356_tm.jpg",
+	"feature_image": "/assets/works/image_galleries/sm_venice_malibu/tm/SAM_2356_tm.jpg",
+	"social_title": "Malibu, Santa Monica and Venice",
+	"social_description": "Photos taken from the famous beach locations around California.",
+	"feature_image_alt": "Skateboarder performing an invert trick on the bowls at the Venice Beach skatepark",
+	"active": true,
+	"long_description": "Photos taken from the famous beach locations around California."
+}
+
+
+
+
+
+{
+	"_id": {
+		"$oid": "5ce47d9c40b392b189eb7d7a"
+	},
+	"name": "Long Beach, California",
+	"description": "Photos I took on my colleague Jayde and I's trip to Long Beach California for Instructure Con.",
+	"data": [
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0096.jpg",
+			"number": 1,
+			"caption": "Sam_0096",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0096_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0102.jpg",
+			"number": 2,
+			"caption": "Sam_0102",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0102_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0124.jpg",
+			"number": 3,
+			"caption": "Sam_0124",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0124_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0134.jpg",
+			"number": 4,
+			"caption": "Sam_0134",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0134_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0140.jpg",
+			"number": 5,
+			"caption": "Sam_0140",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0140_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0146.jpg",
+			"number": 6,
+			"caption": "Sam_0146",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0146_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0178.jpg",
+			"number": 7,
+			"caption": "Sam_0178",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0178_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0183.jpg",
+			"number": 8,
+			"caption": "Sam_0183",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0183_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0189.jpg",
+			"number": 9,
+			"caption": "Sam_0189",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0189_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0253.jpg",
+			"number": 10,
+			"caption": "Sam_0253",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0253_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0304.jpg",
+			"number": 11,
+			"caption": "Sam_0304",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0304_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0309.jpg",
+			"number": 12,
+			"caption": "Sam_0309",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0309_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0343.jpg",
+			"number": 13,
+			"caption": "Sam_0343",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0343_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0347.jpg",
+			"number": 14,
+			"caption": "Sam_0347",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0347_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0387.jpg",
+			"number": 15,
+			"caption": "Sam_0387",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0387_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0408.jpg",
+			"number": 16,
+			"caption": "Sam_0408",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0408_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0415.jpg",
+			"number": 17,
+			"caption": "Sam_0415",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0415_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0418.jpg",
+			"number": 18,
+			"caption": "Sam_0418",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0418_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0446.jpg",
+			"number": 19,
+			"caption": "Sam_0446",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0446_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0451.jpg",
+			"number": 20,
+			"caption": "Sam_0451",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0451_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0468.jpg",
+			"number": 21,
+			"caption": "Sam_0468",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0468_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0486.jpg",
+			"number": 22,
+			"caption": "Sam_0486",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0486_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0493.jpg",
+			"number": 23,
+			"caption": "Sam_0493",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0493_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0502.jpg",
+			"number": 24,
+			"caption": "Sam_0502",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0502_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0509.jpg",
+			"number": 25,
+			"caption": "Sam_0509",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0509_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0677.jpg",
+			"number": 26,
+			"caption": "Sam_0677",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0677_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0689.jpg",
+			"number": 27,
+			"caption": "Sam_0689",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0689_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0724.jpg",
+			"number": 28,
+			"caption": "Sam_0724",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0724_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0727.jpg",
+			"number": 29,
+			"caption": "Sam_0727",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0727_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0738.jpg",
+			"number": 30,
+			"caption": "Sam_0738",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0738_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0752.jpg",
+			"number": 31,
+			"caption": "Sam_0752",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0752_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0766.jpg",
+			"number": 32,
+			"caption": "Sam_0766",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0766_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0786.jpg",
+			"number": 33,
+			"caption": "Sam_0786",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0786_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0791.jpg",
+			"number": 34,
+			"caption": "Sam_0791",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0791_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0801.jpg",
+			"number": 35,
+			"caption": "Sam_0801",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0801_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0809.jpg",
+			"number": 36,
+			"caption": "Sam_0809",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0809_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0813.jpg",
+			"number": 37,
+			"caption": "Sam_0813",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0813_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0830.jpg",
+			"number": 38,
+			"caption": "Sam_0830",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0830_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/SAM_0838.jpg",
+			"number": 39,
+			"caption": "Sam_0838",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0838_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/long_beach_day_1/pano.jpg",
+			"number": 40,
+			"caption": "Pano",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/long_beach_day_1/tm/pano_tm.jpg"
+		}
+	],
+	"type": 2,
+	"date": {
+		"$date": "2019-07-07T16:26:37.201Z"
+	},
+	"thumb_src": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0801_tm.jpg",
+	"feature_image": "/assets/works/image_galleries/long_beach_day_1/tm/SAM_0801_tm.jpg",
+	"social_title": "Long Beach, California",
+	"social_description": "Photos I took on my colleague Jayde and I's trip to Long Beach California for Instructure Con.",
+	"feature_image_alt": "an imagee of a lighthouse on the water during sunset in long beach CA",
+	"active": true,
+	"long_description": "This is just the start of my trip to California with my colleague Jayde. We are over here for the Instructure Con, ed tech conference which is held at the Long Beach convention centre. We arrived here a few days prior to the con starting to allow us to do some fun stuff and get over the Jet lag before the conference. These are some photos from the first 2 days in California. Ps. Driving on the wrong side of the road is still freaking me out.."
+}
+
+
+
+
+
+{
+	"_id": {
+		"$oid": "5d2ab014e7179a26a97031a3"
+	},
+	"name": "Hollywood and Beverly Hills",
+	"description": "Photos I took spending time around Hollywood, and Beverly Hills",
+	"data": [
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_0894.jpg",
+			"number": 1,
+			"caption": "Sam_0894",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_0894_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_0900.jpg",
+			"number": 2,
+			"caption": "Sam_0900",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_0900_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_0937.jpg",
+			"number": 3,
+			"caption": "Sam_0937",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_0937_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_0945.jpg",
+			"number": 4,
+			"caption": "Sam_0945",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_0945_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_0952.jpg",
+			"number": 5,
+			"caption": "Sam_0952",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_0952_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_0976.jpg",
+			"number": 6,
+			"caption": "Sam_0976",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_0976_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_0980.jpg",
+			"number": 7,
+			"caption": "Sam_0980",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_0980_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1011.jpg",
+			"number": 8,
+			"caption": "Sam_1011",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1011_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1014.jpg",
+			"number": 9,
+			"caption": "Sam_1014",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1014_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1015.jpg",
+			"number": 10,
+			"caption": "Sam_1015",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1015_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1084.jpg",
+			"number": 11,
+			"caption": "Sam_1084",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1084_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1112.jpg",
+			"number": 12,
+			"caption": "Sam_1112",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1112_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1117.jpg",
+			"number": 13,
+			"caption": "Sam_1117",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1117_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1119.jpg",
+			"number": 14,
+			"caption": "Sam_1119",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1119_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1123.jpg",
+			"number": 15,
+			"caption": "Sam_1123",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1123_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1126.jpg",
+			"number": 16,
+			"caption": "Sam_1126",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1126_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1130.jpg",
+			"number": 17,
+			"caption": "Sam_1130",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1130_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1146.jpg",
+			"number": 18,
+			"caption": "Sam_1146",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1146_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1154.jpg",
+			"number": 19,
+			"caption": "Sam_1154",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1154_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1158.jpg",
+			"number": 20,
+			"caption": "Sam_1158",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1158_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1188.jpg",
+			"number": 21,
+			"caption": "Sam_1188",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1188_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1192.jpg",
+			"number": 22,
+			"caption": "Sam_1192",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1192_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1194.jpg",
+			"number": 23,
+			"caption": "Sam_1194",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1194_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1201.jpg",
+			"number": 24,
+			"caption": "Sam_1201",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1201_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1238.jpg",
+			"number": 25,
+			"caption": "Sam_1238",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1238_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1242.jpg",
+			"number": 26,
+			"caption": "Sam_1242",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1242_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1249.jpg",
+			"number": 27,
+			"caption": "Sam_1249",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1249_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1252.jpg",
+			"number": 28,
+			"caption": "Sam_1252",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1252_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1263.jpg",
+			"number": 29,
+			"caption": "Sam_1263",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1263_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1299.jpg",
+			"number": 30,
+			"caption": "Sam_1299",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1299_tm.jpg"
+		},
+		{
+			"photo": "/assets/works/image_galleries/hollywood_sm/SAM_1304.jpg",
+			"number": 31,
+			"caption": "Sam_1304",
+			"subCaption": "By Sam Malcolm",
+			"thumbnail": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1304_tm.jpg"
+		}
+	],
+	"type": 2,
+	"date": {
+		"$date": "2019-07-13T16:26:37.201Z"
+	},
+	"thumb_src": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1194_tm.jpg",
+	"feature_image": "/assets/works/image_galleries/hollywood_sm/tm/SAM_1194_tm.jpg",
+	"social_title": "Hollywood and Beverly Hills",
+	"social_description": "Photos I took spending time around Hollywood, and Beverly Hills.",
+	"feature_image_alt": "A cross walk sign in the US showing a red hand indicating not to walk",
+	"active": true,
+	"long_description": "Photos I took spending time around Hollywood, and Beverly Hills."
+}
