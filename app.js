@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
 var adminRouter = require('./routes/admin');
+const session = require('express-session');
+const MemoryStore = require('memorystore')(session);
 var app = express();
 const config = require('config');
 
@@ -22,6 +24,15 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+    store: new MemoryStore({
+        checkPeriod: 86400000
+    }),
+    secret: 'Tj4W;h4KqU4AAGYieKPLH}Jh',
+    cookie: { maxAge: 86400000 },
+    resave: false,
+    saveUninitialized: false
+}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -35,6 +46,14 @@ mongoose.connect(config.get("mongoDB"));
 app.use(function (req, res, next) {
     next(createError(404));
 });
+
+
+
+// app.dynamicHelpers({
+//     session: function (req, res) {
+//         return req.session;
+//     }
+// });
 
 // error handler
 app.use(function (err, req, res, next) {
