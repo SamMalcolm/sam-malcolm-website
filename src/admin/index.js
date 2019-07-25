@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import CRUDAbout from './components/CRUDAbout';
 import CRUDBlog from './components/CRUDBlog';
+import CRUDWorks from './components/CRUDWorks';
 
 const Admin = () => {
 	return (
@@ -19,6 +20,9 @@ const Admin = () => {
 					</Route>
 					<Route exact path="/admin/manage/blog">
 						<CRUDBlog />
+					</Route>
+					<Route exact path="/admin/manage/works">
+						<CRUDWorks />
 					</Route>
 				</Switch>
 			</div>
