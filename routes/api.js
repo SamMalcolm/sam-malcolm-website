@@ -11,6 +11,7 @@ const parseString = require('xml2js').parseString;
 const moment = require('moment');
 const nodemailer = require('nodemailer');
 const nodemailer_transport = require("../keys/nodemailer_transport");
+const util = require('../util/util');
 /* GET home page. */
 
 // Get blog posts
@@ -31,27 +32,27 @@ router.get('/blog/:id', (req, res) => {
 });
 
 // Post new blog post
-// router.post('/blog', (req, res) => {
-//     console.log(req.body);
-//     let blog = new blogModel({
-//         title: req.body.title,
-//         content: req.body.content,
-//         date: new Date(),
-//         author: req.body.author,
-//         social_description: req.body.social_description,
-//         feature_image: req.body.feature_image,
-//         social_title: req.body.title,
-//     });
-//     blog.save();
-//     res.json(blog);
-// });
+router.post('/blog', util.isAuthenticated, (req, res) => {
+    console.log(req.body);
+    let blog = new blogModel({
+        title: req.body.title,
+        content: req.body.content,
+        date: new Date(),
+        author: req.body.author,
+        social_description: req.body.social_description,
+        feature_image: req.body.feature_image,
+        social_title: req.body.title,
+    });
+    blog.save();
+    res.json(blog);
+});
 
 // Delete record by ID
-// router.delete('/blog', (req, res) => {
-//     blogModel.deleteOne({ _id: req.body.id }, (err, resp) => {
-//         res.send(resp);
-//     })
-// })
+router.delete('/blog', util.isAuthenticated, (req, res) => {
+    blogModel.deleteOne({ _id: req.body.id }, (err, resp) => {
+        res.send(resp);
+    })
+})
 
 // Get blog posts
 router.get('/appearances', (req, res) => {
@@ -60,28 +61,28 @@ router.get('/appearances', (req, res) => {
     })
 });
 
-// Post new blog post
-// router.post('/appearances', (req, res) => {
-//     console.log(req.body);
-//     let appearance = new appearanceModel({
-//         date: req.body.date,
-//         event: req.body.event,
-//         name: req.body.name,
-//         location: req.body.location,
-//         tickets: req.body.tickets,
-//         info: req.body.info,
-//         photos: req.body.photo
-//     });
-//     appearance.save();
-//     res.json(appearance);
-// });
+// Post new Appearance post
+router.post('/appearances', util.isAuthenticated, (req, res) => {
+    console.log(req.body);
+    let appearance = new appearanceModel({
+        date: req.body.date,
+        event: req.body.event,
+        name: req.body.name,
+        location: req.body.location,
+        tickets: req.body.tickets,
+        info: req.body.info,
+        photos: req.body.photo
+    });
+    appearance.save();
+    res.json(appearance);
+});
 
 // Delete record by ID
-// router.delete('/appearances', (req, res) => {
-//     appearanceModel.deleteOne({ _id: req.body.id }, (err, resp) => {
-//         res.send(resp);
-//     })
-// })
+router.delete('/appearances', util.isAuthenticated, (req, res) => {
+    appearanceModel.deleteOne({ _id: req.body.id }, (err, resp) => {
+        res.send(resp);
+    })
+})
 
 router.get('/albums', (req, res) => {
     albumModel.find({ 'active': true }).sort({ 'year': -1 }).exec((err, docs) => {
@@ -109,23 +110,23 @@ router.get('/works/:id', (req, res) => {
 });
 
 // Post new blog post
-// router.post('/works', (req, res) => {
-//     console.log(req.body);
-//     let work = new workModel({
-//         date: req.body.date,
-//         description: req.body.description,
-//         name: req.body.name
-//     });
-//     work.save();
-//     res.json(work);
-// });
+router.post('/works', util.isAuthenticated, (req, res) => {
+    console.log(req.body);
+    let work = new workModel({
+        date: req.body.date,
+        description: req.body.description,
+        name: req.body.name
+    });
+    work.save();
+    res.json(work);
+});
 
 // Delete record by ID
-// router.delete('/works', (req, res) => {
-//     workModel.deleteOne({ _id: req.body.id }, (err, resp) => {
-//         res.send(resp);
-//     })
-// });
+router.delete('/works', util.isAuthenticated, (req, res) => {
+    workModel.deleteOne({ _id: req.body.id }, (err, resp) => {
+        res.send(resp);
+    })
+});
 
 router.get('/film_data', async (req, res) => {
 
