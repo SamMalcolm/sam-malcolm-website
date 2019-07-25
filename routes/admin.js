@@ -1,10 +1,42 @@
 var express = require('express');
 var router = express.Router();
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const UserModel = require('../models/users');
+const util = require('../util/util');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/login', function (req, res, next) {
     console.log("In admin router");
-    res.render('index', { title: 'Express' });
+    res.render('adminlogin', { title: 'Express' });
+});
+
+router.get('/', util.isAuthenticated, function (req, res, next) {
+    console.log("In admin router");
+    res.render('admin', { title: 'Express' });
+});
+
+router.get('/session', function (req, res, next) {
+    console.log("In admin router");
+    console.log(req.session);
+    res.send(200);
+});
+
+router.post('/login', function (req, res, next) {
+    console.log("In admin router");
+    if (req.body.username) {
+        let username = req.body.username;
+        let password = req.body.password;
+        UserModel.findOne({ "username": username }).then((doc) => {
+            bcrypt.compare(password, doc.passwordhash, function (err, response) {
+                if (response) {
+                    req.session.loggedin = true;
+                    req.session.user = doc;
+                    res.redirect('/admin');
+                }
+            });
+        })
+    }
 });
 
 router.get('/work', () => {
