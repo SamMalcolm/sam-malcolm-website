@@ -12,11 +12,19 @@ const moment = require('moment');
 const nodemailer = require('nodemailer');
 const nodemailer_transport = require("../keys/nodemailer_transport");
 const util = require('../util/util');
+const fs = require("fs");
+const path = require('path');
 /* GET home page. */
 
 // Get blog posts
 router.get('/blog', (req, res) => {
     blogModel.find({}).where({ active: true }).sort({ 'date': -1 }).exec((err, docs) => {
+        res.send(docs);
+    })
+});
+
+router.get('/blog/all', util.isAuthenticated, (req, res) => {
+    blogModel.find({}).sort({ 'date': -1 }).exec((err, docs) => {
         res.send(docs);
     })
 });
@@ -32,19 +40,32 @@ router.get('/blog/:id', (req, res) => {
 });
 
 // Post new blog post
-router.post('/blog', util.isAuthenticated, (req, res) => {
+router.post('/blog', (req, res) => {
     console.log(req.body);
-    let blog = new blogModel({
-        title: req.body.title,
-        content: req.body.content,
-        date: new Date(),
-        author: req.body.author,
-        social_description: req.body.social_description,
-        feature_image: req.body.feature_image,
-        social_title: req.body.title,
-    });
-    blog.save();
-    res.json(blog);
+    console.log(req.files);
+    if (req.files["feature_image"]) {
+        fs.rename(req.files["feature_image"].path, "" + encodeURIComponent(req.files["feature_image"].name), (err) => {
+            if (err) {
+                console.log(err)
+            } else {
+                let blog = new blogModel({
+                    title: req.body.title,
+                    content: req.body.content,
+                    date: new Date(),
+                    active: (req.body.active) ? req.body.active : true,
+                    author: (req.body.author) ? req.body.author : "Sam Malcolm",
+                    social_description: req.body.social_description,
+                    feature_image: req.body.feature_image,
+                    social_title: req.body.title,
+                });
+                // blog.save();
+                // res.redirect(req.originalUrl);
+            }
+        })
+    } else {
+        res.sendStatus(500);
+    }
+
 });
 
 // Delete record by ID
