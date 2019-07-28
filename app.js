@@ -10,6 +10,8 @@ var apiRouter = require('./routes/api');
 var adminRouter = require('./routes/admin');
 const session = require('express-session');
 const MemoryStore = require('memorystore')(session);
+const formidableMiddleware = require('express-formidable');
+
 var app = express();
 const config = require('config');
 
@@ -21,7 +23,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
+app.use(formidableMiddleware());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({

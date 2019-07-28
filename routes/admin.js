@@ -11,7 +11,7 @@ router.get('/login', function (req, res, next) {
     res.render('adminlogin', { title: 'Express' });
 });
 
-router.get('/', util.isAuthenticated, function (req, res, next) {
+router.get('/', function (req, res, next) {
     console.log("In admin router");
     res.render('admin', { title: 'Express' });
 });
@@ -25,10 +25,13 @@ router.get('/session', function (req, res, next) {
 router.post('/login', function (req, res, next) {
     console.log("In admin router");
     if (req.body.username) {
+        console.log("in if");
         let username = req.body.username;
         let password = req.body.password;
         UserModel.findOne({ "username": username }).then((doc) => {
+            console.log("found model");
             bcrypt.compare(password, doc.passwordhash, function (err, response) {
+                console.log("in bcrypt");
                 if (response) {
                     req.session.loggedin = true;
                     req.session.user = doc;
