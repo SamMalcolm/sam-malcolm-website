@@ -23,7 +23,7 @@ router.get('/blog', (req, res) => {
     })
 });
 
-router.get('/blog/all', util.isAuthenticated, (req, res) => {
+router.get('/blog/all', (req, res) => {
     blogModel.find({}).sort({ 'date': -1 }).exec((err, docs) => {
         res.send(docs);
     })
@@ -40,26 +40,24 @@ router.get('/blog/:id', (req, res) => {
 });
 
 // Post new blog post
-router.post('/blog', (req, res) => {
-    console.log(req.body);
-    console.log(req.files);
+router.post('/blog', util.isAuthenticated, (req, res) => {
     if (req.files["feature_image"]) {
-        fs.rename(req.files["feature_image"].path, "" + encodeURIComponent(req.files["feature_image"].name), (err) => {
+        fs.rename(req.files["feature_image"].path, "public/assets/blog/" + encodeURIComponent(req.files["feature_image"].name), (err) => {
             if (err) {
                 console.log(err)
             } else {
                 let blog = new blogModel({
                     title: req.body.title,
                     content: req.body.content,
-                    date: new Date(),
+                    date: (req.body.date) ? moment(req.body.date) : new Date(),
                     active: (req.body.active) ? req.body.active : true,
                     author: (req.body.author) ? req.body.author : "Sam Malcolm",
                     social_description: req.body.social_description,
                     feature_image: req.body.feature_image,
                     social_title: req.body.title,
                 });
-                // blog.save();
-                // res.redirect(req.originalUrl);
+                blog.save();
+                res.redirect("/admin/manage/blog");
             }
         })
     } else {
@@ -69,8 +67,8 @@ router.post('/blog', (req, res) => {
 });
 
 // Delete record by ID
-router.delete('/blog', util.isAuthenticated, (req, res) => {
-    blogModel.deleteOne({ _id: req.body.id }, (err, resp) => {
+router.delete('/blog/:blog_id', util.isAuthenticated, (req, res) => {
+    blogModel.deleteOne({ _id: req.params.blog_id }, (err, resp) => {
         res.send(resp);
     })
 })
@@ -205,10 +203,7 @@ router.get('/snooker/:id', (req, res) => {
 })
 
 router.post('/contact', (req, res) => {
-    console.log(req);
-    console.log(req.body);
     let transport = nodemailer.createTransport(nodemailer_transport);
-
     var message = {
         from: 'Sam Malcolm Media <sam.malcolm.media@gmail.com>',
         to: req.body.email,

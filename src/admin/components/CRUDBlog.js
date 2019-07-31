@@ -6,14 +6,15 @@ export default function CRUDBlog() {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
-		Axios.get("/api/blog").then((response) => {
+		Axios.get("/api/blog/all").then((response) => {
 			setPosts(response.data);
 		})
 	}, [])
 
-	const handleDelete = () => {
+	const handleDelete = (e) => {
 		if (confirm('Are you sure you want to delete this post?')) {
-			Axios.delete("/api/blog/all" + e.target.getAttribute("data-id"))
+			console.log("DELETING " + e.target.getAttribute("data-id"))
+			Axios.delete("/api/blog/" + e.target.getAttribute("data-id"))
 		}
 	}
 
@@ -22,13 +23,13 @@ export default function CRUDBlog() {
 			<div className="crudMenu">
 				<form action="/api/blog" enctype="multipart/form-data" method="post" id="newBlog" name="newBlog">
 					<h3>Name</h3>
-					<input type="text" name="name" id="name" required />
+					<input type="text" name="title" id="title" required />
 					<h3>Social Description</h3>
 					<input type="text" name="social_description" id="social_description" required />
 					<h3>Date</h3>
 					<input type="date" name="date" id="date" required />
 					<h3>Markup</h3>
-					<textarea form="newBlog" required></textarea>
+					<textarea form="newBlog" name="content" id="content" required></textarea>
 					<h3>Active</h3>
 					<input type="checkbox" name="active" id="active" />
 					<h3>Feature Image</h3>
