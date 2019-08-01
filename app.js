@@ -10,7 +10,6 @@ var apiRouter = require('./routes/api');
 var adminRouter = require('./routes/admin');
 const session = require('express-session');
 const MemoryStore = require('memorystore')(session);
-const formidable = require('formidable')
 
 var app = express();
 const config = require('config');

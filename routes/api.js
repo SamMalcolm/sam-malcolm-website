@@ -13,7 +13,9 @@ const nodemailer = require('nodemailer');
 const nodemailer_transport = require("../keys/nodemailer_transport");
 const util = require('../util/util');
 const fs = require("fs");
-const path = require('path');
+const formidable = require('formidable')
+
+
 /* GET home page. */
 
 // Get blog posts
@@ -41,29 +43,36 @@ router.get('/blog/:id', (req, res) => {
 
 // Post new blog post
 router.post('/blog', util.isAuthenticated, (req, res) => {
-    if (req.files["feature_image"]) {
-        fs.rename(req.files["feature_image"].path, "public/assets/blog/" + encodeURIComponent(req.files["feature_image"].name), (err) => {
-            if (err) {
-                console.log(err)
-            } else {
-                let blog = new blogModel({
-                    title: req.body.title,
-                    content: req.body.content,
-                    date: (req.body.date) ? moment(req.body.date) : new Date(),
-                    active: (req.body.active) ? req.body.active : true,
-                    author: (req.body.author) ? req.body.author : "Sam Malcolm",
-                    social_description: req.body.social_description,
-                    feature_image: req.body.feature_image,
-                    social_title: req.body.title,
+    var form = formidable.IncomingForm();
+    form.parse(req, (err, fields, files) => {
+        if (err) {
+            res.sendStatus(500);
+        } else {
+            if (files["feature_image"]) {
+                fs.rename(files["feature_image"].path, "public/assets/blog/" + encodeURIComponent(files["feature_image"].name), (err) => {
+                    if (err) {
+                        console.log(err)
+                    } else {
+                        let blog = new blogModel({
+                            title: fields.title,
+                            markup: fields.content,
+                            date: (fields.date) ? moment(fields.date) : new Date(),
+                            active: (fields.active == "on") ? true : false,
+                            author: (fields.author) ? req.body.author : "Sam Malcolm",
+                            social_description: fields.social_description,
+                            feature_image: "/assets/blog/" + encodeURIComponent(files["feature_image"].name),
+                            social_title: fields.title,
+                        });
+                        blog.save();
+                        res.redirect("/admin/manage/blog");
+                    }
                 });
-                blog.save();
-                res.redirect("/admin/manage/blog");
-            }
-        })
-    } else {
-        res.sendStatus(500);
-    }
+            } else {
+                res.sendStatus(500);
 
+            }
+        }
+    });
 });
 
 // Delete record by ID

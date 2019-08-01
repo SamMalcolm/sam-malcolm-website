@@ -15,8 +15,8 @@ const Admin = () => {
 					<div className="adminMenu">
 						<h1>SAM MALCOLM MEDIA ADMIN PANEL</h1>
 						<div className="adminMenu">
-							<Link to="/admin/manage/about">Mange About Section</Link>
-							<Link to="/admin/manage/blog">Mange Blog Section</Link>
+							<Link className="btn btn-secondary" to="/admin/manage/about">Mange About Section</Link>
+							<Link className="btn btn-secondary" to="/admin/manage/blog">Mange Blog Section</Link>
 						</div>
 					</div>
 				</Route>
