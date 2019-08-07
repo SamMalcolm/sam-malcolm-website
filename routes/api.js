@@ -4,6 +4,7 @@ const blogModel = require('../models/blog');
 const appearanceModel = require('../models/appearances');
 const workModel = require('../models/work');
 const snookerModel = require('../models/snooker');
+const tutorialModel = require('../models/tutorials');
 const albumModel = require('../models/albums');
 const axios = require('axios');
 const { googleApiKey } = require('../keys/google_api.js');
@@ -236,6 +237,43 @@ router.post('/contact', (req, res) => {
         }
     })
 
+})
+
+router.get('/youtube/transcript/:video_id', async (req, res) => {
+    let tscript = await axios.get("http://video.google.com/timedtext?lang=en&v=" + response[i].contentDetails.videoId);
+    parseString(tscript, { trim: true }, (err, result) => {
+        if (err) {
+            console.log(err);
+            res.sendStatus(404);
+        }
+        console.log(result);
+        res.send(result);
+    });
+});
+
+// ADD PLAYLIST TO DB
+router.post('/youtube/:playlist_id', async (req, res) => {
+    let response = {};
+    let googleData = await axios.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=' + req.params.playlist_id + '&key=' + googleApiKey);
+    response.items = googleData.data.items;
+    let channelInfo = await axios.get('https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UCOSAPdTi4ICVPW8AUzoHUMg&key=' + googleApiKey);
+    response.channel = channelInfo.data;
+    // ADD TO DB
+    res.send(response);
+})
+
+// ADD PLAYLIST TO DB
+router.get('/tutorial/:playlist_id', async (req, res) => {
+    tutorialModel.findById(req.params.playlist_id, (err, docs) => {
+        res.send(docs);
+    });
+})
+
+// ADD PLAYLIST TO DB
+router.get('/tutorial', async (req, res) => {
+    tutorialModel.find({}, (err, docs) => {
+        res.send(docs);
+    });
 })
 
 module.exports = router;

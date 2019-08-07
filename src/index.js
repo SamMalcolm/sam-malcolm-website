@@ -20,7 +20,8 @@ import Albums from './components/Albums';
 import FilmPage from './components/FilmPage';
 import SnookerPage from './components/SnookerPage';
 import { Helmet } from "react-helmet";
-
+import YoutubePlaylist from './components/YoutubePlaylist';
+import Tutorial from './components/Tutorial';
 const App = () => {
 
     const [highlightColour, setHighlightColour] = useState('');
@@ -117,8 +118,21 @@ const App = () => {
                         </div>
                     </Route>
                     <Route exact path="/tutorials">
-                        <h2>Tutorials</h2>
+                        <Container>
+                            <Tutorial />
+                        </Container>
                     </Route>
+                    <Route exact path="/tutorials/:id" render={(props) => {
+                        let tutorial_id = props.location.pathname.replace('/tutorials/', '');
+                        return (
+                            <div>
+                                <Helmet>
+                                    <title>Sam Malcolm Media | Tutorials</title>
+                                </Helmet>
+                                <YoutubePlaylist id={tutorial_id} />
+                            </div>
+                        )
+                    }} />>
                     <Route exact path="/blog">
                         <Container>
                             <Helmet>
