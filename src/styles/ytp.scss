@@ -1,11 +1,17 @@
 $themes: (light: (backgroundColor: #FFF,
-textColor: #000,
-buttonTextColor: #000,
-menuItemBackground: #e7e7e7),
-dark: (backgroundColor: #222,
-textColor: #FFF,
-buttonTextColor: #FFF,
-menuItemBackground: #333),
+          textColor: #000,
+          buttonTextColor: #000,
+          menuItemBackground: #e7e7e7,
+          resourceBG:rgb(235, 235, 235),
+          resourceBGHighlight:rgb(204, 201, 201),
+          tscriptHighlight: rgb(182, 182, 182)),
+     dark: (backgroundColor: #222,
+          textColor: #FFF,
+          buttonTextColor: #FFF,
+          menuItemBackground: #333,
+          resourceBG:rgb(22, 22, 22),
+          resourceBGHighlight:rgb(26, 25, 25),
+          tscriptHighlight:rgba(0, 0, 0, 0.603)),
 );
 
 
@@ -106,6 +112,34 @@ menuItemBackground: #333),
           padding: 10px;
           margin: auto;
           display: flex;
+
+          a {
+               text-decoration: none;
+
+               .resource {
+                    width: calc(100% - 32px);
+                    padding: 16px;
+                    border-radius: 5px;
+                    margin-bottom: 5px;
+                    transition: 0.2s;
+                    text-decoration: none;
+
+                    @include themify($themes) {
+                         color: themed('textColor');
+                         background-color: themed('resourceBG');
+                    }
+
+                    &:hover {
+                         @include themify($themes) {
+                              background-color: themed('resourceBGHighlight');
+                         }
+                    }
+
+                    h3 {
+                         margin-top: 0;
+                    }
+               }
+          }
 
           .ytp_video_menu {
                width: 350px;
@@ -243,7 +277,9 @@ input:checked+.slider::before {
 }
 
 .ytp_transcript span:hover {
-     background: rgba(0, 0, 0, 0.603);
+     @include themify($themes) {
+          background-color: themed('tscriptHighlight');
+     }
 }
 
 .ytp_active {
