@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import CRUDAbout from './components/CRUDAbout';
 import CRUDBlog from './components/CRUDBlog';
 import CRUDWorks from './components/CRUDWorks';
+import CRUDPlaylists from './components/CRUDPlaylists';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../styles/admin.scss';
 
@@ -17,6 +18,8 @@ const Admin = () => {
 						<div className="adminMenu">
 							<Link className="btn btn-secondary" to="/admin/manage/about">Mange About Section</Link>
 							<Link className="btn btn-secondary" to="/admin/manage/blog">Mange Blog Section</Link>
+							<Link className="btn btn-secondary" to="/admin/manage/works">Mange Works Section</Link>
+							<Link className="btn btn-secondary" to="/admin/manage/playlists">Mange Playlists Section</Link>
 						</div>
 					</div>
 				</Route>
@@ -28,6 +31,9 @@ const Admin = () => {
 				</Route>
 				<Route exact path="/admin/manage/works">
 					<CRUDWorks />
+				</Route>
+				<Route exact path="/admin/manage/playlists">
+					<CRUDPlaylists />
 				</Route>
 			</Switch>
 

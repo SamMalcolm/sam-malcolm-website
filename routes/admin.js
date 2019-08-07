@@ -12,7 +12,7 @@ router.get('/login', function (req, res, next) {
     res.render('adminlogin', { title: 'Express' });
 });
 
-router.get(['/', '/manage/blog', '/manage/work'], util.isAuthenticated, function (req, res, next) {
+router.get(['/', '/manage/blog', '/manage/work', '/manage/playlists'], util.isAuthenticated, function (req, res, next) {
     console.log("In admin router");
     res.render('admin', { title: 'Express' });
 });

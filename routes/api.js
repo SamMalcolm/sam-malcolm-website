@@ -6,6 +6,7 @@ const workModel = require('../models/work');
 const snookerModel = require('../models/snooker');
 const tutorialModel = require('../models/tutorials');
 const albumModel = require('../models/albums');
+const tutorialResourcesModel = require('../models/tutorial_resources');
 const axios = require('axios');
 const { googleApiKey } = require('../keys/google_api.js');
 const parseString = require('xml2js').parseString;
@@ -252,14 +253,42 @@ router.get('/youtube/transcript/:video_id', async (req, res) => {
 });
 
 // ADD PLAYLIST TO DB
-router.post('/youtube/:playlist_id', async (req, res) => {
-    let response = {};
-    let googleData = await axios.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=' + req.params.playlist_id + '&key=' + googleApiKey);
-    response.items = googleData.data.items;
-    let channelInfo = await axios.get('https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UCOSAPdTi4ICVPW8AUzoHUMg&key=' + googleApiKey);
-    response.channel = channelInfo.data;
-    // ADD TO DB
-    res.send(response);
+router.post('/youtube/', util.isAuthenticated, async (req, res) => {
+    var form = formidable.IncomingForm();
+    form.parse(req, async (err, fields, files) => {
+        let response = {};
+        let googleData;
+        if (fields.playlist_id.length > 12) {
+            console.log("GETTING DATA FROM GOOGLE");
+            googleData = await axios.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=' + fields.playlist_id + '&key=' + googleApiKey);
+        } else {
+            googleData = await axios.get('https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&maxResults=50&id=' + fields.playlist_id + '&key=' + googleApiKey);
+        }
+        response.items = googleData.data.items;
+        console.log("GETTING DATA ON CHANNEL")
+        let channelInfo = await axios.get('https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UCOSAPdTi4ICVPW8AUzoHUMg&key=' + googleApiKey);
+        response.channel = channelInfo.data;
+        // ADD TO DB
+        console.log("Adding to DB");
+        let tut = new tutorialModel({
+            channel: response.channel,
+            items: response.items,
+            title: fields.title,
+            author: fields.author,
+            social_description: fields.social_description,
+            ytid: fields.playlist_id,
+            active: (fields.active == "on") ? true : false,
+            date: new Date()
+        })
+        tut.save();
+        res.redirect('/admin/manage/playlist');
+    });
+})
+
+router.get('/:video_id/resources', (req, res) => {
+    tutorialResourcesModel.find({ "video_id": req.params.video_id }, (err, docs) => {
+        res.send(docs);
+    });
 })
 
 // ADD PLAYLIST TO DB
@@ -275,5 +304,15 @@ router.get('/tutorial', async (req, res) => {
         res.send(docs);
     });
 })
+
+// Delete record by ID
+router.delete('/tutorial/:tutorial_id', util.isAuthenticated, (req, res) => {
+    tutorialModel.deleteOne({ _id: req.params.tutorial_id }, (err, resp) => {
+        if (err) {
+            console.log(err);
+        }
+        res.send(resp);
+    })
+});
 
 module.exports = router;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
 import parseString from 'xml2js';
+import { SSL_OP_NETSCAPE_CHALLENGE_BUG } from 'constants';
 
 const YtpMenuItem = (data) => {
 	return (
@@ -29,6 +30,7 @@ export default function YoutubePlaylist(data) {
 	const [resources, setResources] = useState([]);
 	const [channel, setChannel] = useState([]);
 	const [playerReady, setPlayerReady] = useState(false);
+	const [multiitems, setMultiitems] = useState(true);
 
 	const tryFetchTranscript = videoid => {
 		return new Promise((resolve, reject) => {
@@ -51,6 +53,24 @@ export default function YoutubePlaylist(data) {
 						setTranscript(result.transcript.text);
 						resolve(true);
 					});
+				}
+			})
+		})
+	}
+
+	const tryFetchResources = videoid => {
+		return new Promise((resolve, reject) => {
+			console.log("FETCHING RESOURCES " + videoid);
+			Axios.get("/api/" + videoid + "/resources").then(response => {
+				console.log(response.data[0].resources);
+				if (!response.data) {
+					console.log("NO RESOURCES AVAILABLE");
+					setResources([]);
+					resolve(false);
+				} else {
+					// HANDLE TRANSCIRPT
+					setResources(response.data[0].resources);
+					resolve(true);
 				}
 			})
 		})
@@ -97,11 +117,23 @@ export default function YoutubePlaylist(data) {
 
 	const playVideo = (index) => {
 		console.log("PLAY VIDEO " + index);
-		tryFetchTranscript(playlist[index].contentDetails.videoId);
-		setTitle(playlist[index].snippet.title);
-		setDescription(playlist[index].snippet.description);
-		player.loadVideoById(playlist[index].contentDetails.videoId);
-		player.playVideo();
+		if (typeof playlist[index].contentDetails.videoId != 'undefined') {
+			console.log("PLAYING FOR PLAYLIST");
+			tryFetchTranscript(playlist[index].contentDetails.videoId);
+			tryFetchResources(playlist[index].contentDetails.videoId);
+			setTitle(playlist[index].snippet.title);
+			setDescription(playlist[index].snippet.description);
+			player.loadVideoById(playlist[index].contentDetails.videoId);
+			player.playVideo();
+		} else {
+			console.log("PLAUING INDIVIDUAL VIDEO");
+			tryFetchTranscript(playlist[index].id);
+			tryFetchResources(playlist[index].id);
+			setTitle(playlist[index].snippet.title);
+			setDescription(playlist[index].snippet.description);
+			player.loadVideoById(playlist[index].id);
+			player.playVideo();
+		}
 	}
 
 	const onPlayerReady = () => {
@@ -122,10 +154,11 @@ export default function YoutubePlaylist(data) {
 	}
 
 	window.onYouTubeIframeAPIReady = () => {
+		let id = (multiitems) ? playlist[0].id : playlist[0].contentDetails.videoId;
 		player = new YT.Player('player', {
 			height: '390',
 			width: '640',
-			videoId: playlist[0].contentDetails.videoId,
+			videoId: id,
 			events: {
 				'onReady': onPlayerReady,
 				'onStateChange': onPlayerStateChange
@@ -137,6 +170,10 @@ export default function YoutubePlaylist(data) {
 		console.log("USE EFFECT");
 		// Axios.get('/api/youtube/PLT_xscTFmzgrH4D4BnIa6dru_iLZRCYDR').then((response) => {
 		Axios.get('/api/tutorial/' + data.id).then((response) => {
+			if (response.data.items.length == 1) {
+				setMultiitems(false);
+				setAutoplay(false);
+			}
 			setPlaylist(response.data.items);
 			setChannel(response.data.channel);
 			if (!document.querySelector("script[src=\"https://www.youtube.com/iframe_api\"]")) {
@@ -164,7 +201,7 @@ export default function YoutubePlaylist(data) {
 					}
 					<div className="ytp_theme_switch">
 						<span>Dark Theme: </span>
-						<input onChange={e => { setDarkTheme(e.target.checked) }} type="checkbox" />
+						<input onChange={e => { setDarkTheme(e.target.checked) }} type="checkbox" checked={(darkTheme) ? true : false} />
 					</div>
 				</div>
 				<div className="ytp_video_theatre_container">
@@ -176,23 +213,30 @@ export default function YoutubePlaylist(data) {
 					</div>
 				</div>
 				<div className="ytp_meta_container">
-					<div className="ytp_video_menu">
-						<h3>Video Menu</h3> {
-							(playlist).map((item, i) => {
-								return (
-									<YtpMenuItem index={i} handleClick={playVideo} title={item.snippet.title} src={item.snippet.thumbnails.default.url} duration="1s" />
-								)
-							})
-						}
-					</div>
-					<div className="ytp_meta_data">
-						<p>Autoplay</p>
-						<div className="switch-container position-relative form-group">
-							<label className="switch">
-								<input checked={autoplay} onChange={(e) => { setAutoplay(e.target.checked) }} type="checkbox" className="form-check-input" />
-								<span className="slider round"></span>
-							</label>
+					{(multiitems) && (
+						<div className="ytp_video_menu">
+							<h3>Video Menu</h3> {
+								(playlist).map((item, i) => {
+									return (
+										<YtpMenuItem index={i} handleClick={playVideo} title={item.snippet.title} src={item.snippet.thumbnails.default.url} duration="1s" />
+									)
+								})
+							}
 						</div>
+					)}
+					<div className="ytp_meta_data" style={(multiitems) ? { 'width': '100%' } : null}>
+						{(multiitems) && (
+							<div>
+								<p>Autoplay</p>
+								<div className="switch-container position-relative form-group">
+									<label className="switch">
+										<input checked={autoplay} onChange={(e) => { setAutoplay(e.target.checked) }} type="checkbox" className="form-check-input" />
+										<span className="slider round"></span>
+									</label>
+								</div>
+							</div>
+						)}
+
 						{(transcript && transcript != []) &&
 							<div>
 								<h3>Video Transcript</h3>
@@ -211,13 +255,24 @@ export default function YoutubePlaylist(data) {
 						{(description) &&
 							<div>
 								<h3>Description</h3>
-								<span className="ytp_description"></span>
+								<span className="ytp_description">{description}</span>
 							</div>
 						}
 						{(resources) &&
 							<div>
 								<h3>Resources</h3>
-								<span className="ytp_resources"></span>
+								<span className="ytp_resources">
+									{(resources).map((resource) => {
+										return (
+											<a href={resource.link}>
+												<div className="resource">
+													<h3>{resource.name}</h3>
+													<i>{resource.description}</i>
+												</div>
+											</a>
+										)
+									})}
+								</span>
 							</div>
 						}
 
