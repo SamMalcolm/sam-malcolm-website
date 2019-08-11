@@ -32,6 +32,9 @@ export default function Tutorial() {
 	return (
 		<div>
 			<h1>Tutorials</h1>
+			{!tutorials.length &&
+				<h3>There arent any tutorials here yet</h3>
+			}
 			{tutorials.map((post) => {
 				return (
 					<Link tabindex='0' to={"/tutorials/" + post._id}>

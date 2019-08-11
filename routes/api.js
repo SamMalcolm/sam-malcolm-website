@@ -265,8 +265,9 @@ router.post('/youtube/', util.isAuthenticated, async (req, res) => {
             googleData = await axios.get('https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&maxResults=50&id=' + fields.playlist_id + '&key=' + googleApiKey);
         }
         response.items = googleData.data.items;
-        console.log("GETTING DATA ON CHANNEL")
-        let channelInfo = await axios.get('https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UCOSAPdTi4ICVPW8AUzoHUMg&key=' + googleApiKey);
+        console.log("GETTING DATA ON CHANNEL");
+        console.log(googleData);
+        let channelInfo = await axios.get('https://www.googleapis.com/youtube/v3/channels?part=snippet&id=' + googleData.data.items[0].snippet.channel_id + '&key=' + googleApiKey);
         response.channel = channelInfo.data;
         // ADD TO DB
         console.log("Adding to DB");
@@ -300,7 +301,7 @@ router.get('/tutorial/:playlist_id', async (req, res) => {
 
 // ADD PLAYLIST TO DB
 router.get('/tutorial', async (req, res) => {
-    tutorialModel.find({}, (err, docs) => {
+    tutorialModel.find({}).where({ active: true }).sort({ 'date': -1 }).exec((err, docs) => {
         res.send(docs);
     });
 })
