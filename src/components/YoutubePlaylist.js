@@ -175,7 +175,9 @@ export default function YoutubePlaylist(data) {
 				setAutoplay(false);
 			}
 			setPlaylist(response.data.items);
-			setChannel(response.data.channel);
+			if (response.data.channel.items.length) {
+				setChannel(response.data.channel);
+			}
 			if (!document.querySelector("script[src=\"https://www.youtube.com/iframe_api\"]")) {
 				var tag = document.createElement('script');
 				tag.src = "https://www.youtube.com/iframe_api";
@@ -193,7 +195,7 @@ export default function YoutubePlaylist(data) {
 			<div className="ytp_container">
 				<div className="ytp_header">
 					<h1>{title}</h1>
-					{(typeof channel != "undefined" && typeof channel.items != "undefined") &&
+					{(typeof channel != "undefined" && typeof channel.items != "undefined" && typeof channel.items[0] != "undefined") &&
 						<div>
 							<img src={channel.items[0].snippet.thumbnails.default.url} />
 							<h4>{channel.items[0].snippet.title}</h4>
