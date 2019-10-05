@@ -128,4 +128,56 @@ router.get('/blog/:blog_id', (req, res) => {
   })
 })
 
+router.get('/pod/rss', (req, res) => {
+  let xml_response = `<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:itunesu="http://www.itunesu.com/feed" version="2.0">
+<channel>
+<link>https://sammalcolmmedia.com/podcast</link>
+<language>en-us</language>
+<copyright>&#xA9; Chalking Snooker 2019</copyright>
+<webMaster>sam_malcolm@live.com.au (Sam Malcolm)</webMaster>
+<managingEditor>am_malcolm@live.com.au (Sam Malcolm)</managingEditor>
+<image>
+   <url>https://sammalcolmmedia.com/assets/pod/pod.jpg</url>
+   <title>Chalking Snooker Artwork</title>
+   <link>https://sammalcolmmedia.com/</link>
+</image>
+<itunes:owner>
+   <itunes:name>Sam Malcolm</itunes:name>
+   <itunes:email>sam_malcolm@live.com.au</itunes:email>
+</itunes:owner>
+<itunes:category text="Sports">
+</itunes:category>
+<itunes:keywords>sport, snooker, australia, neil, robertson, neilrobertson, snooker, cue, billiards</itunes:keywords>
+<itunes:explicit>no</itunes:explicit>
+<itunes:image href="https://chalking-snooker.s3-us-west-2.amazonaws.com/chalking-snooker.jpg" />
+<atom:link href="https://sammalcolmmedia.com/pod/rss" rel="self" type="application/rss+xml" />
+<pubDate>Mon, 07 Oct 2019 09:00:00 GMT</pubDate>
+<title>Chalking Snooker</title>
+<itunes:author>David Heath, Sam Malcolm, Bill Lindsay</itunes:author>
+<description>David Sam and Bill talk about snooker with legends of the game. They ask about how they got their start and remince about some of their greatest successes</description>
+<itunes:summary>David Sam and Bill talk about snooker with legends of the game. They ask about how they got their start and remince about some of their greatest successes</itunes:summary>
+<itunes:subtitle>Made in Australia</itunes:subtitle>
+<lastBuildDate>Mon, 07 Oct 2019 09:00:00 GMT</lastBuildDate>
+
+<!--REPEAT THIS BLOCK FOR EACH EPISODE-->
+<item>
+   <title>Episode 1 Neil Robertson</title>
+   <description>Neil Robertson is a legend of the game and considered by many to be one of the greatest players of all time. Neil sits down with David, Sam and Bill to discuss his career and how he got started playing snooker. Neil shares some of his insights and fun stories from his decorated career.</description>
+   <itunes:summary>Neil Robertson is a legend of the game and considered by many to be one of the greatest players of all time. Neil sits down with David, Sam and Bill to discuss his career and how he got started playing snooker. Neil shares some of his insights and fun stories from his decorated career.</itunes:summary>
+   <itunes:subtitle>Neil Robertson is a legend of the game and considered by many to be one of the greatest players of all time.</itunes:subtitle>
+   <enclosure url="https://sammalcolmmedia.com/podcasts/chalking_snooker/episode_1.mp3" type="audio/mp3" length="1" />
+   <guid>https://sammalcolmmedia.com/podcasts/chalking_snooker/episode_1.mp3</guid>
+   <itunes:image href="https://chalking-snooker.s3-us-west-2.amazonaws.com/ep-1.jpg" />
+   <itunes:duration>H:MM:SS</itunes:duration>
+   <pubDate>Mon, 07 Oct 2019 09:00:00 GMT</pubDate>
+</item>
+<!--END REPEAT--> 
+
+</channel>
+</rss>`
+  res.type('application/rss+xml');
+  res.send(xml_response);
+})
+
 module.exports = router;
