@@ -136,9 +136,9 @@ router.get('/pod/rss', (req, res) => {
 <language>en-us</language>
 <copyright>&#xA9; Chalking Snooker 2019</copyright>
 <webMaster>sam_malcolm@live.com.au (Sam Malcolm)</webMaster>
-<managingEditor>am_malcolm@live.com.au (Sam Malcolm)</managingEditor>
+<managingEditor>sam_malcolm@live.com.au (Sam Malcolm)</managingEditor>
 <image>
-   <url>https://sammalcolmmedia.com/assets/pod/pod.jpg</url>
+   <url>https://chalking-snooker.s3-us-west-2.amazonaws.com/chalking-snooker.jpg</url>
    <title>Chalking Snooker Artwork</title>
    <link>https://sammalcolmmedia.com/</link>
 </image>
