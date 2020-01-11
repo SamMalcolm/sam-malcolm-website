@@ -203,7 +203,7 @@ router.post('/contact', (req, res) => {
     transport.sendMail(message, (err, info) => {
         if (err) {
             console.log(err);
-            res.send(err);
+            res.redirect('/');
         } else {
             console.log(info);
             res.redirect('/contact');
