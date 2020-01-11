@@ -6,7 +6,8 @@
   "scripts": {
     "start": "./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/webpack -w"
+    "build": "./node_modules/.bin/webpack",
+    "build:dev": "./node_modules/.bin/webpack -w"
   },
   "author": "Sam Malcolm",
   "license": "ISC",
@@ -56,6 +57,7 @@
     "react-router-dom": "^4.3.1",
     "react-share": "^2.4.0",
     "react-twitter-embed": "^2.0.8",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "xml": "^1.0.1",
     "xml2js": "^0.4.22"
   }
