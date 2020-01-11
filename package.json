@@ -10,6 +10,9 @@
   },
   "author": "Sam Malcolm",
   "license": "ISC",
+  "engines": {
+    "node": "10.15.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
@@ -19,11 +22,11 @@
     "css-loader": "^2.1.1",
     "mocha": "^6.1.4",
     "nock": "^10.0.6",
+    "node-pre-gyp": "^0.12.0",
     "node-sass": "^4.12.0",
     "nyc": "^14.1.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "uglifyjs-webpack-plugin": "^2.1.3",
     "url-loader": "^1.1.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
