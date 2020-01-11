@@ -1,7 +1,7 @@
 let transport = {
 	host: "smtp.gmail.com",
 	secure: false,
-	port: 587,
+	port: 465,
 	auth: {
 		user: 'sam.malcolm.media@gmail.com',
 		pass: 'LedZep123!@#'
