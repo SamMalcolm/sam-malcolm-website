@@ -1,0 +1,4 @@
+{
+	"siteAddress": "http://localhost:3000/git ",
+	"mongoDB": "mongodb://localhost:27017/smm_db"
+}

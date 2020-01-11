@@ -3,9 +3,6 @@ node_modules
 *.jpg
 *.png
 *.pdf
-/keys
-
-/config/*
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
