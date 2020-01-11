@@ -8,5 +8,4 @@ node_modules
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
-config/prod.json
 .ebextensions/securelistener-clb.config
