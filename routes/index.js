@@ -110,6 +110,7 @@ router.get('/work/:work_id', (req, res) => {
   workModel.findById(req.params.work_id, (err, docs) => {
     console.log(docs);
     res.render('index', {
+      bucket: bucket,
       meta: docs,
       title: docs.name,
       url: config.get("siteAddress")
@@ -121,6 +122,7 @@ router.get('/blog/:blog_id', (req, res) => {
   blogModel.findById(req.params.blog_id, (err, docs) => {
     console.log(docs);
     res.render('index', {
+      bucket: bucket,
       meta: docs,
       title: docs.name,
       url: config.get("siteAddress")
