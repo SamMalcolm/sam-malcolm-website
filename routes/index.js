@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var workModel = require('../models/work');
 const blogModel = require('../models/blog');
 const config = require('config');
-
+const bucket = (typeof process.env.S3_BUCKET != "undefined") ? process.env.S3_BUCKET : "";
 /* GET home page. */
 router.get('/', function (req, res, next) {
   let path = "Sam Malcolm Media";
