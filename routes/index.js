@@ -5,8 +5,8 @@ var workModel = require('../models/work');
 const blogModel = require('../models/blog');
 const config = require('config');
 const bucket = (typeof process.env.S3_BUCKET != "undefined") ? process.env.S3_BUCKET : false;
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom
 /* GET home page. */
 router.get('/', function (req, res, next) {
 	let path = "Sam Malcolm Media";
@@ -145,7 +145,7 @@ router.get('/blog/:blog_id', (req, res) => {
 		docs.feature_image = (bucket) ? bucket + docs.feature_image : config.get("siteAddress") + docs.feature_image;
 		if (bucket) {
 			let doc = docs.markup;
-			doc = new JSDOM(doc).window.document;
+			// doc = new JSDOM(doc).window.document;
 			let images = doc.querySelectorAll("img");
 			for (let i = 0; i < images.length; i++) {
 				images[i].setAttribute("src", bucket + images[i].getAttribute("src"))

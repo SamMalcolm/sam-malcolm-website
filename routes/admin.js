@@ -3,40 +3,40 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    console.log("In admin router");
-    res.render('index', { title: 'Express' });
+	console.log("In admin router");
+	res.render('index', { title: 'Express' });
 });
 
 router.get('/work', () => {
-    // add work to db form
+	// add work to db form
 })
 
 router.post('/work', () => {
-    // add work to db
+	// add work to db
 })
 
 router.delete('/work/:work_id', () => {
-    // delete blog
+	// delete blog
 })
 
 router.put('/work/:work_id', () => {
-    // update blog
+	// update blog
 })
 
 router.get('/blog', () => {
-    // add blog to db form
+	// add blog to db form
 })
 
 router.post('/blog', () => {
-    // add blog to db
+	// add blog to db
 })
 
 router.delete('/blog/:blog_id', () => {
-    // delete blog
+	// delete blog
 })
 
 router.put('/blog/:blog_id', () => {
-    // update blog
+	// update blog
 })
 
 
