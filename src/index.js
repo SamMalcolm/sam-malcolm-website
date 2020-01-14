@@ -50,7 +50,7 @@ const App = () => {
 							<Helmet>
 								<title>Sam Malcolm Media | Snooker</title>
 							</Helmet>
-							<FullWidthBanner src="/assets/ui_images/snooker2.jpg" caption="Photo: David Heath" title="Snooker &amp; Billiards" />
+							<FullWidthBanner src={window.bucket + "/assets/ui_images/snooker2.jpg"} caption="Photo: David Heath" title="Snooker &amp; Billiards" />
 							<Container>
 								<SnookerPage />
 							</Container>
@@ -110,7 +110,7 @@ const App = () => {
 							<Helmet>
 								<title>Sam Malcolm Media | Film</title>
 							</Helmet>
-							<FullWidthBanner src="/assets/ui_images/film.jpg" title="Film Criticism" />
+							<FullWidthBanner src={window.bucket + "/assets/ui_images/film.jpg"} title="Film Criticism" />
 							<Container>
 								<FilmPage highlight={highlightColour} />
 							</Container>
