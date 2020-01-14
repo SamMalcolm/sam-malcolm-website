@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { TwitterTimelineEmbed, TwitterFollowButton } from 'react-twitter-embed';
 import Container from './Container';
+import Axios from 'axios';
 
 const Twitter = () => {
 	return (
 		<div>
-			<TwitterFollowButton screenName="SamMalcolm1414" options={{ size: 'large' }} />
+			<TwitterFollowButton screenName="SamMalcolm1414" options={{ size: 'small' }} />
 			<br />
-			<TwitterTimelineEmbed theme="dark" sourceType="profile" screenName="SamMalcolm1414" />
+			<TwitterTimelineEmbed options={{ height: 400 }} theme="dark" sourceType="profile" screenName="SamMalcolm1414" />
 		</div>
 	)
 }
@@ -31,88 +32,17 @@ const ContactForm = (props) => {
 }
 
 export default function Contact(props) {
-	const [socials, setSocials] = useState([
-		{
-			"service": "twitter",
-			"icon": "/assets/ui_images/social/twitter.png",
-			"component": [<Twitter />],
-			"active": false,
-			"colour": "#1da1f2",
-			"embed": true
-		},
-		{
-			"service": "contact",
-			"icon": "/assets/ui_images/social/email.png",
-			"component": [<ContactForm highlight={props.highlight} />],
-			"active": true,
-			"colour": "#0078d7",
-			"embed": true
-		},
-		{
-			"service": "github",
-			"icon": "/assets/ui_images/social/github.jpg",
-			"src": "https://github.com/SamMalcolm",
-			"active": false,
-			"colour": "#333333",
-			"embed": false
-		},
-		{
-			"service": "imdb",
-			"icon": "/assets/ui_images/social/imdb.png",
-			"src": "https://www.imdb.com/name/nm7066438/",
-			"active": false,
-			"colour": "#f5de50",
-			"embed": false,
-			"dark_text": true
-		},
-		{
-			"service": "instagram",
-			"icon": "/assets/ui_images/social/instagram.png",
-			"src": "https://www.instagram.com/sam_a_malcolm/",
-			"active": false,
-			"colour": "#f56040",
-			"embed": false
-		},
-		{
-			"service": "facebook",
-			"icon": "/assets/ui_images/social/facebook.png",
-			"src": "https://www.facebook.com/sammalcolmmedia/",
-			"active": false,
-			"colour": "#3b5998",
-			"embed": false
-		},
-		{
-			"service": "reddit",
-			"icon": "/assets/ui_images/social/reddit.png",
-			"src": "https://www.reddit.com/user/sam_malcolm",
-			"active": false,
-			"colour": "#ff4500",
-			"embed": false
-		},
-		{
-			"service": "linked in",
-			"icon": "/assets/ui_images/social/linkedin.png",
-			"src": "https://www.linkedin.com/in/sam-malcolm/",
-			"active": false,
-			"colour": "#0077b5",
-			"embed": false
-		},
-		{
-			"service": "youtube",
-			"icon": "/assets/ui_images/social/youtube.png",
-			"src": "https://www.youtube.com/channel/UCOSAPdTi4ICVPW8AUzoHUMg",
-			"active": false,
-			"colour": "#ff0000",
-			"embed": false
-		}
+	const [socials, setSocials] = useState([]);
 
-
-
-	]);
+	useEffect(() => {
+		Axios.get('/api/socials').then((resp) => {
+			setSocials(resp.data);
+		})
+	}, [])
 
 	const handleChange = (e) => {
 		let index = e.currentTarget.value;
-		let newSocialObject = [...socials];
+		let newSocialObject = socials.map((social) => (social));
 		for (let key in newSocialObject) {
 			newSocialObject[key].active = false;
 		}
