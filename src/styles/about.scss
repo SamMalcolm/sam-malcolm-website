@@ -1,80 +1,80 @@
 .cert {
-     text-align: left;
+    text-align: left;
 }
 
 .avatar {
-     width: 200px;
-     height: 200px;
-     border-radius: 108px;
-     border: 5px solid white;
-     margin: auto;
-     overflow: hidden;
-     position: relative;
-     margin-top: 13px;
+    width: 200px;
+    height: 200px;
+    border-radius: 108px;
+    border: 5px solid white;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    margin-top: 13px;
 
-     img {
-          width: 103%;
-          position: absolute;
-          left: -6px;
-          top: -5px;
-     }
+    img {
+        width: 103%;
+        position: absolute;
+        left: -1px;
+        top: 0;
+    }
 
 
 }
 
 
 .bio_img {
-     width: 30%;
-     display: inline-block;
-     vertical-align: top;
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .bio_body {
-     width: 70%;
-     text-align: left;
-     display: inline-block;
+    width: 70%;
+    text-align: left;
+    display: inline-block;
 
-     .sig {
-          position: relative;
-          width: 170px;
-          height: 122px;
-          overflow: hidden;
+    .sig {
+        position: relative;
+        width: 170px;
+        height: 122px;
+        overflow: hidden;
 
-          img {
-               width: 207px;
-               position: absolute;
-               top: -59px;
-               left: -20px;
-          }
-     }
+        img {
+            width: 207px;
+            position: absolute;
+            top: -59px;
+            left: -20px;
+        }
+    }
 }
 
 .divider {
-     width: 80%;
-     background-color: white;
-     height: 1px;
-     margin: auto;
-     margin-top: 15px;
-     margin-bottom: 15px;
+    width: 80%;
+    background-color: white;
+    height: 1px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 @media screen and (max-width:850px) {
-     .bio_img {
-          width: 100%;
-          display: block;
-     }
+    .bio_img {
+        width: 100%;
+        display: block;
+    }
 
-     .bio_body {
-          width: 100%;
-          text-align: center;
-          display: block;
+    .bio_body {
+        width: 100%;
+        text-align: center;
+        display: block;
 
-          .sig {
-               width: 100%;
+        .sig {
+            width: 100%;
 
-               img {
-                    left: calc(50% - 103px);
-               }
-          }
-     }
+            img {
+                left: calc(50% - 103px);
+            }
+        }
+    }
 }
