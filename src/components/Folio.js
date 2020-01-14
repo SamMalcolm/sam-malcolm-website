@@ -32,7 +32,7 @@ const Folio = () => {
 		<div className="folioContainer">
 			{works.map((work) => {
 				return (
-					<Work {...work} />
+					<Work key={work._id} {...work} />
 				)
 			})}
 		</div>

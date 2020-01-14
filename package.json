@@ -7,7 +7,7 @@
 		"start": "./bin/www",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "./node_modules/.bin/webpack",
-		"build:dev": "./node_modules/.bin/webpack -w --mode=development"
+		"build:dev": "./node_modules/.bin/webpack -w "
 	},
 	"author": "Sam Malcolm",
 	"license": "ISC",
