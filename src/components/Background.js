@@ -4,20 +4,20 @@ function Background(props) {
 
 	const [backgrounds, setBackgrounds] = useState([
 		{
-			"src": "/assets/backgrounds/flower.jpg",
+			"src": window.bucket + "/assets/backgrounds/flower.jpg",
 			"highlight": "rgb(0,255,255)",
 			"active": 1,
 			"position": "bottom right"
 		},
 		{
-			"src": "/assets/backgrounds/toby.jpg",
+			"src": window.bucket + "/assets/backgrounds/toby.jpg",
 			"highlight": "rgb(0,255,100)",
 			"active": 1,
 			"position": "top center"
 
 		},
 		{
-			"src": "/assets/backgrounds/night_exp.jpg",
+			"src": window.bucket + "/assets/backgrounds/night_exp.jpg",
 			"highlight": "#f99d23",
 			"active": 1,
 			"position": "center"
