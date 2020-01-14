@@ -25,6 +25,7 @@ function Background(props) {
 	]);
 
 	useEffect(() => {
+		console.log("BACKGROUNDS USE EFFECT");
 		props.setHighlightColour(backgrounds[0].highlight);
 		let counter = 0;
 		const int = setInterval(() => {
