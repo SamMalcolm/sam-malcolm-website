@@ -275,11 +275,11 @@ router.get('/backgrounds', (req, res) => {
 
 router.get('/socials', (req, res) => {
 	socialsModel.find({}).exec((err, docs) => {
-		if (bucket) {
-			for (let i = 0; i < docs.length; i++) {
-				docs[i].icon = bucket + docs[i].icon;
-			}
-		}
+		// if (bucket) {
+		// 	for (let i = 0; i < docs.length; i++) {
+		// 		docs[i].icon = bucket + docs[i].icon;
+		// 	}
+		// }
 		res.send(docs);
 	})
 });
