@@ -85,6 +85,12 @@ export default function Contact(props) {
 			</div>
 			<Container>
 				<div className="socialContentContainer">
+					{(typeof window.success_message != "undefined") ?
+						<div className="success alert">{window.success_message}</div> : null
+					}
+					{(typeof window.error_message != "undefined") ?
+						<div className="error alert">{window.error_message}</div> : null
+					}
 
 					{(socials).map((social, i) => {
 						return (

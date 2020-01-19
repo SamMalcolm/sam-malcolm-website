@@ -235,7 +235,6 @@ router.post('/contact', (req, res) => {
 	console.log(req);
 	console.log(req.body);
 	let transport = nodemailer.createTransport(nodemailer_transport);
-
 	var message = {
 		from: 'Sam Malcolm Media <sam.malcolm.media@gmail.com>',
 		to: req.body.email,
@@ -252,9 +251,11 @@ router.post('/contact', (req, res) => {
 	transport.sendMail(message, (err, info) => {
 		if (err) {
 			console.log(err);
-			res.redirect('/');
+			req.session.error_message = "There was an error :( Alternatively you can email me using sam.malcolm.media@gmail.com";
+			res.redirect('/contact');
 		} else {
 			console.log(info);
+			req.session.success_message = "The email was sent successfully";
 			res.redirect('/contact');
 		}
 	})

@@ -68,13 +68,30 @@ router.get('/about', function (req, res, next) {
 	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
 });
 router.get('/contact', function (req, res, next) {
+	let success_message = false;
+	let error_message = false;
+	if (req.session.success_message) {
+		success_message = req.session.success_message;
+		req.session.success_message = "";
+	}
+	if (req.session.error_message) {
+		error_message = req.session.error_message;
+		req.session.error_message = "";
+	}
 	let path = "Sam Malcolm Media | Contact";
 	let meta = {};
 	meta.social_title = "Sam Malcolm Media | Contact"
 	meta.feature_image = "assets/ui_images/social_share.png"
 	meta.social_description = "The contact page of Sam Malcolm's official website"
 	meta.feature_image_alt = "An image of Sam Malcolms logo, the outline of a cube with a gradient coloured background"
-	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
+	res.render('index', {
+		title: path,
+		bucket: bucket,
+		meta: meta,
+		url: config.get("siteAddress"),
+		success_message: success_message,
+		error_message: error_message
+	});
 });
 
 router.get('/work', function (req, res, next) {

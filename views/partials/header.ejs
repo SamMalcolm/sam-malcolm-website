@@ -44,6 +44,14 @@
 	<% } else { %>
 	<script>window.bucket = "";</script>
 	<% } %>
+
+	<% if (typeof success_message != "undefined" && success_message) { %>
+	<script>window.success_message = "<%= success_message %>";</script>
+	<% } %>
+
+	<% if (typeof error_message != "undefined" && error_message) { %>
+	<script>window.error_message = "<%= error_message %>";</script>
+	<% } %>
 </head>
 
 <body>
