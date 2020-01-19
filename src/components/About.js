@@ -18,7 +18,7 @@ const About = () => {
 				<p>If you want to collaborate on a project, have a chat about film, or organise a game of snooker feel free to engage with me on social media or you can use the contact form on this site. I look foward to hearing from you.</p>
 				<p>Thanks!</p>
 				<div className="sig">
-					<img src="/assets/profile/Sig.png" />
+					<img src="https://sammalcolm-static.s3-us-west-2.amazonaws.com/assets/profile/Sig.png" />
 				</div>
 			</div>
 			<div className="divider"></div>
