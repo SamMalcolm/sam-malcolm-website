@@ -10,10 +10,23 @@ var apiRouter = require('./routes/api');
 var adminRouter = require('./routes/admin');
 var app = express();
 const config = require('config');
+const session = require('express-session');
+const MemoryStore = require('memorystore')(session);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(session({
+	store: new MemoryStore({
+		checkPeriod: 86400000
+	}),
+	secret: 'Tj4W;h4KqU4AAGYieKPLH}Jh',
+	cookie: { maxAge: 86400000 },
+	resave: false,
+	saveUninitialized: false
+}));
+
 
 // FORCE HTTPS
 app.use(function (req, res, next) {
