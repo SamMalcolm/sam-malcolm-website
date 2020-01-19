@@ -29,12 +29,13 @@ app.use(session({
 
 
 // FORCE HTTPS
-app.use(function (req, res, next) {
-	if (!req.secure && process.env.NODE_ENV == "prod") {
-		return res.redirect('https://' + req.headers.host + req.url);
+app.use(function (req, resp, next) {
+	if (req.headers['x-forwarded-proto'] == 'http') {
+		return resp.redirect(301, 'https://' + req.headers.host + '/');
+	} else {
+		return next();
 	}
-	next();
-})
+});
 
 app.use(logger('dev'));
 app.use(express.json());
