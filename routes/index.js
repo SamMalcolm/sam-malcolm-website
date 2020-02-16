@@ -180,7 +180,7 @@ router.get('/pod/rss', (req, res) => {
 	let xml_response = `<?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:itunesu="http://www.itunesu.com/feed" version="2.0">
 <channel>
-<link>https://sammalcolmmedia.com/</link>
+<link>https://www.sammalcolmmedia.com/</link>
 <language>en-us</language>
 <copyright>&#xA9; Chalking Snooker 2019</copyright>
 <webMaster>sam_malcolm@live.com.au (Sam Malcolm)</webMaster>
@@ -188,7 +188,7 @@ router.get('/pod/rss', (req, res) => {
 <image>
    <url>https://chalking-snooker.s3-us-west-2.amazonaws.com/chalking-snooker.jpg</url>
    <title>Chalking Snooker Artwork</title>
-   <link>https://sammalcolmmedia.com/</link>
+   <link>https://www.sammalcolmmedia.com/</link>
 </image>
 <itunes:owner>
    <itunes:name>Sam Malcolm</itunes:name>
@@ -199,7 +199,7 @@ router.get('/pod/rss', (req, res) => {
 <itunes:keywords>sport, snooker, australia, neil, robertson, neilrobertson, snooker, cue, billiards</itunes:keywords>
 <itunes:explicit>no</itunes:explicit>
 <itunes:image href="https://chalking-snooker.s3-us-west-2.amazonaws.com/chalking-snooker.jpg" />
-<atom:link href="https://sammalcolmmedia.com/pod/rss" rel="self" type="application/rss+xml" />
+<atom:link href="https://www.sammalcolmmedia.com/pod/rss" rel="self" type="application/rss+xml" />
 <pubDate>Mon, 07 Oct 2019 09:00:00 GMT</pubDate>
 <title>Chalking Snooker</title>
 <itunes:author>David Heath, Sam Malcolm, Bill Lindsay</itunes:author>
