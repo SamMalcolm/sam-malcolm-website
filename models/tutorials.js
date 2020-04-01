@@ -6,6 +6,7 @@ const TutorialSchema = new Schema({
 	items: { type: Object },
 	title: { type: String },
 	author: { type: String },
+	feature_image: { type: String },
 	social_description: { type: String },
 	ytid: { type: String },
 	active: { type: Boolean },
