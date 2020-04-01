@@ -13,10 +13,32 @@ const MemoryStore = require('memorystore')(session);
 
 var app = express();
 const config = require('config');
+const session = require('express-session');
+const MemoryStore = require('memorystore')(session);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(session({
+	store: new MemoryStore({
+		checkPeriod: 86400000
+	}),
+	secret: 'Tj4W;h4KqU4AAGYieKPLH}Jh',
+	cookie: { maxAge: 86400000 },
+	resave: false,
+	saveUninitialized: false
+}));
+
+
+// FORCE HTTPS
+app.use(function (req, resp, next) {
+	if (req.headers['x-forwarded-proto'] == 'http') {
+		return resp.redirect(301, 'https://' + req.headers.host + '/');
+	} else {
+		return next();
+	}
+});
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -25,13 +47,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-    store: new MemoryStore({
-        checkPeriod: 86400000
-    }),
-    secret: 'Tj4W;h4KqU4AAGYieKPLH}Jh',
-    cookie: { maxAge: 86400000 },
-    resave: false,
-    saveUninitialized: false
+	store: new MemoryStore({
+		checkPeriod: 86400000
+	}),
+	secret: 'Tj4W;h4KqU4AAGYieKPLH}Jh',
+	cookie: { maxAge: 86400000 },
+	resave: false,
+	saveUninitialized: false
 }));
 
 app.use('/', indexRouter);
@@ -44,29 +66,24 @@ mongoose.connect(config.get("mongoDB"));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-    next(createError(404));
+	next(createError(404));
 });
 
 
 
-// app.dynamicHelpers({
-//     session: function (req, res) {
-//         return req.session;
-//     }
-// });
 
 // error handler
 app.use(function (err, req, res, next) {
-    // set locals, only providing error in development
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
+	// set locals, only providing error in development
+	res.locals.message = err.message;
+	res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-    // render the error page
-    res.status(err.status || 500);
-    res.render('error', {
-        title: "Error",
-        error: err.message
-    });
+	// render the error page
+	res.status(err.status || 500);
+	res.render('error', {
+		title: "Error",
+		error: err.message
+	});
 });
 
 module.exports = app;
