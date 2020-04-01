@@ -1,84 +1,99 @@
 @import '_var.scss';
 
 .socialContainer {
-     margin: auto;
-     max-width: 940px;
-     width: 100%;
+    margin: auto;
+    max-width: 940px;
+    width: 100%;
 
 
 
-     .socialInput {
-          width: calc(100% / 6);
-          padding-bottom: 12%;
-          height: 0;
-          display: inline-block;
-          position: relative;
-          transition: 0.2s ease;
-          cursor: pointer !important;
+    .socialInput {
+        width: calc(100% / 6);
+        padding-bottom: 12%;
+        height: 0;
+        display: inline-block;
+        position: relative;
+        transition: 0.2s ease;
+        cursor: pointer !important;
 
-          &.selected {
-               .socialTitle {
-                    display: block;
-               }
-          }
+        &.selected {
+            .socialTitle {
+                display: block;
+            }
+        }
 
-          input {
-               display: none;
-          }
+        input {
+            display: none;
+        }
 
-          .socialLabel {
-               display: flex;
-               flex-direction: column;
-               align-items: center;
-               justify-content: space-around;
-               position: absolute;
-               width: 100%;
-               height: 100%;
-          }
+        .socialLabel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
 
-          .socialIcon {
-               width: 60%;
+        .socialIcon {
+            width: 60%;
 
-               img {
-                    width: 100%;
-               }
-          }
+            img {
+                width: 100%;
+            }
+        }
 
-          .socialTitle {
-               display: none;
-               text-transform: uppercase;
-               font-family: $mainFont;
-               color: white;
-          }
+        .socialTitle {
+            display: none;
+            text-transform: uppercase;
+            font-family: $mainFont;
+            color: white;
+        }
 
-          &:hover {
-               .socialTitle {
-                    display: block;
-               }
-          }
+        &:hover {
+            .socialTitle {
+                display: block;
+            }
+        }
 
-     }
+    }
 }
 
 input[type='text'],
 input[type='email'],
 textarea#message {
-     background: black;
-     border: 0;
-     width: 100%;
-     font-size: 18px;
-     color: white;
-     padding: 8px;
-     transition: $transitionTime;
-     border-bottom: 3px solid;
+    background: black;
+    border: 0;
+    width: 100%;
+    font-size: 18px;
+    color: white;
+    padding: 8px;
+    transition: $transitionTime;
+    border-bottom: 3px solid;
+}
+
+.alert {
+    width: calc(100% - 20px);
+    color: white;
+    padding: 10px;
+
+    &.success {
+        background-color: green;
+    }
+
+    &.error {
+        background-color: red;
+    }
+
 }
 
 @media screen and (max-width:1000px) {
-     .socialContainer {
-          .socialInput {
-               .socialTitle {
-                    font-size: 1.5vw;
-               }
-          }
-     }
+    .socialContainer {
+        .socialInput {
+            .socialTitle {
+                font-size: 1.5vw;
+            }
+        }
+    }
 }
