@@ -14,6 +14,9 @@ router.get('/', function (req, res, next) {
 	let meta = {};
 	meta.social_title = "Sam Malcolm Media"
 	meta.feature_image = "assets/ui_images/social_share.png"
+	if (bucket) {
+		meta.feature_image = bucket + '/' + meta.feature_image;
+	}
 	meta.social_description = "The official website for Sam Malcolm, the Melbourne based Digital Media Designer"
 	meta.feature_image_alt = "An image of Sam Malcolms logo, the outline of a cube with a gradient coloured background"
 	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
@@ -24,6 +27,9 @@ router.get('/snooker', function (req, res, next) {
 	let meta = {};
 	meta.social_title = "Sam Malcolm Media | Snooker"
 	meta.feature_image = "assets/ui_images/snooker2.jpg"
+	if (bucket) {
+		meta.feature_image = bucket + '/' + meta.feature_image;
+	}
 	meta.social_description = "Summary page of Sam Malcolms Snooker & Billiards results"
 	meta.feature_image_alt = "An image of Sam Malcolm playing snooker, with the rest"
 	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
@@ -34,6 +40,9 @@ router.get('/blog', function (req, res, next) {
 	let meta = {};
 	meta.social_title = "Sam Malcolm Media | Blog"
 	meta.feature_image = "assets/ui_images/social_share.png"
+	if (bucket) {
+		meta.feature_image = bucket + '/' + meta.feature_image;
+	}
 	meta.social_description = "Blog page of Sam Malcolm's official website"
 	meta.feature_image_alt = "An image of Sam Malcolms logo, the outline of a cube with a gradient coloured background"
 	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
@@ -44,6 +53,9 @@ router.get('/film', function (req, res, next) {
 	let meta = {};
 	meta.social_title = "Sam Malcolm Media | Film Criticism"
 	meta.feature_image = "assets/ui_images/film.jpg"
+	if (bucket) {
+		meta.feature_image = bucket + '/' + meta.feature_image;
+	}
 	meta.social_description = "A curated resource of Sam Malcolm's film criticism across various platforms"
 	meta.feature_image_alt = "An image a film clapperboard"
 	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
@@ -54,6 +66,9 @@ router.get('/film', function (req, res, next) {
 	let meta = {};
 	meta.social_title = "Sam Malcolm Media | Film Criticism"
 	meta.feature_image = "assets/ui_images/film.jpg"
+	if (bucket) {
+		meta.feature_image = bucket + '/' + meta.feature_image;
+	}
 	meta.social_description = "A curated resource of Sam Malcolm's film criticism across various platforms"
 	meta.feature_image_alt = "An image of a film clapperboard"
 	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
@@ -63,7 +78,10 @@ router.get('/about', function (req, res, next) {
 	let path = "Sam Malcolm Media | About";
 	let meta = {};
 	meta.social_title = "Sam Malcolm Media | About"
-	meta.feature_image = "assets/profile/small_me_for_site.jpg"
+	meta.feature_image = "assets/profile/me.jpg"
+	if (bucket) {
+		meta.feature_image = bucket + '/' + meta.feature_image;
+	}
 	meta.social_description = "The about me page of Sam Malcolm's official website"
 	meta.feature_image_alt = "An image of Sam Malcolm"
 	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
@@ -83,6 +101,9 @@ router.get('/contact', function (req, res, next) {
 	let meta = {};
 	meta.social_title = "Sam Malcolm Media | Contact"
 	meta.feature_image = "assets/ui_images/social_share.png"
+	if (bucket) {
+		meta.feature_image = bucket + '/' + meta.feature_image;
+	}
 	meta.social_description = "The contact page of Sam Malcolm's official website"
 	meta.feature_image_alt = "An image of Sam Malcolms logo, the outline of a cube with a gradient coloured background"
 	res.render('index', {
@@ -100,6 +121,9 @@ router.get('/work', function (req, res, next) {
 	let meta = {};
 	meta.social_title = "Sam Malcolm Media | Work"
 	meta.feature_image = "assets/ui_images/social_share.png"
+	if (bucket) {
+		meta.feature_image = bucket + '/' + meta.feature_image;
+	}
 	meta.social_description = "A curated list of folio works by Sam Malcolm"
 	meta.feature_image_alt = "An image of Sam Malcolms logo, the outline of a cube with a gradient coloured background"
 	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
@@ -110,6 +134,9 @@ router.get('/music', function (req, res, next) {
 	let meta = {};
 	meta.social_title = "Sam Malcolm Media | Music"
 	meta.feature_image = "assets/ui_images/music.jpg"
+	if (bucket) {
+		meta.feature_image = bucket + '/' + meta.feature_image;
+	}
 	meta.social_description = "Sam Malcolm's discography and information about upcoming music projects"
 	meta.feature_image_alt = "An image of Sam Malcolm playing guitar"
 	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
@@ -120,6 +147,9 @@ router.get('/appearances', function (req, res, next) {
 	let meta = {};
 	meta.social_title = "Sam Malcolm Media | Live"
 	meta.feature_image = "assets/profile/small_me_for_site.jpg"
+	if (bucket) {
+		meta.feature_image = bucket + '/' + meta.feature_image;
+	}
 	meta.social_description = "List of events for Sam Malcolm"
 	meta.feature_image_alt = "An image of Sam Malcolm"
 	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
@@ -130,18 +160,24 @@ router.get('/tutorials', function (req, res, next) {
 	let meta = {};
 	meta.social_title = "Sam Malcolm Media | Tutorials"
 	meta.feature_image = "assets/ui_images/social_share.png"
+	if (bucket) {
+		meta.feature_image = bucket + '/' + meta.feature_image;
+	}
 	meta.social_description = "The contact page of Sam Malcolm's official website"
 	meta.feature_image_alt = "An image of Sam Malcolms logo, the outline of a cube with a gradient coloured background"
-	res.render('index', { title: path, meta: meta, url: config.get("siteAddress") });
+	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
 });
 
 router.get('/tutorials/:id', function (req, res, next) {
-	tutorialModel.find({ 'ytid': req.params.id }, (err, docs) => {
-		let path = "Sam Malcolm Media | " + docs.name;
+	tutorialModel.findById(req.params.id, (err, docs) => {
+		let path = "Sam Malcolm Media | " + docs.title;
 		let meta = {};
 		meta.social_title = path;
 		meta.feature_image = docs.feature_image;
-		meta.social_description = docs.description;
+		if (bucket) {
+			meta.feature_image = bucket + meta.feature_image;
+		}
+		meta.social_description = docs.social_description;
 		meta.feature_image_alt = docs.feature_image_alt;
 		res.render('index', { title: path, meta: meta, bucket: bucket, url: config.get("siteAddress") });
 	})
