@@ -143,7 +143,7 @@ router.get('/tutorials/:id', function (req, res, next) {
 		meta.feature_image = docs.feature_image;
 		meta.social_description = docs.description;
 		meta.feature_image_alt = docs.feature_image_alt;
-		res.render('index', { title: path, meta: meta, url: config.get("siteAddress") });
+		res.render('index', { title: path, meta: meta, bucket: bucket, url: config.get("siteAddress") });
 	})
 
 });
