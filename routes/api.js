@@ -355,6 +355,13 @@ router.get('/tutorial/:playlist_id', async (req, res) => {
 // ADD PLAYLIST TO DB
 router.get('/tutorial', async (req, res) => {
 	tutorialModel.find({}).where({ active: true }).sort({ 'date': -1 }).exec((err, docs) => {
+		if (bucket) {
+			for (let i = 0; i < docs.length; i++) {
+				if (docs[i].feature_image) {
+					docs[i].feature_image = bucket + docs[i].feature_image
+				}
+			}
+		}
 		res.send(docs);
 	});
 })
@@ -367,27 +374,28 @@ router.delete('/tutorial/:tutorial_id', util.isAuthenticated, (req, res) => {
 		}
 		res.send(resp);
 	})
-	router.get('/backgrounds', (req, res) => {
-		backgroundsModel.find({}).exec((err, docs) => {
-			if (bucket) {
-				for (let i = 0; i < docs.length; i++) {
-					docs[i].src = bucket + docs[i].src;
-				}
+});
+router.get('/backgrounds', (req, res) => {
+	backgroundsModel.find({}).exec((err, docs) => {
+		if (bucket) {
+			for (let i = 0; i < docs.length; i++) {
+				docs[i].src = bucket + docs[i].src;
 			}
-			console.log(docs);
-			res.send(docs);
-		})
-	});
+		}
+		console.log(docs);
+		res.send(docs);
+	})
+});
 
-	router.get('/socials', (req, res) => {
-		socialsModel.find({}).exec((err, docs) => {
-			// if (bucket) {
-			// 	for (let i = 0; i < docs.length; i++) {
-			// 		docs[i].icon = bucket + docs[i].icon;
-			// 	}
-			// }
-			res.send(docs);
-		})
-	});
+router.get('/socials', (req, res) => {
+	socialsModel.find({}).exec((err, docs) => {
+		// if (bucket) {
+		// 	for (let i = 0; i < docs.length; i++) {
+		// 		docs[i].icon = bucket + docs[i].icon;
+		// 	}
+		// }
+		res.send(docs);
+	})
+});
 
-	module.exports = router;
+module.exports = router;

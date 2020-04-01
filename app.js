@@ -8,8 +8,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
 var adminRouter = require('./routes/admin');
-const session = require('express-session');
-const MemoryStore = require('memorystore')(session);
 
 var app = express();
 const config = require('config');
