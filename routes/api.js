@@ -294,7 +294,7 @@ router.post('/contact', (req, res) => {
 })
 
 router.get('/youtube/transcript/:video_id', async (req, res) => {
-	let tscript = await axios.get("http://video.google.com/timedtext?lang=en&v=" + response[i].contentDetails.videoId);
+	let tscript = await axios.get("https://video.google.com/timedtext?lang=en&v=" + response[i].contentDetails.videoId);
 	parseString(tscript, { trim: true }, (err, result) => {
 		if (err) {
 			console.log(err);
