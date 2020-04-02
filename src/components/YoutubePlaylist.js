@@ -35,7 +35,7 @@ export default function YoutubePlaylist(data) {
 	const tryFetchTranscript = videoid => {
 		return new Promise((resolve, reject) => {
 			console.log("FETCHING TRANSCRIPT " + videoid);
-			Axios.get("http://video.google.com/timedtext?lang=en&v=" + videoid).then(response => {
+			Axios.get("https://video.google.com/timedtext?lang=en&v=" + videoid).then(response => {
 				if (!response.data) {
 					console.log("NO TRANSCRIPT AVAILABLE");
 					setTranscript([]);
