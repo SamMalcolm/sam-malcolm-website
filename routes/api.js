@@ -46,8 +46,9 @@ router.get('/blog/all', (req, res) => {
 router.get('/blog/:id', (req, res) => {
 	blogModel.findById(req.params.id, (err, docs) => {
 		if (docs.active) {
-			docs.feature_image = (bucket) ? bucket + docs.feature_image : config.get("siteAddress") + docs.feature_image;
+
 			if (bucket) {
+				docs.feature_image = (bucket) ? bucket + docs.feature_image : config.get("siteAddress") + docs.feature_image;
 				let doc = docs.markup;
 				doc = new JSDOM(doc).window.document;
 				let images = doc.querySelectorAll("img");
