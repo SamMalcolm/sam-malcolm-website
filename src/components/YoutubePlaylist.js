@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
 import parseString from 'xml2js';
-import { SSL_OP_NETSCAPE_CHALLENGE_BUG } from 'constants';
-
 const YtpMenuItem = (data) => {
 	return (
 		<div className="ytp_menu_item" onClick={() => {
@@ -31,7 +29,7 @@ export default function YoutubePlaylist(data) {
 	const [channel, setChannel] = useState([]);
 	const [playerReady, setPlayerReady] = useState(false);
 	const [multiitems, setMultiitems] = useState(true);
-
+	const [autoscroll, setAutoscroll] = useState(true);
 	const tryFetchTranscript = videoid => {
 		return new Promise((resolve, reject) => {
 			console.log("FETCHING TRANSCRIPT " + videoid);
@@ -105,6 +103,12 @@ export default function YoutubePlaylist(data) {
 							}
 							tcopy[activeIndex].active = true;
 							setTranscript(tcopy);
+							if (autoscroll) {
+								let tpos_active = document.querySelector("span.ytp_active").offsetTop;
+								let tpos_container = document.querySelector('.ytp_transcript').offsetTop;
+								document.querySelector('.ytp_transcript').scrollTop = tpos_active - tpos_container;
+							}
+
 						}
 					}
 				}
@@ -239,14 +243,27 @@ export default function YoutubePlaylist(data) {
 							</div>
 						)}
 
+						{(description) &&
+							<div>
+								<h3>Description</h3>
+								<span className="ytp_description">{description}</span>
+							</div>
+						}
+
+
 						{(transcript && transcript != []) &&
+
 							<div>
 								<h3>Video Transcript</h3>
+								<input type="checkbox" name="as" checked={autoscroll} onChange={(e) => setAutoscroll(e.target.checked)} />
+								<label for="as">Auto Scroll Transcript</label>
+								<br />
+								<br />
 								<span className="ytp_transcript">
 									{(transcript).map(script => {
 										return (
 											<span key={script.$.start} onClick={handleTranscriptClick} className={(script.active) ? "ytp_active" : null} data-start={script.$.start} data-duration={script.$.dur}>
-												{" " + script._ + " "}
+												{" " + script._.replace(/&#39;/igm, "'") + " "}
 											</span>
 										)
 									})}
@@ -254,12 +271,6 @@ export default function YoutubePlaylist(data) {
 							</div>
 						}
 
-						{(description) &&
-							<div>
-								<h3>Description</h3>
-								<span className="ytp_description">{description}</span>
-							</div>
-						}
 						{(resources) &&
 							<div>
 								<h3>Resources</h3>
