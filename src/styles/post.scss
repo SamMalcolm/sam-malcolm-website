@@ -1,8 +1,30 @@
 .postContainer {
-    position: relative;
     width: 100%;
-    height: 150px;
     margin-bottom: 30px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-size: 105% 105%;
+    background-position: center center;
+    overflow: hidden;
+    position: relative;
+
+    .postImage {
+        width: 200px;
+        top: 0;
+        left: 0;
+        position: absolute;
+        height: 100%;
+        display: inline-block;
+
+        img {
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
 
     .postBGContainer {
         position: absolute;
@@ -10,8 +32,7 @@
         width: 100%;
         top: 0;
         left: 0;
-        border: 1px solid white;
-        border-radius: 10px;
+
         overflow: hidden;
 
         .postBg {
@@ -19,9 +40,7 @@
             overflow: hidden;
             width: 105%;
             height: 105%;
-            background-size: cover;
-            background-position: center center;
-            filter: blur(4px);
+
 
             .postDarker {
                 position: absolute;
@@ -30,42 +49,37 @@
                 width: 100%;
                 height: 100%;
                 background: rgba(0, 0, 0, 0.5);
-
+                z-index: -2;
             }
 
-        }
-
-        .postImage {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 220px;
-            height: 100%;
-            overflow: hidden;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-
-            img {
+            .postbgimg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
                 height: 100%;
+                z-index: -3;
+                background-size: cover;
+                background-position: center;
+                filter: blur(4px);
             }
+
         }
+
+
     }
 
     .postText {
         color: white;
-        position: absolute;
-        z-index: 200;
-        width: calc(100% - 253px);
-        right: 0;
-        padding: 10px;
+        padding: 15px;
         text-align: left;
-        display: flex;
-        flex-direction: column;
         font-size: 15px;
+        display: inline-block;
+        width: calc(100% - 230px);
+        text-decoration: none;
+        margin-left: 200px;
 
         .postTitle {
-            font-size: 24px;
             text-transform: uppercase;
             font-family: $mainFont;
         }
@@ -77,45 +91,17 @@
     }
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:450px) {
     .postContainer {
-        .postBGContainer {
-            .postImage {
-                width: 150px;
-            }
+        .postImage {
+            width: 100%;
+            height: 150px;
         }
 
         .postText {
-            width: calc(100% - 183px);
-        }
-    }
-}
-
-@media screen and (max-width:500px) {
-    .postContainer {
-        height: 282px;
-
-        .postBGContainer {
-            .postImage {
-                position: absolute;
-                width: 100%;
-                height: 50%;
-                overflow: hidden;
-                text-align: center;
-                display: flex;
-                justify-content: center;
-
-                img {
-                    object-fit: cover;
-                    height: auto;
-                }
-            }
-        }
-
-        .postText {
-            width: calc(100% - 20px);
-            right: 0;
-            bottom: 0;
+            margin-left: 0;
+            margin-top: 150px;
+            width: calc(100% - 30px);
         }
     }
 }

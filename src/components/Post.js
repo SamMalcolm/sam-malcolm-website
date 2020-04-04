@@ -3,15 +3,20 @@ import moment from 'moment';
 
 const Post = (props) => {
 	return (
-		<div className="postContainer" >
-			<div className="postBGContainer">
-				<div className="postBg" style={{ 'backgroundImage': 'url(\'' + props.feature_image + '\'' }}><div className="postDarker"></div></div>
-				<div className="postImage"><img src={props.feature_image} /></div>
+		<div className="postContainer">
+			<div className="postImage">
+				<img src={props.feature_image} />
 			</div>
 			<div className="postText">
-				<div className="postTitle">{props.title}</div>
-				<div className="postDate"><i>{props.author + " | " + moment(props.date).format('ll')}</i></div>
-				<div className="postDescription">{props.social_description}</div>
+				<h2 className="postTitle">{props.title}</h2>
+				<i className="postDate">{props.author + " | " + moment(props.date).format('ll')}</i>
+				<p className="postDescription">{props.social_description}</p>
+			</div>
+			<div className="postBGContainer">
+				<div className="postBg">
+					<div className="postDarker"></div>
+					<div className="postbgimg" style={{ 'backgroundImage': 'url(\'' + props.feature_image + '\'' }}></div>
+				</div>
 			</div>
 		</div>
 	)
