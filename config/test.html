@@ -1,0 +1,53 @@
+<p>This week I spent my train trips re building the Lynda course page user interface in React JS. Why you might ask,
+	well, its a really good UI. It offers a comprehensive overview of the course, an innovative interactive transcript
+	which is great for accessibility and just a sleek mobile friendly layout.</p>
+<p>I built this in React because my website is built in React and I’m hoping to soon create some tutorial videos or
+	series of videos as I think it might be something I’m good at. Plus, I’ve gotten a lot of knowledge from the online
+	community for free, and because I have skills to teach and some production skills, I’m in a spot where I can give
+	back to that online community. My first series I’m planning to do is to build the front end app I experimented with
+	this year ‘Rankster’ you can see this in the works page. It has some actually cool stuff going on and is pretty
+	much stepping the user through a sorting algorithm, there’s also some recursion in there it was actually a
+	deceptively interesting thing to figure out. Who knows what I will make really, and honestly If the community asks
+	for something, ill try and make it.</p>
+<p>Heres some things I learnt rebuilding the Lynda UI. I learnt that there is a somewhat hidden from their documentation
+	Google API endpoint that returns the transcript in XML form. It seems like an old endpoint and smells of future
+	decommissioning, but I hope not, because it provides the exact data I need to built the interactive transcript
+	layer in a fairly useable format, although XML is a bit old these days.  The second thing is, when will I ever
+	learn not to mutate the state in React. Even when I knowingly try not to do it I seem to fall for that same gotcha,
+	fooled me twice, shame on me. Shall not fool me again! Its important to remember to not assign a new variable to
+	the current state because its not actually copying the data across just creating a new alias for it. The method
+	suggested to me on Stack Overflow (bless them) is to use the map method and loop through the items in the array and
+	simply return them to rebuild the same object.</p>
+<p>So DO NOT do this:</p>
+<pre>
+	let tcopy = transcript;
+</pre>
+<p>Do this instead:</p>
+<pre>
+	let tcopy = transcript.map((script) => {
+		return script
+	});
+</pre>
+<p>I also learnt more about the YouTube iframe API, and that in a single page application you need to call the
+	methods that their script call when the API is ready yourself if you are revisiting a page with the API present.
+	When
+	the YouTube script loads it calls a method called onYouTubeIframeAPIReady(); But because react is a single page
+	application, you need to realise that the YouTube scripts will still be ‘ready’ from when React first put them in
+	the
+	DOM. So you need to check the if the script there and if it is, inject it and it will call the methods, if not
+	simply
+	call the methods yourself, like this:</p>
+<pre>
+	if (!document.querySelector("script[src=\"https://www.youtube.com/iframe_api\"]")) {
+		var tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	} else {
+		onYouTubeIframeAPIReady();
+		onPlayerReady();
+	}
+	</pre>
+
+<p>You can view the code for the UI on my GitHub account, follow the link on my Contact page.</p>
+<p>Thanks for following!</p>

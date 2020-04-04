@@ -98,7 +98,7 @@ const Albums = props => {
 			<FullWidthBanner
 				caption="Photo: Ian Malcolm"
 				backgroundPosition="top center"
-				src="/assets/ui_images/music.jpg"
+				src={window.bucket + "/assets/ui_images/music.jpg"}
 				title="Music"
 			/>
 			{/* Add uniqe keys to looped elements -> better performance */}
