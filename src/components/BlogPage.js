@@ -36,6 +36,7 @@ const BlogPage = (props) => {
 	useEffect(() => {
 		axios.get('/api/blog/' + props.id).then((result) => {
 			setPost(result.data);
+			Prism.highlightAll();
 		})
 	}, []);
 
