@@ -279,6 +279,8 @@ input:checked+.slider::before {
     cursor: pointer !important;
     transition: 0.2s;
     padding: 1px;
+    font-size: 18px;
+    line-height: 22px;
 }
 
 .ytp_transcript {
