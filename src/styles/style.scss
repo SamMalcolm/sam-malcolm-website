@@ -2,63 +2,63 @@
 
 @mixin themify($themes: $themes) {
 
-     @each $theme,
-     $map in $themes {
+    @each $theme,
+    $map in $themes {
 
-          .theme-#{$theme} & {
-               $theme-map: () !global;
+        .theme-#{$theme} & {
+            $theme-map: () !global;
 
-               @each $key,
-               $submap in $map {
-                    $value: map-get(map-get($themes, $theme), '#{$key}');
-                    $theme-map: map-merge($theme-map, ($key: $value)) !global;
-               }
+            @each $key,
+            $submap in $map {
+                $value: map-get(map-get($themes, $theme), '#{$key}');
+                $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
 
-               @content;
-               $theme-map: null !global;
-          }
+            @content;
+            $theme-map: null !global;
+        }
 
-     }
+    }
 }
 
 body.large_text {
-     h1 {
-          // font-size:32px;
-          font-size: 37px !important;
-     }
+    h1 {
+        // font-size:32px;
+        font-size: 37px !important;
+    }
 
-     h2 {
-          // font-size:24px;
-          font-size: 29px !important;
-     }
+    h2 {
+        // font-size:24px;
+        font-size: 29px !important;
+    }
 
-     h3 {
-          // font-size:18.72px;
-          font-size: 23.72px !important;
-     }
+    h3 {
+        // font-size:18.72px;
+        font-size: 23.72px !important;
+    }
 
-     h4 {
-          // font-size:16px;
-          font-size: 21px !important;
-     }
+    h4 {
+        // font-size:16px;
+        font-size: 21px !important;
+    }
 
-     h5 {
-          // font-size:13.28px;
-          font-size: 18.28px !important;
-     }
+    h5 {
+        // font-size:13.28px;
+        font-size: 18.28px !important;
+    }
 
-     h6 {
-          // font-size:12px;
-          font-size: 17px !important;
-     }
+    h6 {
+        // font-size:12px;
+        font-size: 17px !important;
+    }
 
-     p {
-          font-size: 21px !important;
-     }
+    p {
+        font-size: 22px !important;
+    }
 
-     div.nav_links a {
-          font-size: 20px !important;
-     }
+    div.nav_links a {
+        font-size: 20px !important;
+    }
 }
 
 h1,
@@ -67,111 +67,117 @@ h3,
 h4,
 h5,
 h6 {
-     font-family: $mainFont;
+    font-family: $mainFont;
 }
 
 body,
 html {
-     margin: 0;
-     padding: 0;
-     overflow-x: hidden;
-     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: sans-serif;
 }
 
 html {
-     background: black;
+    background: black;
 }
 
 body {
-     padding-top: 65px;
+    padding-top: 65px;
 }
 
 
 
 a.smBtn,
 input.smBtn {
-     background: black;
-     padding: 10px;
-     margin-right: 11px;
-     border-radius: 20px;
-     color: white;
-     text-decoration: none;
-     border: 2px solid white;
-     transition: $transitionTime;
-     display: inline-block;
-     padding-top: 12px;
-     cursor: pointer !important;
+    background: black;
+    padding: 10px;
+    margin-right: 11px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    transition: $transitionTime;
+    display: inline-block;
+    padding-top: 12px;
+    cursor: pointer !important;
 
-     &:hover {
-          transition: 0.2s !important;
-          border-color: white !important;
-     }
+    &:hover {
+        transition: 0.2s !important;
+        border-color: white !important;
+    }
 }
 
 a {
-     color: white;
+    color: white;
 }
 
 // Container
 .smm_container {
-     width: calc(100% - 40px);
-     padding: 20px;
-     color: white;
-     max-width: 900px;
-     margin: auto;
-     background: rgba(0, 0, 0, 0.658);
+    width: calc(100% - 40px);
+    padding: 20px;
+    color: white;
+    max-width: 900px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.658);
+
+    p,
+    ul {
+        font-size: 19px;
+        line-height: 27px;
+    }
 }
 
 // Full Width Cover
 .smm_fullWidthBanner h1 {
-     color: white;
-     position: absolute;
-     bottom: 10px;
-     left: 20px;
-     font-family: 'montserratextrabold';
-     z-index: 999;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-family: 'montserratextrabold';
+    z-index: 999;
 }
 
 .smm_fullWidthBanner i {
-     color: rgb(194, 194, 194);
-     bottom: 11px;
-     position: absolute;
-     z-index: 100;
-     left: 20px;
+    color: rgb(194, 194, 194);
+    bottom: 11px;
+    position: absolute;
+    z-index: 100;
+    left: 20px;
 }
 
 .smm_fullWidthContainer {
-     width: 100%;
-     height: 300px;
-     position: relative;
-     background-position: center;
-     background-size: cover;
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
 }
 
 .bannerCover {
-     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .videoContainer {
-     width: 100%;
-     margin: auto;
-     position: relative;
-     margin-top: 10px;
-     margin-bottom: 10px;
-     padding-bottom: 56.6%;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 56.6%;
 
-     iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-     }
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 
@@ -187,3 +193,4 @@ a {
 @import 'film.scss';
 @import 'snooker.scss';
 @import 'contact.scss';
+@import 'ytp.scss';

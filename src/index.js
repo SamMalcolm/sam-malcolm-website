@@ -20,158 +20,172 @@ import Albums from './components/Albums';
 import FilmPage from './components/FilmPage';
 import SnookerPage from './components/SnookerPage';
 import { Helmet } from "react-helmet";
-
+import YoutubePlaylist from './components/YoutubePlaylist';
+import Tutorial from './components/Tutorial';
 const App = () => {
 
-    const [highlightColour, setHighlightColour] = useState('');
-    const [backgroundSlides, setBackgroundSlides] = useState(false);
+	const [highlightColour, setHighlightColour] = useState('');
+	const [backgroundSlides, setBackgroundSlides] = useState(false);
 
-    return (
-        <Router>
-            <div className="appContainer">
-                <Helmet>
-                    <title>Sam Malcolm Media</title>
-                </Helmet>
-                {(!backgroundSlides) ? <Background setHighlightColour={setHighlightColour} /> : null}
-                <Nav highlight={highlightColour} />
-                <Switch>
-                    <Route exact path="/"></Route>
-                    <Route exact path="/appearances">
+	return (
+		<Router>
+			<div className="appContainer">
+				<Helmet>
+					<title>Sam Malcolm Media</title>
+				</Helmet>
+				{(!backgroundSlides) ? <Background setHighlightColour={setHighlightColour} /> : null}
+				<Nav highlight={highlightColour} />
+				<Switch>
+					<Route exact path="/"></Route>
+					<Route exact path="/appearances">
 
-                        <Container>
-                            <Helmet>
-                                <title>Sam Malcolm Media | Live</title>
-                            </Helmet>
-                            <Appearances highlight={highlightColour} />
-                        </Container>
-                    </Route>
-                    <Route exact path="/snooker">
-                        <div>
-                            <Helmet>
-                                <title>Sam Malcolm Media | Snooker</title>
-                            </Helmet>
-                            <FullWidthBanner src="/assets/ui_images/snooker2.jpg" caption="Photo: David Heath" title="Snooker &amp; Billiards" />
-                            <Container>
-                                <SnookerPage />
-                            </Container>
-                        </div>
-                    </Route>
-                    <Route exact path="/about">
-                        <Container>
-                            <Helmet>
-                                <title>Sam Malcolm Media | About</title>
-                            </Helmet>
-                            <About />
-                        </Container>
-                    </Route>
-                    <Route exact path="/work">
-                        <div>
-                            <Helmet>
-                                <title>Sam Malcolm Media | Work</title>
-                            </Helmet>
-                            <Folio />
-                        </div>
-                    </Route>
-                    <Route exact path="/work/:work_id" render={(props) => {
-                        let workid = props.location.pathname.replace('/work/', '');
-                        return (
-                            <div>
-                                <Helmet>
-                                    <title>Sam Malcolm Media | Work</title>
-                                </Helmet>
-                                <WorkPage highlight={highlightColour} id={workid} />
-                            </div>
-                        )
-                    }} />
+						<Container>
+							<Helmet>
+								<title>Sam Malcolm Media | Live</title>
+							</Helmet>
+							<Appearances highlight={highlightColour} />
+						</Container>
+					</Route>
+					<Route exact path="/snooker">
+						<div>
+							<Helmet>
+								<title>Sam Malcolm Media | Snooker</title>
+							</Helmet>
+							<FullWidthBanner src={window.bucket + "/assets/ui_images/snooker2.jpg"} caption="Photo: David Heath" title="Snooker &amp; Billiards" />
+							<Container>
+								<SnookerPage />
+							</Container>
+						</div>
+					</Route>
+					<Route exact path="/about">
+						<Container>
+							<Helmet>
+								<title>Sam Malcolm Media | About</title>
+							</Helmet>
+							<About />
+						</Container>
+					</Route>
+					<Route exact path="/work">
+						<div>
+							<Helmet>
+								<title>Sam Malcolm Media | Work</title>
+							</Helmet>
+							<Folio />
+						</div>
+					</Route>
+					<Route exact path="/work/:work_id" render={(props) => {
+						let workid = props.location.pathname.replace('/work/', '');
+						return (
+							<div>
+								<Helmet>
+									<title>Sam Malcolm Media | Work</title>
+								</Helmet>
+								<WorkPage highlight={highlightColour} id={workid} />
+							</div>
+						)
+					}} />
 
-                    <Route exact path="/blog/:blog_id" render={(props) => {
-                        let blogid = props.location.pathname.replace('/blog/', '');
-                        return (
-                            <div>
-                                <Helmet>
-                                    <title>Sam Malcolm Media | Blog</title>
-                                </Helmet>
-                                <BlogPage id={blogid} />
-                            </div>
-                        )
-                    }} />
+					<Route exact path="/blog/:blog_id" render={(props) => {
+						let blogid = props.location.pathname.replace('/blog/', '');
+						return (
+							<div>
+								<Helmet>
+									<title>Sam Malcolm Media | Blog</title>
+								</Helmet>
+								<BlogPage id={blogid} />
+							</div>
+						)
+					}} />
 
-                    <Route exact path="/contact">
-                        <div>
-                            <Helmet>
-                                <title>Sam Malcolm Media | Contact</title>
-                            </Helmet>
+					<Route exact path="/contact">
+						<div>
+							<Helmet>
+								<title>Sam Malcolm Media | Contact</title>
+							</Helmet>
 
-                            <Contact highlight={highlightColour} />
-                        </div>
-                    </Route>
-                    <Route exact path="/film">
-                        <div>
-                            <Helmet>
-                                <title>Sam Malcolm Media | Film</title>
-                            </Helmet>
-                            <FullWidthBanner src="/assets/ui_images/film.jpg" title="Film Criticism" />
-                            <Container>
-                                <FilmPage highlight={highlightColour} />
-                            </Container>
-                        </div>
-                    </Route>
-                    <Route exact path="/tutorials">
-                        <h2>Tutorials</h2>
-                    </Route>
-                    <Route exact path="/blog">
-                        <Container>
-                            <Helmet>
-                                <title>Sam Malcolm Media | Blog</title>
-                            </Helmet>
-                            <Blog />
-                        </Container>
-                    </Route>
-                    <Route exact path="/music">
-                        <div>
-                            <Helmet>
-                                <title>Sam Malcolm Media | Music</title>
-                            </Helmet>
-                            <Albums highlight={highlightColour} />
-                        </div>
-                    </Route>
-                </Switch>
-                <div className="cardContainer">
+							<Contact highlight={highlightColour} />
+						</div>
+					</Route>
+					<Route exact path="/film">
+						<div>
+							<Helmet>
+								<title>Sam Malcolm Media | Film</title>
+							</Helmet>
+							<FullWidthBanner src={window.bucket + "/assets/ui_images/film.jpg"} title="Film Criticism" />
+							<Container>
+								<FilmPage highlight={highlightColour} />
+							</Container>
+						</div>
+					</Route>
+					<Route exact path="/tutorials">
+						<Container>
+							<Tutorial />
+						</Container>
+					</Route>
+					<Route exact path="/tutorials/:id" render={(props) => {
+						let tutorial_id = props.location.pathname.replace('/tutorials/', '');
+						return (
+							<div>
+								<Helmet>
+									<title>Sam Malcolm Media | Tutorials</title>
+								</Helmet>
+								<YoutubePlaylist id={tutorial_id} />
+							</div>
+						)
+					}} />
+					<Route exact path="/blog">
+						<Container>
+							<Helmet>
+								<title>Sam Malcolm Media | Blog</title>
+							</Helmet>
+							<Blog />
+						</Container>
+					</Route>
+					<Route exact path="/music">
+						<div>
+							<Helmet>
+								<title>Sam Malcolm Media | Music</title>
+							</Helmet>
+							<Albums highlight={highlightColour} />
+						</div>
+					</Route>
+				</Switch>
+				<div className="cardContainer">
 
-                    <Card icon="assets/ui_images/accessibility.png">
-                        <div className="ackText">
-                            <h3>Accessibility Options</h3>
-                            <i>Stop Background Slideshow</i>
-                            <input type="checkbox" value="backgrounds" onChange={(e) => {
-                                console.log(e.target.checked);
-                                setBackgroundSlides(e.target.checked);
+					<Card icon="https://sammalcolm-static.s3-us-west-2.amazonaws.com/assets/ui_images/accessibility.png">
+						<div className="ackText">
+							<h3>Accessibility Options</h3>
+							<i>Stop Background Slideshow</i>
+							<input type="checkbox" value="backgrounds" onChange={(e) => {
+								console.log(e.target.checked);
+								setBackgroundSlides(e.target.checked);
 
-                            }} />
-                            <br />
-                            <i>Large Text</i>
-                            <input type="checkbox" value="backgrounds" onChange={(e) => {
-                                document.querySelector("body").classList.toggle("large_text");
+							}} />
+							<br />
+							<i>Large Text</i>
+							<input type="checkbox" value="backgrounds" onChange={(e) => {
+								document.querySelector("body").classList.toggle("large_text");
 
-                            }} />
-                            <br />
-                            <i>If an accessibility feature is missing that may help you access the site more easily please dont hesitate to contact me via the contact page and I will make it a priority.</i>
-                        </div>
-                    </Card>
-                    <Card icon="assets/ui_images/australia.png">
-                        <div className="ackImage">
-                            <img src='./assets/ui_images/ack.png' />
-                        </div>
-                        <div className="ackText">
-                            <h3>Acknowledgement Of Country</h3>
-                            <p>I would like to acknowledge the traditional owners of the land on which I conduct the business of being a developer and designer. I would like to pay my respect to their elders past, present and future.</p>
-                            <p>If you would like to learn more about indigenous culture please click <a style={{ 'color': 'black' }} href="https://www.indigenous.gov.au/">here</a></p>
-                        </div>
-                    </Card>
-                </div>
-            </div>
+							}} />
+							<br />
+							<i>If an accessibility feature is missing that may help you access the site more easily please dont hesitate to contact me via the contact page and I will make it a priority.</i>
+						</div>
+					</Card>
+					<Card icon="https://sammalcolm-static.s3-us-west-2.amazonaws.com/assets/ui_images/australia.png">
+						<div className="ackImage">
+							<img src='https://sammalcolm-static.s3-us-west-2.amazonaws.com/assets/ui_images/ack.png' />
+						</div>
+						<div className="ackText">
+							<h3>Acknowledgement Of Country</h3>
+							<p>I would like to acknowledge the traditional owners of the land on which I conduct the business of being a developer and designer. I would like to pay my respect to their elders past, present and future.</p>
+							<p>If you would like to learn more about indigenous culture please click <a style={{ 'color': 'black' }} href="https://www.indigenous.gov.au/">here</a></p>
+						</div>
+					</Card>
+				</div>
+			</div>
 
-        </Router >
-    )
+		</Router >
+	)
 }
 
 ReactDOM.render(<App />, document.querySelector(".container"));
