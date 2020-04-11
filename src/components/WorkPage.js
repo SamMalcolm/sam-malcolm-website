@@ -65,7 +65,17 @@ export default function WorkPage(props) {
 						<LinkedinIcon size={32} round={true} />
 					</LinkedinShareButton>
 				</div>
-				<p>{work.long_description}</p>
+				{(work.long_description) && (
+					<>
+						{(work.long_description.indexOf("<p>") == -1) ?
+							<p>{work.long_description}</p>
+							:
+							<div dangerouslySetInnerHTML={{ __html: work.long_description }}></div>
+
+						}
+					</>
+				)}
+
 				{(work.type == 2) ?
 					<div>
 						<a href="#" style={{ 'borderColor': props.highlight }} className="smBtn" onClick={() => { setGalleryVisible(true) }}>View Gallery</a>
