@@ -10,7 +10,7 @@ import About from './components/About.js';
 import Card from './components/Card.js';
 import Container from './components/Container.js';
 import FullWidthBanner from './components/FullWidthBanner';
-import Blog from './components/Blog';
+import Menu from './components/Menu';
 import { BlogPage } from './components/BlogPage';
 import Contact from './components/Contact';
 import Appearances from './components/Appearances';
@@ -21,7 +21,7 @@ import FilmPage from './components/FilmPage';
 import SnookerPage from './components/SnookerPage';
 import { Helmet } from "react-helmet";
 import YoutubePlaylist from './components/YoutubePlaylist';
-import Tutorial from './components/Tutorial';
+
 const App = () => {
 
 	const [highlightColour, setHighlightColour] = useState('');
@@ -62,7 +62,7 @@ const App = () => {
 							<Helmet>
 								<title>Sam Malcolm Media | About</title>
 							</Helmet>
-							<About />
+							<About highlight={highlightColour} />
 						</Container>
 					</Route>
 					<Route exact path="/work">
@@ -119,7 +119,7 @@ const App = () => {
 					</Route>
 					<Route exact path="/tutorials">
 						<Container>
-							<Tutorial />
+							<Menu dataSource="/api/tutorial" urlPath="/tutorial/" menuName="Tutorials" />
 						</Container>
 					</Route>
 					<Route exact path="/tutorials/:id" render={(props) => {
@@ -138,7 +138,7 @@ const App = () => {
 							<Helmet>
 								<title>Sam Malcolm Media | Blog</title>
 							</Helmet>
-							<Blog />
+							<Menu dataSource="/api/blog" urlPath="/blog/" menuName="Blog" />
 						</Container>
 					</Route>
 					<Route exact path="/music">
@@ -178,7 +178,7 @@ const App = () => {
 						<div className="ackText">
 							<h3>Acknowledgement Of Country</h3>
 							<p>I would like to acknowledge the traditional owners of the land on which I conduct the business of being a developer and designer. I would like to pay my respect to their elders past, present and future.</p>
-							<p>If you would like to learn more about indigenous culture please click <a style={{ 'color': 'black' }} href="https://www.indigenous.gov.au/">here</a></p>
+							<p>If you would like to learn more about indigenous culture please click <a style={{ 'color': 'white' }} href="https://www.indigenous.gov.au/">here</a></p>
 						</div>
 					</Card>
 				</div>

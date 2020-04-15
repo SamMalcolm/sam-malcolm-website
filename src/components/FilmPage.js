@@ -9,7 +9,7 @@ const Letterboxd = (props) => {
 
 	return (
 		<div className="poster">
-			<div className="lb" onClick={() => { setVisible(true) }} style={{ 'backgroundImage': 'url(\'' + props.poster + '\')' }}>
+			<div className="lb" onClick={() => { setVisible(true) }} style={(props.poster) ? { 'backgroundImage': 'url(\'' + props.poster + '\')' } : { 'backgroundColor': 'black' }}>
 				<div className="starContainer">
 					<p className="stars">
 						{(props.title[0].indexOf(" - ") != -1) ? props.title[0].slice(props.title[0].indexOf(" - ") + 3, props.title[0].length) : props.title[0]}
@@ -34,7 +34,7 @@ const YouTubeReview = (props) => {
 
 	return (
 		<div className="poster">
-			<div className="lb" onClick={() => { setVisible(true) }} style={{ 'backgroundImage': 'url(\'' + "#" + '\')' }}>
+			<div className="lb" onClick={() => { setVisible(true) }} style={{ 'backgroundImage': 'url(\'' + props.snippet.thumbnails.medium.url + '\')' }}>
 				<div className="starContainer">
 					<p className="stars">
 						{props.snippet.title}

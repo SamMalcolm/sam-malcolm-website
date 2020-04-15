@@ -65,6 +65,7 @@
 		"react-router": "^4.3.1",
 		"react-router-dom": "^4.3.1",
 		"react-share": "^2.4.0",
+		"react-social-icons": "^4.1.0",
 		"react-twitter-embed": "^2.0.8",
 		"uglifyjs-webpack-plugin": "^2.2.0",
 		"xml": "^1.0.1",

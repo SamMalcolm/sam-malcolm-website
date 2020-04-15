@@ -1,6 +1,8 @@
 import React from 'react';
+import { ContactForm } from './Contact'
+import { SocialIcon } from 'react-social-icons';
 
-const About = () => {
+const About = (props) => {
 	return (
 		<div className="bio_container">
 			<div className="bio_img">
@@ -10,6 +12,20 @@ const About = () => {
 			</div>
 			<div className="bio_body">
 				<h1>SAM MALCOLM</h1>
+				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.twitter.com/SamMalcolm1414" />
+				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.linkedin.com/in/sam-malcolm/" />
+				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://github.com/SamMalcolm" />
+
+
+				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.instagram.com/sam_a_malcolm/" />
+				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.facebook.com/sammalcolmmedia" />
+
+				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.reddit.com/user/sam_malcolm/" />
+				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#000000" bgColor="#FFFFFF" url="https://codepen.io/SamMalcolm/" />
+				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.youtube.com/channel/UCOSAPdTi4ICVPW8AUzoHUMg" />
+				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://open.spotify.com/artist/1lic0tkQOleES5rgyihvHV?si=m1Sjky21QuOzId0rpz9qOA" />
+				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="#contact" network="email" />
+
 				<p>My Name is Sam Malcolm and I am a multi-disciplinary digital media designer from Melbourne, Australia. </p>
 				<p>I currently work at RMIT University in the central Learning and Teaching Design team focusing on improving the student and teacher experience. This role has involved me conducting photography and videography of high stakes clients including former Prime-Minister Julia Gillard and the Deputy Vice-Chancellor. The role has also involved building enterprise scale web applications to enable more efficient processes.</p>
 				<p>My focus areas are photo/video and full stack web programming, but I also have a vested interest in 3D modelling, music production and composition and motion graphics. Under the <i>works</i> section of this site I have some examples of my work in these areas. Under the <i>music</i> section there are examples of some of my own originally composed and performed music.</p>
@@ -21,6 +37,7 @@ const About = () => {
 					<img src="https://sammalcolm-static.s3-us-west-2.amazonaws.com/assets/profile/Sig.png" />
 				</div>
 			</div>
+
 			<div className="divider"></div>
 			<h3>SKILLS</h3>
 			<div className="bottomSection">
@@ -63,7 +80,11 @@ const About = () => {
 					</ul>
 				</div>
 			</div>
-		</div>
+			<div id="contact" className="divider"></div>
+			<div >
+				<ContactForm highlight={props.highlight} />
+			</div>
+		</div >
 	)
 }
 

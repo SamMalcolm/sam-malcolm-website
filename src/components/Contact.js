@@ -31,7 +31,7 @@ const ContactForm = (props) => {
 	)
 }
 
-export default function Contact(props) {
+const Contact = (props) => {
 	const [socials, setSocials] = useState([]);
 
 	useEffect(() => {
@@ -109,3 +109,5 @@ export default function Contact(props) {
 		</div >
 	)
 }
+
+export { Contact, ContactForm }

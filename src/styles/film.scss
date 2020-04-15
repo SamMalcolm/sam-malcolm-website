@@ -30,6 +30,7 @@ div.poster {
         background-size: cover;
         text-align: center;
         position: relative;
+        background-position: center;
         cursor: pointer;
 
         &:hover {
@@ -52,5 +53,23 @@ div.poster {
             display: none;
             transition: 0.2s ease;
         }
+    }
+}
+
+@media screen and (max-width:900px) {
+    div.poster {
+        width: calc(100% / 4);
+    }
+}
+
+@media screen and (max-width:700px) {
+    div.poster {
+        width: calc(100% / 3);
+    }
+}
+
+@media screen and (max-width:400px) {
+    div.poster {
+        width: calc(100% / 2);
     }
 }

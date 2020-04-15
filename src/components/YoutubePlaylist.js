@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
 import parseString from 'xml2js';
+import {
+	FacebookShareButton,
+	LinkedinShareButton,
+	TwitterShareButton,
+	RedditShareButton,
+	FacebookIcon,
+	TwitterIcon,
+	RedditIcon,
+	LinkedinIcon,
+} from 'react-share';
+
 const YtpMenuItem = (data) => {
 	return (
 		<div className="ytp_menu_item" onClick={() => {
@@ -205,6 +216,20 @@ export default function YoutubePlaylist(data) {
 							<h4>{channel.items[0].snippet.title}</h4>
 						</div>
 					}
+					<div style={{ 'marginBottom': '23px' }} className="shareContainer">
+						<FacebookShareButton url={window.location.href}>
+							<FacebookIcon size={32} round={true} />
+						</FacebookShareButton>
+						<TwitterShareButton url={window.location.href}>
+							<TwitterIcon size={32} round={true} />
+						</TwitterShareButton>
+						<RedditShareButton url={window.location.href} >
+							<RedditIcon size={32} round={true} />
+						</RedditShareButton>
+						<LinkedinShareButton url={window.location.href} >
+							<LinkedinIcon size={32} round={true} />
+						</LinkedinShareButton>
+					</div>
 					<div className="ytp_theme_switch">
 						<span>Dark Theme: </span>
 						<input onChange={e => { setDarkTheme(e.target.checked) }} type="checkbox" checked={(darkTheme) ? true : false} />
@@ -219,6 +244,7 @@ export default function YoutubePlaylist(data) {
 					</div>
 				</div>
 				<div className="ytp_meta_container">
+
 					{(multiitems) && (
 						<div className="ytp_video_menu">
 							<h3>Video Menu</h3> {
