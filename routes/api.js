@@ -228,9 +228,16 @@ router.get('/film_data', async (req, res) => {
 
 		for (let i = 0; i < googleData.data.items.length; i++) {
 			finalResult.push(googleData.data.items[i]);
+
 		}
 
 		for (let i = 0; i < result.rss.channel[0].item.length; i++) {
+			// console.log(result.rss.channel[0].item[i]);
+			let doc = new JSDOM(result.rss.channel[0].item[i].description[0]).window.document;
+			let img = doc.querySelector("img");
+			if (img) {
+				result.rss.channel[0].item[i].poster = img.getAttribute("src")
+			}
 			finalResult.push(result.rss.channel[0].item[i]);
 		}
 
@@ -251,6 +258,8 @@ router.get('/film_data', async (req, res) => {
 			return dateB - dateA;
 
 		})
+
+		// console.log(finalResult);
 
 		res.send(finalResult);
 

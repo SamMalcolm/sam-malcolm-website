@@ -1,16 +1,56 @@
 .lbdescr {
-     text-align: center;
+    text-align: center;
 
-     p {
-          display: inline-block;
-          width: calc(100% - 20px);
-          padding: 10px;
+    p {
+        display: inline-block;
+        width: calc(100% - 20px);
+        padding: 10px;
 
-          img {
-               width: 140px;
-          }
-     }
+        img {
+            width: 140px;
+        }
+    }
 
 
 
+}
+
+div.poster {
+
+    display: inline-block;
+    width: calc(100% / 5);
+
+
+
+    .lb {
+        width: 100%;
+        display: inline-block;
+        height: 0;
+        padding-bottom: 150%;
+        background-size: cover;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+
+        &:hover {
+            .starContainer {
+                display: flex;
+            }
+        }
+
+        .starContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            transition: 0.2s ease;
+        }
+    }
 }
