@@ -9,6 +9,7 @@ const albumModel = require('../models/albums');
 const tutorialResourcesModel = require('../models/tutorial_resources');
 const backgroundsModel = require('../models/backgrounds');
 const socialsModel = require('../models/socials');
+const podcastsModel = require('../models/podcasts');
 const axios = require('axios');
 const { googleApiKey } = require('../keys/google_api.js');
 const parseString = require('xml2js').parseString;
@@ -25,6 +26,12 @@ const { JSDOM } = jsdom;
 const bucket = (typeof process.env.S3_BUCKET != "undefined") ? process.env.S3_BUCKET : false;
 /* GET home page. */
 
+router.get('/podcasts', (req, res) => {
+	console.log("API PODCASTS");
+	podcastsModel.find({}).exec((err, docs) => {
+		res.send(docs);
+	})
+})
 // Get blog posts
 router.get('/blog', (req, res) => {
 	blogModel.find({}).where({ active: true }).sort({ 'date': -1 }).exec((err, docs) => {
@@ -405,6 +412,8 @@ router.get('/backgrounds', (req, res) => {
 		res.send(docs);
 	})
 });
+
+
 
 router.get('/socials', (req, res) => {
 	socialsModel.find({}).exec((err, docs) => {

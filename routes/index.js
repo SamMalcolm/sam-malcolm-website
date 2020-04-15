@@ -61,6 +61,7 @@ router.get('/film', function (req, res, next) {
 	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
 });
 
+
 router.get('/film', function (req, res, next) {
 	let path = "Sam Malcolm Media | Film Criticism";
 	let meta = {};
@@ -125,6 +126,18 @@ router.get('/work', function (req, res, next) {
 		meta.feature_image = bucket + '/' + meta.feature_image;
 	}
 	meta.social_description = "A curated list of folio works by Sam Malcolm"
+	meta.feature_image_alt = "An image of Sam Malcolms logo, the outline of a cube with a gradient coloured background"
+	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
+});
+router.get('/podcasts', function (req, res, next) {
+	let path = "Sam Malcolm Media | Podcasts";
+	let meta = {};
+	meta.social_title = "Sam Malcolm Media | podcasts"
+	meta.feature_image = "assets/ui_images/social_share.png"
+	if (bucket) {
+		meta.feature_image = bucket + '/' + meta.feature_image;
+	}
+	meta.social_description = "A list of podcasts by Sam Malcolm"
 	meta.feature_image_alt = "An image of Sam Malcolms logo, the outline of a cube with a gradient coloured background"
 	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
 });

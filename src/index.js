@@ -65,6 +65,14 @@ const App = () => {
 							<About highlight={highlightColour} />
 						</Container>
 					</Route>
+					<Route exact path="/podcasts">
+						<Container>
+							<Helmet>
+								<title>Sam Malcolm Media | Podcasts</title>
+							</Helmet>
+							<Menu dataSource="/api/podcasts" urlPath="/podcast/" menuName="Podcast" />
+						</Container>
+					</Route>
 					<Route exact path="/work">
 						<div>
 							<Helmet>
@@ -119,7 +127,7 @@ const App = () => {
 					</Route>
 					<Route exact path="/tutorials">
 						<Container>
-							<Menu dataSource="/api/tutorial" urlPath="/tutorial/" menuName="Tutorials" />
+							<Menu dataSource="/api/tutorial" urlPath="/tutorials/" menuName="Tutorials" />
 						</Container>
 					</Route>
 					<Route exact path="/tutorials/:id" render={(props) => {
