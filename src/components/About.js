@@ -21,7 +21,7 @@ const About = (props) => {
 				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#000000" bgColor="#FFFFFF" url="https://codepen.io/SamMalcolm/" />
 				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.youtube.com/channel/UCOSAPdTi4ICVPW8AUzoHUMg" />
 				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://open.spotify.com/artist/1lic0tkQOleES5rgyihvHV?si=m1Sjky21QuOzId0rpz9qOA" />
-				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="#contact" network="email" />
+				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="#contact" network="email" />
 
 				<p>My Name is Sam Malcolm and I am a multi-disciplinary digital media designer from Melbourne, Australia. </p>
 				<p>I currently work at RMIT University in the central Learning and Teaching Design team focusing on improving the student and teacher experience. This role has involved me conducting photography and videography of high stakes clients including former Prime-Minister Julia Gillard and the Deputy Vice-Chancellor. The role has also involved building enterprise scale web applications to enable more efficient processes.</p>
