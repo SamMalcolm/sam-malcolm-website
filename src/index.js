@@ -21,6 +21,7 @@ import FilmPage from './components/FilmPage';
 import SnookerPage from './components/SnookerPage';
 import { Helmet } from "react-helmet";
 import YoutubePlaylist from './components/YoutubePlaylist';
+import PodcastEpisodeList from './components/PodcastEpisodeList';
 
 const App = () => {
 
@@ -138,6 +139,22 @@ const App = () => {
 									<title>Sam Malcolm Media | Tutorials</title>
 								</Helmet>
 								<YoutubePlaylist id={tutorial_id} />
+							</div>
+						)
+					}} />
+					<Route exact path="/podcast/:id" render={(props) => {
+						let podcast_id = props.location.pathname.replace('/podcast/', '');
+						console.log("PODCAST ID");
+						console.log(podcast_id);
+						return (
+							<div>
+								<Helmet>
+									<title>Sam Malcolm Media | Podcasts</title>
+								</Helmet>
+								<FullWidthBanner src={window.bucket + "/assets/ui_images/snooker2.jpg"} caption="Photo: David Heath" title="Chalking Snooker Podcast" />
+								<Container>
+									<PodcastEpisodeList highlight={highlightColour} id={podcast_id} />
+								</Container>
 							</div>
 						)
 					}} />

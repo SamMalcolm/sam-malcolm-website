@@ -92,6 +92,7 @@ const Nav = (props) => {
 				<NavLink highlight={props.highlight} name="Blog" path="/blog" showMenu={showMenu} />
 				<NavLink highlight={props.highlight} name="Music" path="/music" showMenu={showMenu} />
 				<NavLink highlight={props.highlight} name="Tutorials" path="/tutorials" showMenu={showMenu} />
+				<NavLink highlight={props.highlight} name="Podcasts" path="/podcasts" showMenu={showMenu} />
 				<NavLink highlight={props.highlight} name="Snooker" path="/snooker" showMenu={showMenu} />
 				<NavLink highlight={props.highlight} name="Film" path="/film" showMenu={showMenu} />
 				<NavLink highlight={props.highlight} name="About + Contact" path="/about" showMenu={showMenu} />

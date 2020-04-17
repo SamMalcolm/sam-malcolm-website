@@ -32,6 +32,13 @@ router.get('/podcasts', (req, res) => {
 		res.send(docs);
 	})
 })
+
+router.get('/podcasts/:pod_id', (req, res) => {
+	console.log("API PODCASTS");
+	podcastsModel.find({ _id: req.params.pod_id }).exec((err, docs) => {
+		res.send(docs);
+	})
+})
 // Get blog posts
 router.get('/blog', (req, res) => {
 	blogModel.find({}).where({ active: true }).sort({ 'date': -1 }).exec((err, docs) => {

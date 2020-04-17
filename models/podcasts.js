@@ -13,6 +13,8 @@ const PodcastsSchema = new Schema({
 	episodes: { type: Array },
 	itunes_keywords: { type: String },
 	category: { type: String },
+	subtitle: { type: String },
+	copyright: { type: String },
 
 });
 

@@ -58,6 +58,16 @@
     margin-bottom: 15px;
 }
 
+.lyndaList {
+    width: 100%;
+
+    ul.lynda {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+    }
+}
+
 @media screen and (max-width:850px) {
     .bio_img {
         width: 100%;

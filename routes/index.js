@@ -5,6 +5,7 @@ var workModel = require('../models/work');
 const blogModel = require('../models/blog');
 const config = require('config');
 const tutorialModel = require('../models/tutorials');
+const podcastsModel = require('../models/podcasts');
 const bucket = (typeof process.env.S3_BUCKET != "undefined") ? process.env.S3_BUCKET : false;
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom
@@ -196,6 +197,21 @@ router.get('/tutorials/:id', function (req, res, next) {
 	})
 
 });
+router.get('/podcast/:id', function (req, res, next) {
+	podcastsModel.findById(req.params.id, (err, docs) => {
+		let path = "Sam Malcolm Media | " + docs.title;
+		let meta = {};
+		meta.social_title = path;
+		meta.feature_image = docs.feature_image;
+		if (bucket) {
+			meta.feature_image = bucket + meta.feature_image;
+		}
+		meta.social_description = docs.social_description;
+		meta.feature_image_title = docs.feature_image_title;
+		res.render('index', { title: path, meta: meta, bucket: bucket, url: config.get("siteAddress") });
+	})
+
+});
 
 
 router.get('/work/:work_id', (req, res) => {
@@ -249,7 +265,7 @@ router.get('/blog/:blog_id', (req, res) => {
 	})
 })
 
-router.get('/pod/rss', (req, res) => {
+router.get('/pod/rss/old', (req, res) => {
 	let xml_response = `<?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:itunesu="http://www.itunesu.com/feed" version="2.0">
 <channel>
@@ -299,6 +315,64 @@ router.get('/pod/rss', (req, res) => {
 </rss>`
 	res.type('application/rss+xml');
 	res.send(xml_response);
+})
+
+router.get('/pod/rss/', (req, res) => {
+	podcastsModel.find({}, (err, docs) => {
+		console.log(docs);
+		let xml_response = `<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:itunesu="http://www.itunesu.com/feed" version="2.0">
+<channel>
+<link>https://www.sammalcolmmedia.com/</link>
+<language>en-us</language>
+<copyright>${docs[0].copyright}</copyright>
+<webMaster>sam_malcolm@live.com.au (Sam Malcolm)</webMaster>
+<managingEditor>sam_malcolm@live.com.au (Sam Malcolm)</managingEditor>
+<image>
+   <url>${docs[0].feature_image}</url>
+   <title>${docs[0].feature_image_title}</title>
+   <link>https://www.sammalcolmmedia.com/</link>
+</image>
+<itunes:owner>
+   <itunes:name>Sam Malcolm</itunes:name>
+   <itunes:email>sam_malcolm@live.com.au</itunes:email>
+</itunes:owner>
+<itunes:category text="Sports">
+</itunes:category>
+<itunes:keywords>${docs[0].itunes_keywords}</itunes:keywords>
+<itunes:explicit>no</itunes:explicit>
+<itunes:image href="${docs[0].feature_image}" />
+<atom:link href="https://www.sammalcolmmedia.com/pod/rss" rel="self" type="application/rss+xml" />
+<pubDate>${docs[0].pub_date}</pubDate>
+<title>${docs[0].title}</title>
+<itunes:author>${docs[0].author}</itunes:author>
+<description>${docs[0].social_description}</description>
+<itunes:summary>${docs[0].social_description}</itunes:summary>
+<itunes:subtitle>${docs[0].subtitle}</itunes:subtitle>
+<lastBuildDate>${docs[0].pub_date}</lastBuildDate>`;
+
+		for (let i = 0; i < docs[0].episodes.length; i++) {
+			xml_response += `<item>
+			<title>${docs[0].episodes[i].title}</title>
+			<description>${docs[0].episodes[i].social_description}</description>
+			<itunes:summary>${docs[0].episodes[i].social_description}</itunes:summary>
+			<itunes:subtitle>${docs[0].episodes[i].subtitle}</itunes:subtitle>
+			<enclosure url="${docs[0].episodes[i].mp3_src}" type="audio/mp3" length="${docs[0].episodes[i].mp3_duration}" />
+			<guid>${docs[0].episodes[i].mp3_src}</guid>
+			<itunes:image href="${docs[0].episodes[i].feature_image}" />
+			<itunes:duration>${docs[0].episodes[i].itunes_duration}</itunes:duration>
+			<pubDate>${docs[0].episodes[i].pub_date}</pubDate>
+		 </item>`
+		}
+
+
+		xml_response += `</channel>
+</rss>`;
+		res.type('application/rss+xml');
+		res.send(xml_response);
+	})
+
+
 })
 
 module.exports = router;

@@ -12,19 +12,16 @@ const About = (props) => {
 			</div>
 			<div className="bio_body">
 				<h1>SAM MALCOLM</h1>
-				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.twitter.com/SamMalcolm1414" />
-				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.linkedin.com/in/sam-malcolm/" />
-				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://github.com/SamMalcolm" />
-
-
-				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.instagram.com/sam_a_malcolm/" />
-				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.facebook.com/sammalcolmmedia" />
-
-				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.reddit.com/user/sam_malcolm/" />
-				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#000000" bgColor="#FFFFFF" url="https://codepen.io/SamMalcolm/" />
-				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.youtube.com/channel/UCOSAPdTi4ICVPW8AUzoHUMg" />
-				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://open.spotify.com/artist/1lic0tkQOleES5rgyihvHV?si=m1Sjky21QuOzId0rpz9qOA" />
-				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="#contact" network="email" />
+				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.twitter.com/SamMalcolm1414" />
+				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.linkedin.com/in/sam-malcolm/" />
+				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://github.com/SamMalcolm" />
+				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.instagram.com/sam_a_malcolm/" />
+				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.facebook.com/sammalcolmmedia" />
+				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.reddit.com/user/sam_malcolm/" />
+				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#000000" bgColor="#FFFFFF" url="https://codepen.io/SamMalcolm/" />
+				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.youtube.com/channel/UCOSAPdTi4ICVPW8AUzoHUMg" />
+				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://open.spotify.com/artist/1lic0tkQOleES5rgyihvHV?si=m1Sjky21QuOzId0rpz9qOA" />
+				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="#contact" network="email" />
 
 				<p>My Name is Sam Malcolm and I am a multi-disciplinary digital media designer from Melbourne, Australia. </p>
 				<p>I currently work at RMIT University in the central Learning and Teaching Design team focusing on improving the student and teacher experience. This role has involved me conducting photography and videography of high stakes clients including former Prime-Minister Julia Gillard and the Deputy Vice-Chancellor. The role has also involved building enterprise scale web applications to enable more efficient processes.</p>
@@ -39,7 +36,6 @@ const About = (props) => {
 			</div>
 
 			<div className="divider"></div>
-			<h3>SKILLS</h3>
 			<div className="bottomSection">
 				<div className="frameworks">
 					<h4>Frameworks</h4>
@@ -65,8 +61,16 @@ const About = (props) => {
 						<li>2013: Certificate III in Interactive Digital Media</li>
 						<li>2012: Certificate II in Information Technology</li>
 					</ul>
-					<h4>Lynda:</h4>
+					<h4>Achievements</h4>
 					<ul>
+						<li>2019: RMIT University Education leadership Award (Beyond the Call)</li>
+						<li>2019: Presented at International Instructure Con Confrence in Long Beach CA</li>
+					</ul>
+
+				</div>
+				<div className="lyndaList" style={{ 'width': '100%' }}>
+					<h4>Lynda:</h4>
+					<ul className="lynda">
 						<li>Learning Paths:
                         <ul>
 								<li>Become a MERN stack developer</li>
