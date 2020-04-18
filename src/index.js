@@ -66,14 +66,7 @@ const App = () => {
 							<About highlight={highlightColour} />
 						</Container>
 					</Route>
-					<Route exact path="/podcasts">
-						<Container>
-							<Helmet>
-								<title>Sam Malcolm Media | Podcasts</title>
-							</Helmet>
-							<Menu dataSource="/api/podcasts" urlPath="/podcast/" menuName="Podcast" />
-						</Container>
-					</Route>
+
 					<Route exact path="/work">
 						<div>
 							<Helmet>
@@ -164,6 +157,14 @@ const App = () => {
 								<title>Sam Malcolm Media | Blog</title>
 							</Helmet>
 							<Menu dataSource="/api/blog" urlPath="/blog/" menuName="Blog" />
+						</Container>
+					</Route>
+					<Route exact path="/podcasts">
+						<Container>
+							<Helmet>
+								<title>Sam Malcolm Media | Podcasts</title>
+							</Helmet>
+							<Menu dataSource="/api/podcasts" urlPath="/podcast/" menuName="Podcast" />
 						</Container>
 					</Route>
 					<Route exact path="/music">
