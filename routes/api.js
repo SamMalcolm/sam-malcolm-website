@@ -192,15 +192,18 @@ router.get('/works/:id', (req, res) => {
 				}
 				docs.feature_image = (docs.feature_image) ? bucket + docs.feature_image : "";
 				docs.thumb_src = (docs.thumb_src) ? bucket + docs.thumb_src : "";
-				if (docs.long_description.indexOf("<p>") != -1) {
-					let html_doc = docs.long_description;
-					html_doc = new JSDOM(html_doc).window.document;
-					let images = html_doc.querySelectorAll("img");
-					for (let i = 0; i < images.length; i++) {
-						images[i].setAttribute("src", bucket + images[i].getAttribute("src"))
+				if (typeof docs.long_description != "undefined") {
+					if (docs.long_description.indexOf("<p>") != -1) {
+						let html_doc = docs.long_description;
+						html_doc = new JSDOM(html_doc).window.document;
+						let images = html_doc.querySelectorAll("img");
+						for (let i = 0; i < images.length; i++) {
+							images[i].setAttribute("src", bucket + images[i].getAttribute("src"))
+						}
+						docs.long_description = html_doc.querySelector("body").innerHTML;
 					}
-					docs.long_description = html_doc.querySelector("body").innerHTML;
 				}
+
 			} else {
 				docs.feature_image = (docs.feature_image) ? config.get("siteAddress") + docs.feature_image : "";
 				docs.thumb_src = (docs.thumb_src) ? config.get("siteAddress") + docs.thumb_src : "";
