@@ -353,9 +353,7 @@ router.post('/youtube/', util.isAuthenticated, async (req, res) => {
 			googleData = await axios.get('https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&maxResults=50&id=' + fields.playlist_id + '&key=' + googleApiKey);
 		}
 		response.items = googleData.data.items;
-		console.log("GETTING DATA ON CHANNEL");
-		console.log(googleData);
-		let channelInfo = await axios.get('https://www.googleapis.com/youtube/v3/channels?part=snippet&id=' + googleData.data.items[0].snippet.channel_id + '&key=' + googleApiKey);
+		let channelInfo = await axios.get('https://www.googleapis.com/youtube/v3/channels?part=snippet&id=' + googleData.data.items[0].snippet.channelId + '&key=' + googleApiKey);
 		response.channel = channelInfo.data;
 		// ADD TO DB
 		console.log("Adding to DB");

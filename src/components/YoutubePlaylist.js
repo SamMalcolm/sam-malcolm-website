@@ -21,8 +21,8 @@ const YtpMenuItem = (data) => {
 				<img src={data.src} />
 			</div>
 			<span>
-				<h4>{data.title}</h4>
-				<i>{data.duration}</i>
+				<h4>{data.title}</h4><br />
+				{/* <i>{data.duration}</i> */}
 			</span>
 		</div>
 	)
@@ -136,7 +136,7 @@ export default function YoutubePlaylist(data) {
 			console.log("PLAYING FOR PLAYLIST");
 			tryFetchTranscript(playlist[index].contentDetails.videoId);
 			tryFetchResources(playlist[index].contentDetails.videoId);
-			setTitle(playlist[index].snippet.title);
+			setTitle(playlist[index].snippet.title.replace(/\[.+\]/, '').trim());
 			setDescription(playlist[index].snippet.description);
 			player.loadVideoById(playlist[index].contentDetails.videoId);
 			player.playVideo();
@@ -144,7 +144,7 @@ export default function YoutubePlaylist(data) {
 			console.log("PLAUING INDIVIDUAL VIDEO");
 			tryFetchTranscript(playlist[index].id);
 			tryFetchResources(playlist[index].id);
-			setTitle(playlist[index].snippet.title);
+			setTitle(playlist[index].snippet.title.replace(/\[.+\]/, '').trim());
 			setDescription(playlist[index].snippet.description);
 			player.loadVideoById(playlist[index].id);
 			player.playVideo();
@@ -250,7 +250,7 @@ export default function YoutubePlaylist(data) {
 							<h3>Video Menu</h3> {
 								(playlist).map((item, i) => {
 									return (
-										<YtpMenuItem index={i} handleClick={playVideo} title={item.snippet.title} src={item.snippet.thumbnails.default.url} duration="1s" />
+										<YtpMenuItem index={i} handleClick={playVideo} title={item.snippet.title.replace(/\[.+\]/, '').trim()} src={item.snippet.thumbnails.high.url} duration="1s" />
 									)
 								})
 							}
