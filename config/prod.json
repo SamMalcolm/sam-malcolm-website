@@ -1,4 +1,4 @@
 {
 	"siteAddress": "https://www.sammalcolmmedia.com/",
-	"mongoDB": "mongodb://smm_user:Kyr3nW1ls0n@ds231207.mlab.com:31207/smm"
+	"mongoDB": "mongodb+srv://smm_user:<<DB_PASS>>@cluster0.copzd.mongodb.net/<<DB_NAME>>?retryWrites=true&w=majority"
 }

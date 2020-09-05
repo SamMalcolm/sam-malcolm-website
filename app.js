@@ -60,7 +60,17 @@ app.use('/admin', adminRouter);
 app.use('/api', apiRouter);
 
 console.log("connecting to DB");
-mongoose.connect(config.get("mongoDB"));
+let connect_str = config.get("mongoDB");
+
+if (process.env.DB_PASS) {
+	connect_str = connect_str.replace('<<DB_PASS>>', process.env.DB_PASS)
+}
+
+if (process.env.DB_NAME) {
+	connect_str = connect_str.replace('<<DB_NAME>>', process.env.DB_NAME)
+}
+
+mongoose.connect(connect_str);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
