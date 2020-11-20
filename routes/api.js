@@ -318,11 +318,11 @@ router.post('/contact', (req, res) => {
 		if (err) {
 			console.log(err);
 			req.session.error_message = "There was an error :( Alternatively you can email me using sam.malcolm.media@gmail.com";
-			res.redirect('/contact');
+			res.redirect('/about');
 		} else {
 			console.log(info);
 			req.session.success_message = "The email was sent successfully";
-			res.redirect('/contact');
+			res.redirect('/about');
 		}
 	})
 

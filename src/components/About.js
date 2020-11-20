@@ -23,12 +23,11 @@ const About = (props) => {
 				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://open.spotify.com/artist/1lic0tkQOleES5rgyihvHV?si=m1Sjky21QuOzId0rpz9qOA" />
 				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="#contact" network="email" />
 
-				<p>My Name is Sam Malcolm and I am a multi-disciplinary digital media designer from Melbourne, Australia. </p>
-				<p>I currently work at RMIT University in the central Learning and Teaching Design team focusing on improving the student and teacher experience. This role has involved me conducting photography and videography of high stakes clients including former Prime-Minister Julia Gillard and the Deputy Vice-Chancellor. The role has also involved building enterprise scale web applications to enable more efficient processes.</p>
-				<p>My focus areas are photo/video and full stack web programming, but I also have a vested interest in 3D modelling, music production and composition and motion graphics. Under the <i>works</i> section of this site I have some examples of my work in these areas. Under the <i>music</i> section there are examples of some of my own originally composed and performed music.</p>
-				<p>In my spare time I love walking and playing with my dogs, watching films, playing boardgames and playing competitive snooker and billiards. </p>
-				<p>I love learning new things and expanding my skill set. I usually spend my train trips committing an inordinate amount of time to Lynda.com, which has held me in good stead for my career.</p>
-				<p>If you want to collaborate on a project, have a chat about film, or organise a game of snooker feel free to engage with me on social media or you can use the contact form on this site. I look foward to hearing from you.</p>
+				<p>I am a relentlessly curious Digital Media Designer and Developer from Melbourne, Australia with a passion for Education. I’m also someone who is a strong advocate for inclusive and supportive workplaces as well as ethical design practices.</p>
+				<p>I currently work at RMIT University in the central Learning and Teaching Technology team which focuses on improving the student and teacher experience. This role has been both challenging and rewarding and it has allowed me to work within the intersection of my passion for education and technology. I have built enterprise scale software solutions and driven initiatives that have resulted in improved business processes and a positive impact on the learning experience.</p>
+				<p>I am constantly learning and improving. Being on the cutting edge of my professional practice and being able to approach different issues from unique and informed perspectives is very important to me. For this reason I spend a lot of time outside of my work exploring, learning and building. In the remainder of my spare time I love walking my dog Apollo, watching films, playing boardgames with friends and competing in local snooker competitions. </p>
+				<p>If you want to collaborate on a project, have a chat about film, or organise a game of snooker then feel free to reach out on social media, or you can use the contact form on this site. </p>
+				<p>I look forward to hearing from you.</p>
 				<p>Thanks!</p>
 				<div className="sig">
 					<img src="https://sammalcolm-static.s3-us-west-2.amazonaws.com/assets/profile/Sig.png" />
@@ -40,11 +39,15 @@ const About = (props) => {
 				<div className="frameworks">
 					<h4>Frameworks</h4>
 					<ul>
-						<li>PHP</li>
+
 						<li>JavaScript</li>
+						<li>PHP</li>
+						<li>Ruby on Rails</li>
+						<li>Swift</li>
+						<li>Flutter / Dart</li>
 						<li>CSS</li>
 						<li>HTML</li>
-						<li>NodeJS</li>
+						<li>Node</li>
 						<li>React</li>
 						<li>MySQL</li>
 						<li>MongoDB</li>
