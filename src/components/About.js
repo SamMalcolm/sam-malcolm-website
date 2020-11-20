@@ -5,6 +5,12 @@ import { SocialIcon } from 'react-social-icons';
 const About = (props) => {
 	return (
 		<div className="bio_container">
+			{(typeof window.success_message != "undefined") ?
+				<div className="success alert">{window.success_message}</div> : null
+			}
+			{(typeof window.error_message != "undefined") ?
+				<div className="error alert">{window.error_message}</div> : null
+			}
 			<div className="bio_img">
 				<div className="avatar">
 					<img src="https://sammalcolm-static.s3-us-west-2.amazonaws.com/assets/profile/me.jpg" />

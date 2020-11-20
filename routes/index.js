@@ -77,6 +77,17 @@ router.get('/film', function (req, res, next) {
 });
 
 router.get('/about', function (req, res, next) {
+	let success_message = false;
+	let error_message = false;
+	if (req.session.success_message) {
+		success_message = req.session.success_message;
+		req.session.success_message = "";
+	}
+	if (req.session.error_message) {
+		error_message = req.session.error_message;
+		req.session.error_message = "";
+	}
+
 	let path = "Sam Malcolm Media | About";
 	let meta = {};
 	meta.social_title = "Sam Malcolm Media | About"
@@ -86,7 +97,11 @@ router.get('/about', function (req, res, next) {
 	}
 	meta.social_description = "The about me page of Sam Malcolm's official website"
 	meta.feature_image_alt = "An image of Sam Malcolm"
-	res.render('index', { title: path, bucket: bucket, meta: meta, url: config.get("siteAddress") });
+	res.render('index', {
+		title: path, bucket: bucket, meta: meta, url: config.get("siteAddress"),
+		success_message: success_message,
+		error_message: error_message
+	});
 });
 router.get('/contact', function (req, res, next) {
 	let success_message = false;
