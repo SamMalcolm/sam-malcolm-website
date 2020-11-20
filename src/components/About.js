@@ -27,12 +27,12 @@ const About = (props) => {
 				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#000000" bgColor="#FFFFFF" url="https://codepen.io/SamMalcolm/" />
 				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://www.youtube.com/channel/UCOSAPdTi4ICVPW8AUzoHUMg" />
 				<SocialIcon target="_blank" style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="https://open.spotify.com/artist/1lic0tkQOleES5rgyihvHV?si=m1Sjky21QuOzId0rpz9qOA" />
-				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="#contact" network="email" />
+				<SocialIcon style={{ height: 30, width: 30, marginRight: 5 }} fgColor="#FFFFFF" url="mailto:sam.malcolm.media@gmail.com" network="email" />
 
 				<p>I am a relentlessly curious Digital Media Designer and Developer from Melbourne, Australia with a passion for Education. I’m also someone who is a strong advocate for inclusive and supportive workplaces as well as ethical design practices.</p>
 				<p>I currently work at RMIT University in the central Learning and Teaching Technology team which focuses on improving the student and teacher experience. This role has been both challenging and rewarding and it has allowed me to work within the intersection of my passion for education and technology. I have built enterprise scale software solutions and driven initiatives that have resulted in improved business processes and a positive impact on the learning experience.</p>
 				<p>I am constantly learning and improving. Being on the cutting edge of my professional practice and being able to approach different issues from unique and informed perspectives is very important to me. For this reason I spend a lot of time outside of my work exploring, learning and building. In the remainder of my spare time I love walking my dog Apollo, watching films, playing boardgames with friends and competing in local snooker competitions. </p>
-				<p>If you want to collaborate on a project, have a chat about film, or organise a game of snooker then feel free to reach out on social media, or you can use the contact form on this site. </p>
+				<p>If you want to collaborate on a project, have a chat about film, or organise a game of snooker then feel free to reach out. My email is <a style="color:white;" href="mailto:sam.malcolm.media@gmail.com">sam.malcolm.media@gmail.com</a> </p>
 				<p>I look forward to hearing from you.</p>
 				<p>Thanks!</p>
 				<div className="sig">
@@ -93,10 +93,10 @@ const About = (props) => {
 					</ul>
 				</div>
 			</div>
-			<div id="contact" className="divider"></div>
+			{/* <div id="contact" className="divider"></div>
 			<div >
 				<ContactForm highlight={props.highlight} />
-			</div>
+			</div> */}
 		</div >
 	)
 }
