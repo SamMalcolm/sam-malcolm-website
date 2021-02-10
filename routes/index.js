@@ -390,4 +390,10 @@ router.get('/pod/rss/', (req, res) => {
 
 })
 
+router.get('/privacy/snooker', (req, res) => {
+	res.send(`
+	<h1>Smart Snooker Scoreboard Privacy Policy</h1>
+	<p>The smart snooker scoreboard app does not collect any data from its users. Any data the app uses is stored within the application memory and is only stored for the duration that it is required when using the app. The data is not accessible by the developer.</p>`)
+})
+
 module.exports = router;
