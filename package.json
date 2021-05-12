@@ -53,7 +53,7 @@
 		"mongodb": "^3.1.13",
 		"mongoose": "^5.4.19",
 		"morgan": "^1.9.1",
-		"nodemailer": "^6.2.1",
+		"nodemailer": "^6.4.16",
 		"prismjs": "^1.20.0",
 		"react": "^16.8.4",
 		"react-bnb-gallery": "^1.1.5",
