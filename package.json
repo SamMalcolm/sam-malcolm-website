@@ -22,7 +22,7 @@
 		"babel-loader": "^8.0.5",
 		"chai": "^4.2.0",
 		"css-loader": "^2.1.1",
-		"mocha": "^6.1.4",
+		"mocha": "^10.2.0",
 		"nock": "^10.0.6",
 		"node-pre-gyp": "^0.10.3",
 		"node-sass": "^4.12.0",
