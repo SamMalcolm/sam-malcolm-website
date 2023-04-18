@@ -12,7 +12,7 @@
 	"author": "Sam Malcolm",
 	"license": "ISC",
 	"engines": {
-		"node": "16.x",
+		"node": "18.x",
 		"npm": "9.x"
 	},
 	"devDependencies": {
@@ -25,8 +25,6 @@
 		"mocha": "^6.1.4",
 		"nock": "^10.0.6",
 		"nyc": "^14.1.0",
-		"sass-loader": "^7.1.0",
-		"style-loader": "^0.23.1",
 		"url-loader": "^1.1.2",
 		"webpack": "^4.29.6",
 		"webpack-cli": "^3.2.3"
@@ -65,6 +63,7 @@
 		"react-share": "^2.4.0",
 		"react-social-icons": "^4.1.0",
 		"react-twitter-embed": "^2.0.8",
+		"sass": "^1.62.0",
 		"uglifyjs-webpack-plugin": "^2.2.0",
 		"xml": "^1.0.1",
 		"xml2js": "^0.4.22"
