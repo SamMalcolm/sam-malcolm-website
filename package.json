@@ -12,7 +12,7 @@
 	"author": "Sam Malcolm",
 	"license": "ISC",
 	"engines": {
-		"node": "18.x",
+		"node": "16.x",
 		"npm": "9.x"
 	},
 	"devDependencies": {
