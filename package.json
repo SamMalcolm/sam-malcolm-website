@@ -11,10 +11,6 @@
 	},
 	"author": "Sam Malcolm",
 	"license": "ISC",
-	"engines": {
-		"node": "10.15.0",
-		"npm": "6.13.2"
-	},
 	"devDependencies": {
 		"@babel/core": "^7.3.4",
 		"@babel/preset-env": "^7.3.4",
@@ -50,8 +46,8 @@
 		"jsdom": "^15.2.1",
 		"memorystore": "^1.6.1",
 		"moment": "^2.24.0",
-		"mongodb": "^3.1.13",
-		"mongoose": "^5.4.19",
+		"mongodb": "^5.2.0",
+		"mongoose": "^7.0.4",
 		"morgan": "^1.9.1",
 		"nodemailer": "^6.2.1",
 		"prismjs": "^1.20.0",
