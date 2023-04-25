@@ -6,8 +6,8 @@
 	"scripts": {
 		"start": "./bin/www",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "./node_modules/.bin/webpack",
-		"build:dev": "./node_modules/.bin/webpack -w "
+		"build": "NODE_OPTIONS=--openssl-legacy-provider ./node_modules/.bin/webpack",
+		"build:dev": "NODE_OPTIONS=--openssl-legacy-provider ./node_modules/.bin/webpack -w "
 	},
 	"author": "Sam Malcolm",
 	"license": "ISC",
@@ -46,7 +46,7 @@
 		"memorystore": "^1.6.1",
 		"moment": "^2.24.0",
 		"mongodb": "^5.2.0",
-		"mongoose": "^7.0.4",
+		"mongoose": "^6.10.0",
 		"morgan": "^1.9.1",
 		"node-sass": "^8.0.0",
 		"nodemailer": "^6.2.1",
@@ -64,6 +64,8 @@
 		"react-social-icons": "^4.1.0",
 		"react-twitter-embed": "^2.0.8",
 		"sass": "^1.62.0",
+		"sass-loader": "^10.4.1",
+		"style-loader": "^2.0.0",
 		"uglifyjs-webpack-plugin": "^2.2.0",
 		"xml": "^1.0.1",
 		"xml2js": "^0.4.22"
